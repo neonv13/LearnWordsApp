@@ -18,6 +18,7 @@ public abstract class LearnDatabase extends RoomDatabase {
     public abstract FlashCardDao flashCardDao();
     public abstract AnswerDao answerDao();
     public abstract QuestionDao questionDao();
+    public abstract FlashCardPersonalDao flashCardPersonalDao();
 
 
 
