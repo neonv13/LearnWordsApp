@@ -10,17 +10,17 @@ import androidx.room.Update;
 import java.util.List;
 
 @Dao
-public interface FlashCardDao {
+public interface QuestionDao {
 
     @Insert
-    void insert(FlashCard flashCard);
+    void insert(Question question);
 
     @Update
-    void update(FlashCard flashCard);
+    void update(Question question);
 
     @Delete
-    void delete(FlashCard flashcard);
+    void delete(Question question);
 
-    @Query("SELECT * FROM flashCard_table") // WHERE Category something ?
-    LiveData<List<FlashCard>> getAllFlashCard();
+    @Query("SELECT * FROM Question") // WHERE Category something ?
+    LiveData<List<Question>> getAllQuestion();
 }

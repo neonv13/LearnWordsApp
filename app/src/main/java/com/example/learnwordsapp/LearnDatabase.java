@@ -6,12 +6,18 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {FlashCard.class}, version = 1)
+@Database(entities = {
+        FlashCard.class,
+        Question.class,
+        Answer.class}, version = 1)
+
 public abstract class LearnDatabase extends RoomDatabase {
 
     private static LearnDatabase instance;
 
     public abstract FlashCardDao flashCardDao();
+    public abstract AnswerDao answerDao();
+    public abstract QuestionDao questionDao();
 
 
 
