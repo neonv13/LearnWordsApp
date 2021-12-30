@@ -3,7 +3,7 @@ package com.example.learnwordsapp;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "question_table")
 public class Question {
 
     @PrimaryKey(autoGenerate = true)
