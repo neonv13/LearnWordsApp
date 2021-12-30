@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/shape"
-            android:hint="@string/login_password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:paddingVertical="15sp"
             android:paddingStart="20sp"

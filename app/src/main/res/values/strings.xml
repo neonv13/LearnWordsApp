@@ -16,14 +16,18 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
     <!-- Login and Register -->
-
     <string name="login_title">Log in to Your Account</string>
     <string name="login_email">Enter Your Email</string>
     <string name="login_password">Enter Your Password</string>
+    <string name="confirm_password">Confirm Your Password</string>
     <string name="sign_in">Sign In</string>
     <string name="no_account">Don’t have an account yet?</string>
     <string name="create_account">Create account</string>
     <string name="register_title">Register Account</string>
     <string name="account">Do You already have an account?</string>
+
+    <!-- Choose Your Language -->
+    <string name="language">Choose Your Language</string>
+    <string name="cont">Continue</string>
 
 </resources>
