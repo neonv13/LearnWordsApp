@@ -12,7 +12,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_light"
         android:text="@string/register_title"
         android:textColor="@color/darkGray"
         android:textSize="30sp" />
@@ -85,7 +84,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/lato"
             android:text="@string/create_account"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -96,7 +94,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:fontFamily="@font/lato"
         android:text="@string/account"
         android:textColor="@color/darkGray"
         android:textSize="16sp" />
@@ -114,7 +111,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/lato"
             android:text="@string/sign_in"
             android:textColor="@color/white"
             android:textSize="20sp"

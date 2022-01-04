@@ -9,7 +9,9 @@ import androidx.room.RoomDatabase;
 @Database(entities = {
         FlashCard.class,
         Question.class,
-        Answer.class}, version = 1)
+        Answer.class,
+        FlashCardPersonal.class
+}, version = 1)
 
 public abstract class LearnDatabase extends RoomDatabase {
 
