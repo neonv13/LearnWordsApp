@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">LearnWordsApp</string>
+
+    <!-- Main -->
+    <string name="main_title">Welcome to the Language Learning App!</string>
+    <string name="main_subtitle">With Language Learnig App, you will learn the language of your dreams</string>
+
+    <!-- Nav -->
+    <string name="nav_user">Profile</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_ranking">Ranking</string>
+
+    <string name="quiz">Quiz</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="complete_the_sentence">Complete the Setence</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -51,5 +65,8 @@
     <string name="level_test_title">Knowledge Test</string>
     <string name="level_test_subtitle">Take a knowledge placement test and complete tasks appropriate to your level</string>
     <string name="level_test_subtitle2">Congratulations! You have completed the level test!</string>
+
+    <!-- Home Menu -->
+    <string name="home_menu_category">Category:</string>
 
 </resources>
