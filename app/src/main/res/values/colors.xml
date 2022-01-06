@@ -14,4 +14,6 @@
     <color name="black">#000000</color>
     <color name="darkPurple">#8F51BF</color>
     <color name="backgroundPurple">#D0C0DC</color>
+    <color name="backgroundPeach">#EAD5D0</color>
+    <color name="peach">#F7A492</color>
 </resources>

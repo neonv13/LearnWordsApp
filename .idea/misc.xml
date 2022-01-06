@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/neonx/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/next_btn_category_test.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/next_btn_quiz.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/next_btn_sentence.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape2.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape3.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/time_btn.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_category_test_end.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_category_test_main.xml" value="0.2" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_language.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_main.xml" value="0.16530797101449277" />

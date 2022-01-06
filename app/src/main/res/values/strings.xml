@@ -43,4 +43,8 @@
     <string name="quiz_title">Quiz</string>
     <string name="quiz_subtitle">Make a Quiz from a Category:</string>
 
+    <!-- Category Test -->
+    <string name="category_test_title">Test</string>
+    <string name="category_test_subtitle">Take a test and go to a new category!</string>
+
 </resources>

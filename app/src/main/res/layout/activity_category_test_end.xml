@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--   add tools:context and id -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:text="@string/your_score"
+        android:textColor="@color/darkGray"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:layout_width="333dp"
+        android:layout_height="265dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/win"
+        android:foregroundGravity="center" />
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="450dp">
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cpb_background_progressbar_color="@color/red"
+            app:cpb_background_progressbar_width="10dp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progress_max="20"
+            app:cpb_progressbar_color="@color/green"
+            app:cpb_progressbar_width="10dp"
+            app:cpb_round_border="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/lato"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
