@@ -28,15 +28,29 @@
             android:layout_marginTop="100dp"
             android:background="@drawable/edit_profile" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="450sp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/shape_statistics"
+            android:hint="@string/change_password"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="12sp"
+            android:paddingStart="20sp"
+            android:textColorHint="@color/lightGray"
+            tools:ignore="RtlSymmetry" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/shape_statistics"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/next_btn_level_test"
+        android:backgroundTint="@color/yellow"
         android:gravity="center">
 
         <TextView
@@ -45,7 +59,7 @@
             android:layout_gravity="center"
             android:text="@string/change"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 

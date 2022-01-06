@@ -27,6 +27,16 @@
     <string name="number_points">Your number of points</string>
     <string name="your_level">Your level</string>
 
+    <!-- My Profile -->
+
+    <string name="my_profile">My Profile</string>
+    <string name="edit_avatar">Edit Avatar</string>
+    <string name="music">Music</string>
+    <string name="notifications">Notifications</string>
+    <string name="location">Location</string>
+    <string name="language_app">Language</string>
+    <string name="logout">Logout</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
