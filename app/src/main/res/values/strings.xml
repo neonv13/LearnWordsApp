@@ -12,7 +12,14 @@
 
     <string name="quiz">Quiz</string>
     <string name="flashcards">Flashcards</string>
-    <string name="complete_the_sentence">Complete the Setence</string>
+    <string name="complete_the_sentence">Complete the Sentence</string>
+    <string name="learn">Learn</string>
+    <string name="create_your_flashcards">Create Your Flashcards</string>
+    <string name="category_test">You have already passed everything !!!</string>
+    <string name="category_test_button">Take a test and go to a new category</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change">Change</string>
+    <string name="change_password">Change Your password</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -68,5 +75,7 @@
 
     <!-- Home Menu -->
     <string name="home_menu_category">Category:</string>
-
+    <string name="select">Select what You want to do</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".CategoryTestFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,45 +27,35 @@
             android:layout_marginTop="100dp"
             android:background="@drawable/home2" />
 
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="450dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/category_test"
+            android:textColor="@color/darkGray"
+            android:textSize="22sp" />
+
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/next_btn_quiz"
-        android:backgroundTint="@color/lightMint"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/learn"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="550dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/next_btn_quiz"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/peach"
         android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/create_your_flashcards"
+            android:text="@string/category_test_button"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 

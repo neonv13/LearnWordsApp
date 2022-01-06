@@ -12,20 +12,32 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:layout_width="258dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/home_menu_category"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
             android:fontFamily="@font/lato"
-            android:text="@string/select"
+            android:text="Example Category"
             android:textColor="@color/darkGray"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="318dp"
+            android:layout_width="380dp"
+            android:layout_height="250dp"
             android:layout_marginTop="100dp"
-            android:background="@drawable/home2" />
+            android:background="@drawable/home_menu" />
 
     </RelativeLayout>
 
@@ -33,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/lightMint"
@@ -43,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/learn"
+            android:text="@string/quiz"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -53,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/blue"
@@ -63,11 +75,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/create_your_flashcards"
+            android:text="@string/flashcards"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/next_btn_quiz"
+        android:backgroundTint="@color/darkPurple"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/complete_the_sentence"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </FrameLayout>
