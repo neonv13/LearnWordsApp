@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundPurple"
+    android:background="@color/backgroundYellow"
     android:orientation="vertical">
 
     <!--   add tools:context and id -->
@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
         android:layout_height="6dp"
-        android:background="@color/darkPurple"
+        android:background="@color/yellow"
         android:indeterminate="false"
         android:max="20"
         android:maxHeight="12dp"
         android:minHeight="12dp"
         android:progress="10"
-        app:progressColor="@color/darkPurple"
+        app:progressColor="@color/yellow"
         tools:ignore="MissingClass" />
 
     <androidx.cardview.widget.CardView
@@ -31,7 +31,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        app:cardBackgroundColor="@color/backgroundPurple"
+        app:cardBackgroundColor="@color/backgroundYellow"
         app:cardCornerRadius="0dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false">
@@ -144,8 +144,8 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="80dp"
-        android:background="@drawable/next_btn_sentence"
-        android:backgroundTint="@color/darkPurple"
+        android:background="@drawable/next_btn_level_test"
+        android:backgroundTint="@color/yellow"
         android:gravity="center">
 
         <TextView
