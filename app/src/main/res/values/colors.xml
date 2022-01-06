@@ -9,6 +9,9 @@
     <color name="backgroundBlue">#B5CAF1</color>
     <color name="blue">#466EB6</color>
     <color name="darkBlue">#35558E</color>
-    <color name="red">#E14562</color>
-
+    <color name="green">#5BC85F</color>
+    <color name="red">#F14D41</color>
+    <color name="black">#000000</color>
+    <color name="darkPurple">#8F51BF</color>
+    <color name="backgroundPurple">#D0C0DC</color>
 </resources>

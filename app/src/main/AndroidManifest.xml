@@ -35,4 +35,6 @@
             android:resource="@array/preloaded_fonts" />
     </application>
 
+    <!--- add android:theme="@style/Theme.AppCompat.NoActionBar" -->
+
 </manifest>

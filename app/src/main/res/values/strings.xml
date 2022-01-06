@@ -30,4 +30,13 @@
     <string name="language">Choose Your Language</string>
     <string name="cont">Continue</string>
 
+    <!-- Complete the sentence -->
+    <string name="sentence_title">Complete the sentence</string>
+    <string name="sentence_subtitle">Make a Test from a Category:</string>
+    <string name="your_score">Your Score</string>
+
+    <!-- Time out -->
+    <string name="time_out">Time out!</string>
+    <string name="try_again">Try Again</string>
+
 </resources>
