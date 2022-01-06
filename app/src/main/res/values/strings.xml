@@ -39,4 +39,8 @@
     <string name="time_out">Time out!</string>
     <string name="try_again">Try Again</string>
 
+    <!-- Quiz -->
+    <string name="quiz_title">Quiz</string>
+    <string name="quiz_subtitle">Make a Quiz from a Category:</string>
+
 </resources>

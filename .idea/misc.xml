@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/neonx/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/next_btn_quiz.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/next_btn_sentence.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape2.xml" value="0.2703125" />
@@ -13,6 +14,9 @@
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_main.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_profile.xml" value="0.16530797101449277" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.4" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_quiz_end.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_quiz_main.xml" value="0.161231884057971" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_sentence_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_sentence_end.xml" value="0.152" />
