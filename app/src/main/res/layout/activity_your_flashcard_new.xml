@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundBlue"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="30sp">
+
+    <!--   add id -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_flashcards_new_title"
+        android:textColor="@color/darkGray"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/shape"
+            android:hint="@string/word_polish"
+            android:paddingVertical="15sp"
+            android:paddingStart="20sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/lightGray" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/shape"
+            android:hint="@string/word_english"
+            android:paddingVertical="15sp"
+            android:paddingStart="20sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/lightGray" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/shape"
+            android:hint="@string/definition_polish"
+            android:paddingVertical="15sp"
+            android:paddingStart="20sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/lightGray" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/shape"
+            android:hint="@string/definition_english"
+            android:paddingVertical="15sp"
+            android:paddingStart="20sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/lightGray" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/shape2"
+        android:backgroundTint="@color/darkBlue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

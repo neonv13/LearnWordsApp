@@ -37,6 +37,8 @@
     <string name="language_app">Language</string>
     <string name="logout">Logout</string>
 
+    <string name="ranking">Ranking</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -92,6 +94,17 @@
     <!-- Home Menu -->
     <string name="home_menu_category">Category:</string>
     <string name="select">Select what You want to do</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Your Flashcards -->
+    <string name="your_flashcards_title">Create a list of Your Flashcards</string>
+    <string name="create">Create</string>
+    <string name="enter_your_list">Enter Your List</string>
+
+    <!-- New Your Flashcards -->
+    <string name="your_flashcards_new_title">Add New Flashcard</string>
+    <string name="word_polish">Enter your word in polish</string>
+    <string name="word_english">Enter your word in english</string>
+    <string name="definition_polish">Enter your definition in polish</string>
+    <string name="definition_english">Enter your definition in english</string>
+    <string name="add_word">Add</string>
 </resources>
