@@ -17,9 +17,15 @@
     <string name="create_your_flashcards">Create Your Flashcards</string>
     <string name="category_test">You have already passed everything !!!</string>
     <string name="category_test_button">Take a test and go to a new category</string>
+
     <string name="edit_profile">Edit Profile</string>
     <string name="change">Change</string>
     <string name="change_password">Change Your password</string>
+
+    <string name="statistics_title">My statistics</string>
+    <string name="place_ranking">Your place in the ranking</string>
+    <string name="number_points">Your number of points</string>
+    <string name="your_level">Your level</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

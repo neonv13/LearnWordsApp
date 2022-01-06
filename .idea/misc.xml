@@ -11,6 +11,7 @@
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape2.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/shape3.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/statistics.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/drawable/time_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.536" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_category_test_end.xml" value="0.161231884057971" />
@@ -38,6 +39,7 @@
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/fragment_home_menu.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/fragment_profile.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/fragment_ranking.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/fragment_statistics.xml" value="0.264" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/navigation.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/menu/item_menu.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
