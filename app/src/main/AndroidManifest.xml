@@ -13,7 +13,7 @@
 <!--            android:name=".UserProfile"-->
 <!--            android:exported="true" />-->
         <activity
-            android:name=".UserProfile"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UserProfile"/>
+        <activity android:name=".RegisterActivity"/>
 
         <service
             android:name=".NotificationService"
