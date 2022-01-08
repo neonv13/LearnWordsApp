@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518055455681",
+    "project_id": "learnwordsapp-a5578",
+    "storage_bucket": "learnwordsapp-a5578.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518055455681:android:0c6080742b69ba13191d40",
+        "android_client_info": {
+          "package_name": "com.example.learnwordsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518055455681-4nij064ivvc07mapi2av1fqavokf3kb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqyj_wqEWw_NveP8ELAybYO2epOe1na0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518055455681-4nij064ivvc07mapi2av1fqavokf3kb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

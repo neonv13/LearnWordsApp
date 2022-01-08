@@ -21,6 +21,6 @@ public interface QuestionDao {
     @Delete
     void delete(Question question);
 
-    @Query("SELECT * FROM Question") // WHERE Category something ?
+    @Query("SELECT * FROM question_table") // WHERE Category something ?
     LiveData<List<Question>> getAllQuestion();
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:screenOrientation="portrait">
+
+        <TextView
+            android:id="@+id/userIdTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/ranking"
+            android:textColor="@color/darkGray"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ImageRanking"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/userIdTxt"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rankings" />
+
+        <TableLayout
+            android:id="@+id/rankingTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ImageRanking"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:stretchColumns="0,1,2"
+            android:textAlignment="center"
+            android:textColor="@color/darkGray" />
+
+    </RelativeLayout>
+
+</ScrollView>
+

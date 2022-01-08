@@ -16,6 +16,10 @@ public class FlashCardPersonal {
         this.wordEng = wordEng;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
