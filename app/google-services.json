@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "518055455681",
-    "project_id": "learnwordsapp-a5578",
-    "storage_bucket": "learnwordsapp-a5578.appspot.com"
+    "project_number": "101001522625",
+    "firebase_url": "https://learnwordsapp-44c35-default-rtdb.firebaseio.com",
+    "project_id": "learnwordsapp-44c35",
+    "storage_bucket": "learnwordsapp-44c35.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:518055455681:android:0c6080742b69ba13191d40",
+        "mobilesdk_app_id": "1:101001522625:android:0751d3038302dc3e695340",
         "android_client_info": {
           "package_name": "com.example.learnwordsapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "518055455681-4nij064ivvc07mapi2av1fqavokf3kb0.apps.googleusercontent.com",
+          "client_id": "101001522625-ljhrc22u5dmr9q1e33it68phrdk9p2k1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAqyj_wqEWw_NveP8ELAybYO2epOe1na0k"
+          "current_key": "AIzaSyCS1KcywZI9P6Jn5ZXKjeEhjN0Yaav_eus"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "518055455681-4nij064ivvc07mapi2av1fqavokf3kb0.apps.googleusercontent.com",
+              "client_id": "101001522625-ljhrc22u5dmr9q1e33it68phrdk9p2k1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

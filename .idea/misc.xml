@@ -8,10 +8,29 @@
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_register.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/activity_user_profile.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp/app/src/main/res/menu/item_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_category_test_end.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_category_test_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_flashcards_end.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_language.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_level_test_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_level_test_end.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_level_test_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_login.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_quiz_end.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_quiz_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_register.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_sentence_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_sentence_end.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_sentence_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_time_out.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_user_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_your_flashcard_new.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/activity_your_flashcards_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/bottom_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/fragment_category_test.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/fragment_edit_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ja/AndroidStudioProjects/LearnWordsApp2/app/src/main/res/layout/fragment_home_menu.xml" value="0.36666666666666664" />
