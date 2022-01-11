@@ -2,6 +2,7 @@ package com.example.learnwordsapp;
 
 import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -18,19 +19,23 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -45,6 +50,8 @@ import java.util.Locale;
 
 public class UserProfile extends AppCompatActivity {
     private static final int REQUEST_CODE = 0101;
+    public static final int CAMERA_PERM_CODE = 101;
+    public static final int CAMERA_REQUEST_CODE = 102;
     private Switch notif_switch;
     private Switch sound_switch;
     private TextView location_text;
@@ -53,7 +60,7 @@ public class UserProfile extends AppCompatActivity {
     private Button button_edit_profile;
     private Button button_logout;
     private Button change_language;
-
+    private ImageView avatar;
 
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -70,7 +77,7 @@ public class UserProfile extends AppCompatActivity {
         button_edit_avatar = findViewById(R.id.button_editavatar);
         button_edit_profile = findViewById(R.id.button_editprofile);
         button_logout = findViewById(R.id.button_logout);
-
+        avatar=findViewById(R.id.image_avatar);
         change_language = findViewById(R.id.changeMyLang);
 
         ActionBar actionBar = getSupportActionBar();
@@ -92,7 +99,8 @@ public class UserProfile extends AppCompatActivity {
         button_edit_avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent camera=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(camera,CAMERA_REQUEST_CODE);
             }
         });
 
@@ -136,6 +144,22 @@ public class UserProfile extends AppCompatActivity {
         });
 
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==CAMERA_REQUEST_CODE){
+            Bitmap image=(Bitmap) data.getExtras().get("data");
+            avatar.setImageBitmap(image);
+
+        }
+    }
+
+    private void askCameraPermissions() {
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
+        }else {
+
+        }}
 
     private void permLocateUser() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
