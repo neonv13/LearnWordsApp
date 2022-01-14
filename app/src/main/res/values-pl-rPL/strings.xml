@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LearnWordsApp</string>
+
+    <!-- Main -->
+    <string name="main_title">Witaj w Language Learning App!</string>
+    <string name="main_subtitle">Razem z  Language Learnig App, nauczysz się języka swoich marzeń</string>
+
+    <!-- Nav -->
+    <string name="nav_user">Profil</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_ranking">Ranking</string>
+
+    <string name="quiz">Quiz</string>
+    <string name="flashcards">Fiszki</string>
+    <string name="complete_the_sentence">Uzupełnij zdania</string>
+    <string name="learn">Ucz się</string>
+    <string name="create_your_flashcards">Stwórz swoje fiszki</string>
+    <string name="category_test">Zaliczyłeś wszystko!</string>
+    <string name="category_test_button">Zrób ten test i przejdź do nowej kategorii</string>
+
+    <string name="edit_profile">Edytuj Profil</string>
+    <string name="change">Zmień</string>
+    <string name="change_password">Zmień swoje hasło</string>
+
+    <string name="statistics_title">Moje statystyki</string>
+    <string name="place_ranking">Twoje miejsce w rankingu</string>
+    <string name="number_points">Twoja ilość punktów</string>
+    <string name="your_level">Twój poziom</string>
+
+    <!-- My Profile -->
+
+    <string name="my_profile">Mój Profil</string>
+    <string name="edit_avatar">Edytuj Awatar</string>
+    <string name="music">Muzyka</string>
+    <string name="notifications">Powiadomienia</string>
+    <string name="location">Lokalizacja</string>
+    <string name="language_app">Język</string>
+    <string name="logout">Wyloguj się</string>
+
+    <string name="ranking">Ranking</string>
+
+    <!-- Login and Register -->
+    <string name="login_title">Zaloguj się do Twojego Konta</string>
+    <string name="login_email">Wpisz swój Email</string>
+    <string name="login_username">Wpisz swój login</string>
+    <string name="login_password">Wpisz swoje Hasło</string>
+    <string name="confirm_password">Potwierdź swoje Hasło</string>
+    <string name="sign_in">Zaloguj się</string>
+    <string name="no_account">Nie masz jeszcze konta?</string>
+    <string name="create_account">Stwórz Konto</string>
+    <string name="register_title">Zarejestruj Konto</string>
+    <string name="account">Masz już utworzone Konto?</string>
+
+    <!-- Choose Your Language -->
+    <string name="language">Wybierz język</string>
+    <string name="cont">Kontynuuj</string>
+
+    <!-- Complete the sentence -->
+    <string name="sentence_title">Complete the sentence</string>
+    <string name="sentence_subtitle">Make a Test from a Category:</string>
+    <string name="your_score">Your Score</string>
+
+    <!-- Time out -->
+    <string name="time_out">Time out!</string>
+    <string name="try_again">Try Again</string>
+
+    <!-- Quiz -->
+    <string name="quiz_title">Quiz</string>
+    <string name="quiz_subtitle">Wykonaj Quiz w Kategorii:</string>
+
+    <!-- Category Test -->
+    <string name="category_test_title">Test</string>
+    <string name="category_test_subtitle">Zrób test i przejdź do nowej Kategorii!</string>
+
+    <!-- Level Test -->
+    <string name="level_test_title">Test wiedzy</string>
+    <string name="level_test_subtitle">Zrób test wiedzy i dowiedz się jaki masz poziom angielskiego</string>
+    <string name="level_test_subtitle2">Gratulacje! Ukończyłeś test wiedzy!</string>
+
+    <!-- Home Menu -->
+    <string name="home_menu_category">Kategoria:</string>
+    <string name="select">Wybierz co chcesz zrobić</string>
+
+    <!-- Your Flashcards -->
+    <string name="your_flashcards_title">Stwórz swoją listę fiszek</string>
+    <string name="create">Stwórz</string>
+    <string name="enter_your_list">Wpisz swoją Listę</string>
+
+    <!-- New Your Flashcards -->
+    <string name="your_flashcards_new_title">Dodaj nową fiszkę</string>
+    <string name="word_polish">Wpisz swoje słowo po polsku</string>
+    <string name="word_english">Wpisz swoje słowo po angielsku</string>
+    <string name="definition_polish">Wpisz definicję słowa po polsku</string>
+    <string name="definition_english">Wpisz definicję słowa po angielsku</string>
+    <string name="add_word">Dodaj</string>
+</resources>

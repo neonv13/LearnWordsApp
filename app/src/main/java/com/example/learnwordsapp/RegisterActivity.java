@@ -2,7 +2,6 @@ package com.example.learnwordsapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -18,11 +17,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
     //Activity Components
     private EditText emailText;
+    private EditText usernameText;
     private EditText passwordText;
     private EditText password2Text;
     private View createAccountButton;
@@ -39,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Components
         emailText = findViewById(R.id.emailTextRegister);
+        usernameText = findViewById(R.id.usernameTextRegister);
         passwordText = findViewById(R.id.passwordTextRegister);
         password2Text = findViewById(R.id.confirmPasswordTextRegister);
         createAccountButton = findViewById(R.id.createAccountButtonRegister);
@@ -110,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void Register(String email, String password){
+        String username = usernameText.getText().toString().trim();
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
@@ -117,9 +120,29 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(RegisterActivity.this, UserProfile.class));
-                    finish();
+
+                    User u = new User(username, email);
+                    String fbu = mAuth.getCurrentUser().getUid();
+
+                    FirebaseDatabase.getInstance().getReference("/Users").child(fbu).setValue(u)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+
+                                        Toast.makeText(RegisterActivity.this, "User '" + username + "' registered successfully", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(RegisterActivity.this, UserProfile.class);
+                                        //Intent intent = new Intent(SignUpActivity.this, LoginUser.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                       //Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                    //dopisujemy usera do Rankingu
+                    FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(username).setValue(0);
+
                 }
                 else{
                     Toast.makeText(RegisterActivity.this, "Registration failed: " + task.getException(), Toast.LENGTH_LONG).show();

@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.concurrent.Executor;
 
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     //Firebase
     private SharedPreferences sharedPreferences;
     private FirebaseAuth mAuth;
+    private FirebaseUser fUser;
     private ProgressDialog progressDialog;
 
     //Biometric
@@ -53,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         //Components
         emailText = findViewById(R.id.emailText);
@@ -138,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    //updateUserCredentials(firebaseAuth.getCurrentUser(),"Karolina",email);
                     SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
                     editor.putString("email",email);
                     editor.putString("password",password);
@@ -154,5 +158,34 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
+
+    private void updateUserCredentials(@NonNull FirebaseUser fUser,@NonNull String displayName,@NonNull String eMail){
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(displayName)
+                //.setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                .build();
+
+        fUser.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("updateProfile", "User profile updated.");
+                        }
+                    }
+                });
+
+        fUser.updateEmail(eMail)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+
+                            Log.d("updateEmail", "User email address updated.");
+                        }
+                    }
+                });
+
     }
 }
