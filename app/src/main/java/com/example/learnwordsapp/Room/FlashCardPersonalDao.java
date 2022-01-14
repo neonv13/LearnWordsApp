@@ -1,4 +1,4 @@
-package com.example.learnwordsapp;
+package com.example.learnwordsapp.Room;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,6 +6,9 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.learnwordsapp.Room.FlashCard;
+import com.example.learnwordsapp.Room.FlashCardPersonal;
 
 import java.util.List;
 
@@ -22,7 +25,7 @@ public interface FlashCardPersonalDao {
     void delete(FlashCardPersonal flashCardPersonal);
 
     @Query("SELECT * FROM flashCardPersonal_table") // WHERE Category something ?
-    LiveData<List<FlashCard>> getAllFlashCard();
+    LiveData<List<FlashCardPersonal>> getAllFlashCard();
 
 
 }
