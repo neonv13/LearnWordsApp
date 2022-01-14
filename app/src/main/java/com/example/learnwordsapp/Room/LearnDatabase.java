@@ -48,15 +48,19 @@ public abstract class LearnDatabase extends RoomDatabase {
 
     private static class PopulateDbAsyncTack extends AsyncTask<Void, Void,Void>{
         private AnswerDao answerDao;
+        private FlashCardDao flashCardDao;
 
         private PopulateDbAsyncTack(LearnDatabase db){
             this.answerDao = db.answerDao();
+            this.flashCardDao = db.flashCardDao();
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
 
             // Adding Data here == API fetch data here ?
+
+
 //            answerDao.insert((new Answer("Text sample here1")));
 //            answerDao.insert((new Answer("Text sample here2")));
 //            answerDao.insert((new Answer("Text sample here3")));
