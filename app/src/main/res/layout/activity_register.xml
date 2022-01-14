@@ -34,7 +34,24 @@
             android:textColorHint="@color/lightGray" />
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp">
 
+        <EditText
+            android:id="@+id/usernameTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/shape"
+            android:hint="@string/login_username"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="15sp"
+            android:paddingStart="20sp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/lightGray" />
+
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

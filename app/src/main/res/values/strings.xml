@@ -41,6 +41,7 @@
     <!-- Login and Register -->
     <string name="login_title">Log in to Your Account</string>
     <string name="login_email">Enter Your Email</string>
+    <string name="login_username">Enter Your Username</string>
     <string name="login_password">Enter Your Password</string>
     <string name="confirm_password">Confirm Your Password</string>
     <string name="sign_in">Sign In</string>

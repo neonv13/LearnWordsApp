@@ -42,6 +42,7 @@
     <!-- Login and Register -->
     <string name="login_title">Zaloguj się do Twojego Konta</string>
     <string name="login_email">Wpisz swój Email</string>
+    <string name="login_username">Wpisz swój login</string>
     <string name="login_password">Wpisz swoje Hasło</string>
     <string name="confirm_password">Potwierdź swoje Hasło</string>
     <string name="sign_in">Zaloguj się</string>

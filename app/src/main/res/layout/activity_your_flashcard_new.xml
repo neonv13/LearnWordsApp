@@ -22,6 +22,7 @@
         android:layout_marginTop="30sp">
 
         <EditText
+            android:id="@+id/et_polishword"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/shape"
@@ -39,6 +40,7 @@
         android:layout_marginTop="30sp">
 
         <EditText
+            android:id="@+id/et_englishword"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/shape"
@@ -56,6 +58,7 @@
         android:layout_marginTop="30sp">
 
         <EditText
+            android:id="@+id/et_polishdef"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/shape"
@@ -73,6 +76,7 @@
         android:layout_marginTop="30sp">
 
         <EditText
+            android:id="@+id/et_englishdef"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/shape"
