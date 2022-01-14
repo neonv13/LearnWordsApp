@@ -1,4 +1,4 @@
-package com.example.learnwordsapp;
+package com.example.learnwordsapp.Room;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
