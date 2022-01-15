@@ -17,6 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -33,6 +35,7 @@ public class RankingFragment extends Fragment {
     DatabaseReference rankingTable;
     int sum=0;
     List<Ranking> najlepsi;
+    RankingAdapter ad;
 
     public RankingFragment() {
     }
@@ -76,21 +79,36 @@ public class RankingFragment extends Fragment {
         layoutManager.setStackFromEnd(true);
 
         rankingList.setLayoutManager(layoutManager);
+
+        database = FirebaseDatabase.getInstance();
+
         rankingTable.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 najlepsi=new ArrayList<>();
                 if(snapshot.hasChildren()){
                     for(DataSnapshot data:snapshot.getChildren()){
-                        String k=data.getKey();
+                        String user = data.getKey();
                         Object d =  data.getValue();
-                        String s = d.toString();
-                        int v= Integer.valueOf(s);
-                        Ranking local=new Ranking(k,v);
+                        String score = d.toString();
+                        int scoreVal= Integer.valueOf(score);
+                        Ranking local=new Ranking(user,scoreVal);
                         najlepsi.add(local);
                     }
                 }
-                RankingAdapter ad = new RankingAdapter(najlepsi);
+                if(najlepsi.size()<=0) {//jeśli nie ma danych na liście
+                    Ranking local = new Ranking("<NO DATA>", 0);
+                    najlepsi.add(local);
+                } else {//jeśli są dane
+                    Collections.sort(najlepsi, new Comparator<Ranking>() {
+                        @Override
+                        public int compare(Ranking ranking, Ranking t1) {
+                            return ranking.getScore() - t1.getScore();
+                        }
+                    });
+                }
+
+                ad = new RankingAdapter(najlepsi);
                 rankingList.setAdapter(ad);
             }
 
@@ -102,8 +120,6 @@ public class RankingFragment extends Fragment {
             }
         });
 
-
-        //  ad.notifyDataSetChanged();
 
     }
 

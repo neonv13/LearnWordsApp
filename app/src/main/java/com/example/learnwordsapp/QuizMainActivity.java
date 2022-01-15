@@ -41,9 +41,9 @@ public class QuizMainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent intent= new Intent(QuizMainActivity.this, QuizDashboardActivity.class);
-                //startActivity(intent);
+                Intent intent= new Intent(QuizMainActivity.this, QuizDashboardActivity.class);
+                startActivity(intent);
             }
-        }, 1500);
+        }, 2000);
     }
 }

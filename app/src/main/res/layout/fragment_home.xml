@@ -30,6 +30,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/LearnBtn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
@@ -50,6 +51,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/FlashcardBtn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"

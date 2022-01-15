@@ -2,9 +2,11 @@ package com.example.learnwordsapp;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,6 +43,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
     TextView card_question,optiona,optionb,optionc,optiond;
     CardView cardOA,cardOC,cardOB,cardOD;
 
+    ImageButton cancelBtn;
     int correctCount = 0;
     int wrongCount = 0;
 
@@ -88,6 +91,14 @@ public class QuizDashboardActivity extends AppCompatActivity {
         }.start();
 
         setAllData();
+       cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownTimer.cancel();
+                finish();
+                EndQuiz();
+            }
+        });
     }
 
     private void setAllData() {
@@ -118,6 +129,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
         cardOD = findViewById(R.id.cardD);
 
         continueBtn = findViewById(R.id.continueBtn);
+        cancelBtn = findViewById(R.id.cancelBtn);
 
     }
 
