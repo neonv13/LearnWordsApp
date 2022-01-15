@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
-
-    <!--   add tools:context and id -->
+    android:background="@color/white"
+    tools:context="QuizEndActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -34,6 +33,7 @@
         android:layout_marginTop="450dp">
 
         <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cpb_background_progressbar_color="@color/red"
@@ -45,6 +45,7 @@
             app:cpb_round_border="false" />
 
         <TextView
+            android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

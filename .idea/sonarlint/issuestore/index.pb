@@ -26,5 +26,3 @@ F
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-m
-=app/src/main/java/com/example/learnwordsapp/MainActivity.java,b\3\b38b8139d2cf133d36c170d4edcbb49fb96e62af

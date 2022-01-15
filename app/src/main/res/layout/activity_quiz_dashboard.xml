@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundMint"
-    android:orientation="vertical">
-
-    <!--   add tools:context and id -->
+    android:orientation="vertical"
+    tools:context=".QuizDashboardActivity">
 
     <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
+        android:id="@+id/quiz_timer"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="6dp"
@@ -48,6 +48,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="OptionClickA"
+        android:id="@+id/cardA"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="40dp"
@@ -58,6 +60,7 @@
         app:cardCornerRadius="20dp">
 
         <TextView
+            android:id="@+id/card_optiona"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -70,6 +73,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="OptionClickB"
+        android:id="@+id/cardB"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="40dp"
@@ -80,6 +85,7 @@
         app:cardCornerRadius="20dp">
 
         <TextView
+            android:id="@+id/card_optionb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -92,6 +98,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="OptionClickC"
+        android:id="@+id/cardC"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="40dp"
@@ -102,6 +110,7 @@
         app:cardCornerRadius="20dp">
 
         <TextView
+            android:id="@+id/card_optionc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -114,6 +123,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="OptionClickD"
+        android:id="@+id/cardD"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="40dp"
@@ -124,6 +135,7 @@
         app:cardCornerRadius="20dp">
 
         <TextView
+            android:id="@+id/card_optiond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -136,6 +148,7 @@
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
+        android:id="@+id/continueBtn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="100dp"
