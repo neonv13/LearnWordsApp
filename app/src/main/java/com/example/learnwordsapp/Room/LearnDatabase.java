@@ -49,10 +49,14 @@ public abstract class LearnDatabase extends RoomDatabase {
     private static class PopulateDbAsyncTack extends AsyncTask<Void, Void,Void>{
         private AnswerDao answerDao;
         private FlashCardDao flashCardDao;
+        private  FlashCardPersonalDao flashCardPersonalDao;
+        private  QuestionDao questionDao;
 
         private PopulateDbAsyncTack(LearnDatabase db){
             this.answerDao = db.answerDao();
             this.flashCardDao = db.flashCardDao();
+            this.flashCardPersonalDao = db.flashCardPersonalDao();
+            this.questionDao = db.questionDao();
         }
 
         @Override
