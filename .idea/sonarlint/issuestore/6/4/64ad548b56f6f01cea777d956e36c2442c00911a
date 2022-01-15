@@ -1,0 +1,37 @@
+
+x
+java:S1450"bRemove the "createAccountButton" field and declare it as a local variable in the relevant methods.(ºàÕ³
+q
+java:S1450"[Remove the "signInButton" field and declare it as a local variable in the relevant methods.(ÎÖ±ÿ
+Q
+java:S1874""6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+Q
+java:S18741"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+c	java:S100I"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÎé
+B
+java:S1125J"'Remove the unnecessary boolean literal.(†£—ªúÿÿÿÿ
+B
+java:S1125N"'Remove the unnecessary boolean literal.(Áµ†Ãøÿÿÿÿ
+=
+java:S1125R"'Remove the unnecessary boolean literal.(Ì¯ó
+<
+java:S1125V"'Remove the unnecessary boolean literal.(€–°
+<
+java:S1125^"'Remove the unnecessary boolean literal.(ı”Úy
+B
+java:S1125b"'Remove the unnecessary boolean literal.(ÿ‘Øúÿÿÿÿ
+B
+java:S1125l"'Remove the unnecessary boolean literal.(µñˆ”úÿÿÿÿ
+c	java:S100r"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ó“Û
+H
+java:S1874t"2Remove this use of "setMessage"; it is deprecated.(¯Á×ş
+W	java:S125‡"<This block of commented-out lines of code should be removed.(Óû“úÿÿÿÿ
+R	java:S125‹"<This block of commented-out lines of code should be removed.(œ’å“
+>
+java:S16044"(Make this anonymous inner class a lambda(ÓĞá
+>
+java:S1604@"(Make this anonymous inner class a lambda(Òˆò
+D
+java:S1604€"(Make this anonymous inner class a lambda(„¬é¿øÿÿÿÿ
+>
+java:S1604w"(Make this anonymous inner class a lambda(ü¬ç

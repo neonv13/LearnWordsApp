@@ -12,8 +12,6 @@ A
 Oapp/src/androidTest/java/com/example/learnwordsapp/ExampleInstrumentedTest.java,9\9\99305ee17bd42e8cca605d891632e44ddbba5b27
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 7
