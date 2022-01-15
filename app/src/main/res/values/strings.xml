@@ -37,6 +37,7 @@
     <string name="language_app">Language</string>
     <string name="logout">Logout</string>
     <string name="ranking">Ranking</string>
+    <string name="dark_mode">Dark Mode</string>
 
     <!-- Login and Register -->
     <string name="login_title">Log in to Your Account</string>

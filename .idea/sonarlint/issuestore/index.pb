@@ -36,8 +36,6 @@ q
 Aapp/src/main/java/com/example/learnwordsapp/RegisterActivity.java,6\4\64ad548b56f6f01cea777d956e36c2442c00911a
 o
 ?app/src/main/java/com/example/learnwordsapp/RankingAdapter.java,4\8\48cd551eb4715a2ff75951d7a950b17166379ec7
-e
-5app/src/main/java/com/example/learnwordsapp/User.java,c\b\cb556c9fbbd08b510f96d5dba18f6e495188d59a
 m
 =app/src/main/java/com/example/learnwordsapp/HomeFragment.java,5\6\565c803660d351acdb41a17f42a01d118a680341
 s

@@ -36,6 +36,7 @@
     <string name="location">Lokalizacja</string>
     <string name="language_app">Język</string>
     <string name="logout">Wyloguj się</string>
+    <string name="dark_mode">Tryb ciemny</string>
 
     <string name="ranking">Ranking</string>
 

@@ -7,6 +7,7 @@ import static com.example.learnwordsapp.R.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
@@ -66,6 +67,7 @@ public class UserProfile extends AppCompatActivity {
     private Button change_language;
     private ImageView avatar;
     private MediaPlayer musicP;
+    private Switch darkMode;
 
 
     private FusedLocationProviderClient fusedLocationClient;
@@ -83,8 +85,9 @@ public class UserProfile extends AppCompatActivity {
         button_edit_avatar = findViewById(id.button_editavatar);
         button_edit_profile = findViewById(id.button_editprofile);
         button_logout = findViewById(id.button_logout);
-        avatar=findViewById(id.image_avatar);
+        avatar = findViewById(id.image_avatar);
         change_language = findViewById(id.changeMyLang);
+        darkMode = findViewById(id.switch_mode);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(string.app_name));
@@ -105,8 +108,8 @@ public class UserProfile extends AppCompatActivity {
         button_edit_avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent camera=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera,CAMERA_REQUEST_CODE);
+                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(camera, CAMERA_REQUEST_CODE);
             }
         });
 
@@ -158,23 +161,36 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
+        darkMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
+
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==CAMERA_REQUEST_CODE){
-            Bitmap image=(Bitmap) data.getExtras().get("data");
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
             avatar.setImageBitmap(image);
 
         }
     }
 
     private void askCameraPermissions() {
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
-        }else {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
+        } else {
 
-        }}
+        }
+    }
 
     private void permLocateUser() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -183,7 +199,7 @@ public class UserProfile extends AppCompatActivity {
         locateUser();
     }
 
-    private void locateUser(){
+    private void locateUser() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
                 @Override
@@ -199,8 +215,7 @@ public class UserProfile extends AppCompatActivity {
                             location_text.setText("No Location");
                             e.printStackTrace();
                         }
-                    }
-                    else{
+                    } else {
                         location_text.setText("No Location");
                     }
                 }
@@ -208,18 +223,17 @@ public class UserProfile extends AppCompatActivity {
         }
     }
 
-    private void showChangeLanguageDialog(){
+    private void showChangeLanguageDialog() {
         final String[] listItems = {"Polish", "English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(UserProfile.this);
         mBuilder.setTitle("Choose Language:");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (i==0){
+                if (i == 0) {
                     setLocale("pl");
                     recreate();
-                }
-                else if (i==1){
+                } else if (i == 1) {
                     setLocale("en");
                     recreate();
                 }
@@ -232,21 +246,21 @@ public class UserProfile extends AppCompatActivity {
         mDialog.show();
     }
 
-    private void setLocale(String lang){
+    private void setLocale(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
         editor.putString("MyLanguage", lang);
         editor.apply();
     }
 
-    private void loadLocale(){
+    private void loadLocale() {
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = prefs.getString("MyLanguage","");
+        String language = prefs.getString("MyLanguage", "");
         setLocale(language);
     }
 }
