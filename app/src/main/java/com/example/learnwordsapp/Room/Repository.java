@@ -70,7 +70,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class UpdateAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
 
@@ -84,7 +83,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class DeleteAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
 
@@ -98,7 +96,6 @@ public class Repository {
             return null;
         }
     }
-
 
 
     // FlashCard
@@ -131,7 +128,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class UpdateFlashCardAsync extends AsyncTask<FlashCard, Void, Void>{
         private FlashCardDao flashCardDao;
 
@@ -145,7 +141,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class DeleteFlashCardAsync extends AsyncTask<FlashCard, Void, Void>{
         private FlashCardDao flashCardDao;
 
@@ -191,7 +186,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class UpdateFlashCardPersonalAsync extends AsyncTask<FlashCardPersonal, Void, Void>{
         private FlashCardPersonalDao flashCardPersonalDao;
 
@@ -205,7 +199,6 @@ public class Repository {
             return null;
         }
     }
-
     private static class DeleteFlashCardPersonalAsync extends AsyncTask<FlashCardPersonal, Void, Void>{
         private FlashCardPersonalDao flashCardPersonalDao;
 
@@ -216,6 +209,63 @@ public class Repository {
         @Override
         protected Void doInBackground(FlashCardPersonal... flashCardPersonals) {
             flashCardPersonalDao.delete(flashCardPersonals[0]);
+            return null;
+        }
+    }
+
+    // Question
+    //Methods to do db operations
+    public void insertQuestion(Question question){
+        new InsertQuestionAsync(questionDao).execute(question);
+    }
+    public void updateQuestion(Question question){
+        new UpdateQuestionAsync(questionDao).execute(question);
+    }
+    public void deleteQuestion(Question question){
+        new DeleteQuestionAsync(questionDao).execute(question);
+    }
+    public LiveData<List<Question>> getAllQuestion(){
+        return allQuestion;
+    }
+
+    //Androind needs a Async data operation so ...
+    //
+    private static class InsertQuestionAsync extends AsyncTask<Question, Void, Void>{
+        private QuestionDao questionDao;
+
+        private InsertQuestionAsync(QuestionDao questionDao ){
+            this.questionDao = questionDao;
+        }
+
+        @Override
+        protected Void doInBackground(Question... questions) {
+            questionDao.insert((questions[0]));
+            return null;
+        }
+    }
+    private static class UpdateQuestionAsync extends AsyncTask<Question, Void, Void>{
+        private QuestionDao questionDao;
+
+        private UpdateQuestionAsync(QuestionDao questionDao ){
+            this.questionDao = questionDao;
+        }
+
+        @Override
+        protected Void doInBackground(Question... questions) {
+            questionDao.update((questions[0]));
+            return null;
+        }
+    }
+    private static class DeleteQuestionAsync extends AsyncTask<Question, Void, Void>{
+        private QuestionDao questionDao;
+
+        private DeleteQuestionAsync(QuestionDao questionDao ){
+            this.questionDao = questionDao;
+        }
+
+        @Override
+        protected Void doInBackground(Question... questions) {
+            questionDao.delete((questions[0]));
             return null;
         }
     }
