@@ -159,4 +159,64 @@ public class Repository {
             return null;
         }
     }
+
+
+    // FlashCardPersonal
+    //Methods to do db operations
+    public void insertFlashCardPersonal(FlashCardPersonal flashCardPersonal){
+        new InsertFlashCardPersonalAsync(flashCardPersonalDao).execute(flashCardPersonal);
+    }
+    public void updateFlashCardPersonal(FlashCardPersonal flashCardPersonal){
+        new UpdateFlashCardPersonalAsync(flashCardPersonalDao).execute(flashCardPersonal);
+    }
+    public void deleteFlashCardPersonal(FlashCardPersonal flashCardPersonal){
+        new DeleteFlashCardPersonalAsync(flashCardPersonalDao).execute(flashCardPersonal);
+    }
+    public LiveData<List<FlashCardPersonal>> getAllFlashCardPersonal(){
+        return allFlashCardPersonal;
+    }
+
+    //Androind needs a Async data operation so ...
+    //
+    private static class InsertFlashCardPersonalAsync extends AsyncTask<FlashCardPersonal, Void, Void>{
+        private FlashCardPersonalDao flashCardPersonalDao;
+
+        private InsertFlashCardPersonalAsync(FlashCardPersonalDao flashCardPersonalDao ){
+            this.flashCardPersonalDao = flashCardPersonalDao;
+        }
+
+        @Override
+        protected Void doInBackground(FlashCardPersonal... flashCardPersonals) {
+            flashCardPersonalDao.insert(flashCardPersonals[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateFlashCardPersonalAsync extends AsyncTask<FlashCardPersonal, Void, Void>{
+        private FlashCardPersonalDao flashCardPersonalDao;
+
+        private UpdateFlashCardPersonalAsync(FlashCardPersonalDao flashCardPersonalDao ){
+            this.flashCardPersonalDao = flashCardPersonalDao;
+        }
+
+        @Override
+        protected Void doInBackground(FlashCardPersonal... flashCardPersonals) {
+            flashCardPersonalDao.update(flashCardPersonals[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteFlashCardPersonalAsync extends AsyncTask<FlashCardPersonal, Void, Void>{
+        private FlashCardPersonalDao flashCardPersonalDao;
+
+        private DeleteFlashCardPersonalAsync(FlashCardPersonalDao flashCardPersonalDao ){
+            this.flashCardPersonalDao = flashCardPersonalDao;
+        }
+
+        @Override
+        protected Void doInBackground(FlashCardPersonal... flashCardPersonals) {
+            flashCardPersonalDao.delete(flashCardPersonals[0]);
+            return null;
+        }
+    }
 }
