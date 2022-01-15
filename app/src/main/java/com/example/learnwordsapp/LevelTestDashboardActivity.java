@@ -1,9 +1,6 @@
 package com.example.learnwordsapp;
 
-import static com.example.learnwordsapp.CategoryTestMainActivity.list;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import static com.example.learnwordsapp.LevelTestMainActivity.list;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -13,12 +10,15 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
 import java.util.Collections;
 import java.util.List;
 
-public class CategoryTestDashboardActivity extends AppCompatActivity {
+public class LevelTestDashboardActivity extends AppCompatActivity {
 
     CountDownTimer countDownTimer;
     int timerValue = 20;
@@ -38,7 +38,7 @@ public class CategoryTestDashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_test_dashboard);
+        setContentView(R.layout.activity_level_test_dashboard);
 
         Hooks();
 
@@ -62,13 +62,13 @@ public class CategoryTestDashboardActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Dialog dialog = new Dialog(CategoryTestDashboardActivity.this);
+                Dialog dialog = new Dialog(LevelTestDashboardActivity.this);
                 dialog.setContentView(R.layout.activity_time_out);
 
                 dialog.findViewById(R.id.btn_tryAgain).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(CategoryTestDashboardActivity.this, CategoryTestMainActivity.class);
+                        Intent intent = new Intent(LevelTestDashboardActivity.this, LevelTestMainActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -149,7 +149,7 @@ public class CategoryTestDashboardActivity extends AppCompatActivity {
     }
 
     private void EndQuiz() {
-        Intent intent = new Intent(CategoryTestDashboardActivity.this, CategoryTestEndActivity.class);
+        Intent intent = new Intent(LevelTestDashboardActivity.this, LevelTestEndActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
 
