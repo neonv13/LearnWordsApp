@@ -2,6 +2,8 @@ package com.example.learnwordsapp;
 
 import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
+import static com.example.learnwordsapp.R.*;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,6 +41,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -61,6 +65,8 @@ public class UserProfile extends AppCompatActivity {
     private Button button_logout;
     private Button change_language;
     private ImageView avatar;
+    private MediaPlayer musicP;
+
 
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -69,19 +75,19 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        setContentView(R.layout.activity_user_profile);
+        setContentView(layout.activity_user_profile);
 
-        notif_switch = (Switch) findViewById(R.id.switch_notification);
-        sound_switch = (Switch) findViewById(R.id.switch_sound);
-        location_text = findViewById(R.id.location_text);
-        button_edit_avatar = findViewById(R.id.button_editavatar);
-        button_edit_profile = findViewById(R.id.button_editprofile);
-        button_logout = findViewById(R.id.button_logout);
-        avatar=findViewById(R.id.image_avatar);
-        change_language = findViewById(R.id.changeMyLang);
+        notif_switch = (Switch) findViewById(id.switch_notification);
+        sound_switch = (Switch) findViewById(id.switch_sound);
+        location_text = findViewById(id.location_text);
+        button_edit_avatar = findViewById(id.button_editavatar);
+        button_edit_profile = findViewById(id.button_editprofile);
+        button_logout = findViewById(id.button_logout);
+        avatar=findViewById(id.image_avatar);
+        change_language = findViewById(id.changeMyLang);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getResources().getString(R.string.app_name));
+        actionBar.setTitle(getResources().getString(string.app_name));
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -114,6 +120,15 @@ public class UserProfile extends AppCompatActivity {
         sound_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (!isChecked) {
+                    musicP.setLooping(false);
+                    musicP.stop();
+
+                } else {
+                    musicP = MediaPlayer.create(UserProfile.this, raw.music);
+                    musicP.setLooping(true);
+                    musicP.start();
+                }
 
             }
         });

@@ -6,6 +6,7 @@ import static androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTI
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -56,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         //Components
         emailText = findViewById(R.id.emailText);
         passwordText = findViewById(R.id.passwordText);
@@ -69,33 +69,32 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
         executor = ContextCompat.getMainExecutor(this);
 
-        boolean isLogin = sharedPreferences.getBoolean("isLogin",false);
-        if(isLogin){
+        boolean isLogin = sharedPreferences.getBoolean("isLogin", false);
+        if (isLogin) {
             fingerprintImage.setVisibility(View.VISIBLE);
         }
 
-        biometricPrompt = new androidx.biometric.BiometricPrompt(LoginActivity.this, executor, new androidx.biometric.BiometricPrompt.AuthenticationCallback()
-        {
+        biometricPrompt = new androidx.biometric.BiometricPrompt(LoginActivity.this, executor, new androidx.biometric.BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
-                Toast.makeText(getApplicationContext(),"Authentication error: " + errString, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Authentication error: " + errString, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAuthenticationSucceeded(@NonNull androidx.biometric.BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
 
-                String email = sharedPreferences.getString("email","");
-                String password = sharedPreferences.getString("password","");
+                String email = sharedPreferences.getString("email", "");
+                String password = sharedPreferences.getString("password", "");
 
-                Login(email,password);
+                Login(email, password);
             }
 
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
-                Toast.makeText(getApplicationContext(),"Authentication failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,10 +109,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = emailText.getText().toString();
                 String password = passwordText.getText().toString();
-                if (TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     emailText.setError("You need to enter your email");
                 }
-                if (TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     passwordText.setError("You need to enter your password");
                 }
                 Login(email, password);
@@ -133,34 +132,33 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void Login(String email, String password){
+    private void Login(String email, String password) {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     //updateUserCredentials(firebaseAuth.getCurrentUser(),"Karolina",email);
-                    SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
-                    editor.putString("email",email);
-                    editor.putString("password",password);
-                    editor.putBoolean("isLogin",true);
+                    SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
+                    editor.putString("email", email);
+                    editor.putString("password", password);
+                    editor.putBoolean("isLogin", true);
                     editor.apply();
 
                     Toast.makeText(LoginActivity.this, "Logged Successfully", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, UserProfile.class));
                     finish();
-                }
-                else{
-                    Toast.makeText(LoginActivity.this, "Login failed: "+task.getException(), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login failed: " + task.getException(), Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
             }
         });
     }
 
-    private void updateUserCredentials(@NonNull FirebaseUser fUser,@NonNull String displayName,@NonNull String eMail){
+    private void updateUserCredentials(@NonNull FirebaseUser fUser, @NonNull String displayName, @NonNull String eMail) {
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(displayName)
                 //.setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
