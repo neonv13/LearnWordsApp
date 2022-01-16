@@ -15,7 +15,7 @@
 <!--            android:name=".UserProfile"-->
 <!--            android:exported="true" />-->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,18 @@
         </activity>
         <activity android:name=".UserProfile"/>
         <activity android:name=".RegisterActivity"/>
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".QuizMainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".QuizDashboardActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".QuizEndActivity"
+            android:exported="true"/>
         <service
             android:name=".NotificationService"
             android:exported="false">

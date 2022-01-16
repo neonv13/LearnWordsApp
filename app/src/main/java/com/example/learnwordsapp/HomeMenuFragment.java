@@ -47,8 +47,10 @@ public class HomeMenuFragment extends Fragment {
         quizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuizMainActivity.class);
-                startActivity(intent);
+              try{  Intent intent = new Intent(getActivity(), QuizMainActivity.class);
+                startActivity(intent);}
+              catch(Exception e)
+              {e.printStackTrace();}
             }
         });
         flashcardsBtn.setOnClickListener(new View.OnClickListener() {
