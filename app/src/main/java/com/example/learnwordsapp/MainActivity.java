@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
 
-                /*if(item.getItemId()== R.id.nav_user){
-                    Fragment f = RankingFragment.newInstance();
+                if(item.getItemId()== R.id.nav_user){
+                    Fragment f = StatisticsFragment.newInstance();
                     FragmentTransaction r = getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
                     r.commit();
                     return true;
-                }*/
+                }
 
                 if(item.getItemId()== R.id.nav_home){
                     Fragment f = HomeFragment.newInstance();

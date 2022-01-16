@@ -62,7 +62,10 @@ public class HomeMenuFragment extends Fragment {
         completeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                try{  Intent intent = new Intent(getActivity(), SentenceMainActivity.class);
+                    startActivity(intent);}
+                catch(Exception e)
+                {e.printStackTrace();}
             }
         });
         return root;

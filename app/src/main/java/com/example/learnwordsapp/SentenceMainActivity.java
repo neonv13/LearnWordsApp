@@ -43,8 +43,8 @@ public class SentenceMainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-         //       Intent intent= new Intent(SentenceMainActivity.this, SentenceDashboardActivity.class);
-         //       startActivity(intent);
+                Intent intent= new Intent(SentenceMainActivity.this, SentenceDashboardActivity.class);
+                startActivity(intent);
             }
         }, 1500);
     }

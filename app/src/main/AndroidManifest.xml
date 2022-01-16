@@ -37,9 +37,19 @@
         <activity
             android:name=".QuizEndActivity"
             android:exported="true"/>
+        <activity
+            android:name=".SentenceMainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SentenceDashboardActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SentenceEndActivity"
+            android:exported="true"/>
         <service
             android:name=".NotificationService"
             android:exported="false">
+
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

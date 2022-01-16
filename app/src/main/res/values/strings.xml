@@ -93,4 +93,6 @@
     <string name="definition_polish">Enter your definition in polish</string>
     <string name="definition_english">Enter your definition in english</string>
     <string name="add_word">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
