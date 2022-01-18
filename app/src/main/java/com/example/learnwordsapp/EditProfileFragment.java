@@ -1,12 +1,27 @@
 package com.example.learnwordsapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +38,22 @@ public class EditProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    View root;
+    private EditText text_username;
+    private EditText text_email;
+    private TextView text_verification;
+    private Button button_edit_username;
+    private Button button_edit_email;
+    private Button button_verify_email;
+    private Button button_change_password;
+    private Button button_delete_account;
+    private View button_go_back;
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
+
 
     public EditProfileFragment() {
         // Required empty public constructor
@@ -64,6 +95,101 @@ public class EditProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_profile, container, false);
+        root = inflater.inflate(R.layout.fragment_edit_profile, container, false);
+
+        text_username = root.findViewById(R.id.text_username);
+        text_email = root.findViewById(R.id.text_email);
+        text_verification = root.findViewById(R.id.text_email_verification);
+        button_edit_email = root.findViewById(R.id.button_edit_email);
+        button_edit_username = root.findViewById(R.id.button_edit_username);
+        button_verify_email = root.findViewById(R.id.button_verify_email);
+        button_change_password = root.findViewById(R.id.button_edit_password);
+        button_delete_account = root.findViewById(R.id.button_delete_account);
+        button_go_back = root.findViewById(R.id.button_go_back);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        text_username.setText(firebaseUser.getDisplayName());
+        text_email.setText(firebaseUser.getEmail());
+
+        button_edit_username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = text_username.getText().toString();
+                if (TextUtils.isEmpty(username) == true){
+                    text_email.setError("You need to enter your username");
+                    return;
+                }
+
+                Toast.makeText(getContext(), "Successfully changed Username", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        button_edit_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = text_email.getText().toString();
+                if (TextUtils.isEmpty(email) == true){
+                    text_email.setError("You need to enter your email");
+                    return;
+                }
+                if (Patterns.EMAIL_ADDRESS.matcher(email).matches() == false){
+                    text_email.setError("Email is incorrect");
+                    return;
+                }
+
+                firebaseUser.updateEmail(email).addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(getContext(), "Successfully changed Email", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "Changing Email failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+        });
+
+        button_verify_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Link to verify your email was sent", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        button_change_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Change password", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        button_delete_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        button_go_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Activity activity = getActivity();
+                    Intent intent = new Intent(activity, MainActivity.class);
+                    startActivity(intent);
+                    activity.finish();
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        return root;
     }
 }

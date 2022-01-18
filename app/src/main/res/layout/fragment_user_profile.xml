@@ -163,14 +163,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/button_editprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="500dp"
-                android:layout_marginStart="50dp"
 
                 android:backgroundTint="@color/yellow"
                 android:text="@string/edit_profile" />
@@ -179,11 +181,9 @@
                 android:id="@+id/button_statistics"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="500dp"
                 android:layout_marginStart="20dp"
                 android:backgroundTint="@color/backgroundBlue"
-                android:text="@string/my_statistics"
-                />
+                android:text="@string/my_statistics" />
         </LinearLayout>
 
     <Button

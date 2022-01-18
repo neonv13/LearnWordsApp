@@ -116,10 +116,10 @@ public class UserProfileFragment extends Fragment {
         edit_profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment f = EditProfileFragment.newInstance();
-                FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
-                r.replace(R.id.frame_layout, f);
-                r.commit();
+                try{  Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                    startActivity(intent);}
+                catch(Exception e)
+                {e.printStackTrace();}
             }
         });
 

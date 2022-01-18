@@ -99,8 +99,15 @@
     <string name="definition_english">Wpisz definicję słowa po angielsku</string>
     <string name="add_word">Dodaj</string>
 
-    <!-- Edit Progile -->
+    <!-- Edit Profile -->
+    <string name="go_back">Wróć</string>
+    <string name="delete_account">Usuń konto</string>
+    <string name="verify_email">Zweryfikuj email</string>
+    <string name="edit">Zmień</string>
     <string name="old_password">Wpisz swoje stare hasło</string>
     <string name="new_password">Wpisz swoje nowe hasło</string>
     <string name="confirm_new_password">Potwierdź swoje nowe hasło</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

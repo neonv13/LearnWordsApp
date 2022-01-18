@@ -136,6 +136,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

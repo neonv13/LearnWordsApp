@@ -1,82 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EditProfileFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/lato"
-            android:text="@string/edit_profile"
-            android:textColor="@color/darkGray"
-            android:textSize="30sp" />
-
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/edit_profile" />
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
+            android:layout_height="match_parent"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="400sp"
+            android:layout_marginTop="400dp"
+            android:layout_marginBottom="80dp"
             android:layout_marginEnd="30dp"
-            android:background="@drawable/shape_statistics"
-            android:hint="@string/old_password"
-            android:inputType="textPassword"
-            android:paddingVertical="12sp"
-            android:paddingStart="20sp"
-            android:textColorHint="@color/lightGray"
-            tools:ignore="RtlSymmetry" />
+            android:orientation="vertical">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="460sp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/shape_statistics"
-            android:hint="@string/new_password"
-            android:inputType="textPassword"
-            android:paddingVertical="12sp"
-            android:paddingStart="20sp"
-            android:textColorHint="@color/lightGray"
-            tools:ignore="RtlSymmetry" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="520sp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/shape_statistics"
-            android:hint="@string/confirm_new_password"
-            android:inputType="textPassword"
-            android:paddingVertical="12sp"
-            android:paddingStart="20sp"
-            android:textColorHint="@color/lightGray"
-            tools:ignore="RtlSymmetry" />
-    </RelativeLayout>
+                    <EditText
+                        android:id="@+id/text_username"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_statistics"
+                        android:hint="Username"
+                        android:inputType="textEmailAddress"
+                        android:paddingVertical="11sp"
+                        android:paddingStart="10sp"
+                        android:layout_marginEnd="10dp"
+                        android:textColorHint="@color/lightGray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <Button
+                        android:id="@+id/button_edit_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/yellow"
+                        android:text="@string/edit"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/text_email"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_statistics"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="11sp"
+                    android:paddingStart="10sp"
+                    android:layout_marginEnd="10dp"
+                    android:textColorHint="@color/lightGray"
+                    tools:ignore="RtlSymmetry" />
+
+                <Button
+                    android:id="@+id/button_edit_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/edit"
+                    android:textSize="11sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/text_email_verification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="Unverified Email"
+                    android:textColorHint="@color/lightGray"
+                    tools:ignore="RtlSymmetry" />
+
+                <Button
+                    android:id="@+id/button_verify_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/verify_email"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_edit_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/change_password"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_delete_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/delete_account"
+
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/button_go_back"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="700dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_level_test"
         android:backgroundTint="@color/yellow"
@@ -86,10 +136,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/change"
+            android:text="@string/go_back"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>
