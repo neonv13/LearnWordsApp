@@ -28,7 +28,6 @@
     <string name="your_level">Twój poziom</string>
 
     <!-- My Profile -->
-
     <string name="my_profile">Mój Profil</string>
     <string name="edit_avatar">Edytuj Awatar</string>
     <string name="music">Muzyka</string>
@@ -37,8 +36,10 @@
     <string name="language_app">Język</string>
     <string name="logout">Wyloguj się</string>
     <string name="dark_mode">Tryb ciemny</string>
-
     <string name="ranking">Ranking</string>
+    <string name="my_statistics">Statystyki</string>
+    <string name="location_Poland">Polska</string>
+    <string name="no_location">Brak Lokalizacji</string>
 
     <!-- Login and Register -->
     <string name="login_title">Zaloguj się do twojego konta</string>
@@ -55,6 +56,9 @@
     <!-- Choose Your Language -->
     <string name="language">Wybierz język</string>
     <string name="cont">Kontynuuj</string>
+    <string name="chooseLanguage">Wybierz język:</string>
+    <string name="polishLanguage">Polski</string>
+    <string name="englishLanguage">Angielski</string>
 
     <!-- Complete the sentence -->
     <string name="sentence_title">Uzupełnij zdanie</string>

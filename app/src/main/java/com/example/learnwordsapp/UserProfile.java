@@ -135,7 +135,6 @@ public class UserProfile extends AppCompatActivity {
                     musicP.setLooping(true);
                     musicP.start();
                 }
-
             }
         });
 

@@ -28,7 +28,6 @@
     <string name="your_level">Your level</string>
 
     <!-- My Profile -->
-
     <string name="my_profile">My Profile</string>
     <string name="edit_avatar">Edit Avatar</string>
     <string name="music">Music</string>
@@ -38,6 +37,9 @@
     <string name="logout">Logout</string>
     <string name="ranking">Ranking</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="my_statistics">My Statistics</string>
+    <string name="location_Poland">Poland</string>
+    <string name="no_location">No Location</string>
 
     <!-- Login and Register -->
     <string name="login_title">Log in to your account</string>
@@ -54,6 +56,9 @@
     <!-- Choose Your Language -->
     <string name="language">Choose Your Language</string>
     <string name="cont">Continue</string>
+    <string name="chooseLanguage">Choose Language:</string>
+    <string name="polishLanguage">Polish</string>
+    <string name="englishLanguage">English</string>
 
     <!-- Complete the sentence -->
     <string name="sentence_title">Complete the sentence</string>
