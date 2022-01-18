@@ -3,7 +3,7 @@
 
     <!-- Main -->
     <string name="main_title">Witaj w Language Learning App!</string>
-    <string name="main_subtitle">Razem z  Language Learnig App, nauczysz się języka swoich marzeń</string>
+    <string name="main_subtitle">Razem z Language Learnig App, nauczysz się języka swoich marzeń</string>
 
     <!-- Nav -->
     <string name="nav_user">Profil</string>
@@ -41,29 +41,29 @@
     <string name="ranking">Ranking</string>
 
     <!-- Login and Register -->
-    <string name="login_title">Zaloguj się do Twojego Konta</string>
+    <string name="login_title">Zaloguj się do twojego konta</string>
     <string name="login_email">Wpisz swój Email</string>
     <string name="login_username">Wpisz swój login</string>
-    <string name="login_password">Wpisz swoje Hasło</string>
-    <string name="confirm_password">Potwierdź swoje Hasło</string>
+    <string name="login_password">Wpisz swoje hasło</string>
+    <string name="confirm_password">Potwierdź swoje hasło</string>
     <string name="sign_in">Zaloguj się</string>
     <string name="no_account">Nie masz jeszcze konta?</string>
     <string name="create_account">Stwórz Konto</string>
-    <string name="register_title">Zarejestruj Konto</string>
-    <string name="account">Masz już utworzone Konto?</string>
+    <string name="register_title">Zarejestruj konto</string>
+    <string name="account">Masz już utworzone konto?</string>
 
     <!-- Choose Your Language -->
     <string name="language">Wybierz język</string>
     <string name="cont">Kontynuuj</string>
 
     <!-- Complete the sentence -->
-    <string name="sentence_title">Complete the sentence</string>
-    <string name="sentence_subtitle">Make a Test from a Category:</string>
-    <string name="your_score">Your Score</string>
+    <string name="sentence_title">Uzupełnij zdanie</string>
+    <string name="sentence_subtitle">Zrób test z kategorii:</string>
+    <string name="your_score">Twój wynik</string>
 
     <!-- Time out -->
-    <string name="time_out">Time out!</string>
-    <string name="try_again">Try Again</string>
+    <string name="time_out">Koniec czasu!</string>
+    <string name="try_again">Spróbuj ponownie</string>
 
     <!-- Quiz -->
     <string name="quiz_title">Quiz</string>
@@ -94,4 +94,9 @@
     <string name="definition_polish">Wpisz definicję słowa po polsku</string>
     <string name="definition_english">Wpisz definicję słowa po angielsku</string>
     <string name="add_word">Dodaj</string>
+
+    <!-- Edit Progile -->
+    <string name="old_password">Wpisz swoje stare hasło</string>
+    <string name="new_password">Wpisz swoje nowe hasło</string>
+    <string name="confirm_new_password">Potwierdź swoje nowe hasło</string>
 </resources>

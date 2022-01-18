@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,14 +28,43 @@
             android:layout_marginTop="100dp"
             android:background="@drawable/edit_profile" />
 
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="450sp"
+            android:layout_marginTop="400sp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/shape_statistics"
-            android:hint="@string/change_password"
+            android:hint="@string/old_password"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="12sp"
+            android:paddingStart="20sp"
+            android:textColorHint="@color/lightGray"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="460sp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/shape_statistics"
+            android:hint="@string/new_password"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="12sp"
+            android:paddingStart="20sp"
+            android:textColorHint="@color/lightGray"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="520sp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/shape_statistics"
+            android:hint="@string/confirm_new_password"
             android:inputType="textEmailAddress"
             android:paddingVertical="12sp"
             android:paddingStart="20sp"
@@ -47,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_level_test"
         android:backgroundTint="@color/yellow"
@@ -63,4 +92,4 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>

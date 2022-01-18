@@ -28,6 +28,11 @@ public class EditProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static EditProfileFragment newInstance() {
+        EditProfileFragment editProfileFragment=new EditProfileFragment();
+        return editProfileFragment;
+    }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

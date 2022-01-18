@@ -1,4 +1,4 @@
-package com.example.learnwordsapp.Auth;
+package com.example.learnwordsapp;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import android.Manifest;
@@ -90,7 +92,7 @@ public class UserProfile extends AppCompatActivity {
         darkMode = findViewById(id.switch_mode);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getResources().getString(string.app_name));
+        //actionBar.setTitle(getResources().getString(string.app_name));
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -116,7 +118,8 @@ public class UserProfile extends AppCompatActivity {
         button_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(UserProfile.this, EditProfileActivity.class));
+                finish();
             }
         });
 

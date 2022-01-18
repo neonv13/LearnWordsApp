@@ -3,7 +3,7 @@
 
     <!-- Main -->
     <string name="main_title">Welcome to the Language Learning App!</string>
-    <string name="main_subtitle">With Language Learnig App, you will learn the language of your dreams</string>
+    <string name="main_subtitle">Learn language of your dreams with Language Learning App!</string>
 
     <!-- Nav -->
     <string name="nav_user">Profile</string>
@@ -15,7 +15,7 @@
     <string name="complete_the_sentence">Complete the Sentence</string>
     <string name="learn">Learn</string>
     <string name="create_your_flashcards">Create Your Flashcards</string>
-    <string name="category_test">You have already passed everything !!!</string>
+    <string name="category_test">You have already passed everything!!!</string>
     <string name="category_test_button">Take a test and go to a new category</string>
 
     <string name="edit_profile">Edit Profile</string>
@@ -40,15 +40,15 @@
     <string name="dark_mode">Dark Mode</string>
 
     <!-- Login and Register -->
-    <string name="login_title">Log in to Your Account</string>
-    <string name="login_email">Enter Your Email</string>
-    <string name="login_username">Enter Your Username</string>
-    <string name="login_password">Enter Your Password</string>
-    <string name="confirm_password">Confirm Your Password</string>
+    <string name="login_title">Log in to your account</string>
+    <string name="login_email">Enter your Email</string>
+    <string name="login_username">Enter your Username</string>
+    <string name="login_password">Enter your Password</string>
+    <string name="confirm_password">Confirm your Password</string>
     <string name="sign_in">Sign In</string>
     <string name="no_account">Don’t have an account yet?</string>
     <string name="create_account">Create account</string>
-    <string name="register_title">Register Account</string>
+    <string name="register_title">Register account</string>
     <string name="account">Do You already have an account?</string>
 
     <!-- Choose Your Language -->
@@ -82,17 +82,24 @@
     <string name="select">Select what You want to do</string>
 
     <!-- Your Flashcards -->
-    <string name="your_flashcards_title">Create a list of Your Flashcards</string>
+    <string name="your_flashcards_title">Create a list of your Flashcards</string>
     <string name="create">Create</string>
-    <string name="enter_your_list">Enter Your List</string>
+    <string name="enter_your_list">Enter your list</string>
 
     <!-- New Your Flashcards -->
-    <string name="your_flashcards_new_title">Add New Flashcard</string>
+    <string name="your_flashcards_new_title">Add new Flashcard</string>
     <string name="word_polish">Enter your word in polish</string>
     <string name="word_english">Enter your word in english</string>
     <string name="definition_polish">Enter your definition in polish</string>
     <string name="definition_english">Enter your definition in english</string>
     <string name="add_word">Add</string>
+
+    <!-- Edit Progile -->
+    <string name="old_password">Enter your old password</string>
+    <string name="new_password">Enter your new password</string>
+    <string name="confirm_new_password">Confirm your new password</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
