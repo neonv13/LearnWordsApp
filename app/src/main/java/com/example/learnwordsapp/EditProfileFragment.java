@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -22,6 +23,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,7 +48,7 @@ public class EditProfileFragment extends Fragment {
 
 
     View root;
-    private EditText text_username;
+    private TextView text_username;
     private EditText text_email;
     private TextView text_verification;
     private Button button_edit_username;
@@ -53,6 +60,9 @@ public class EditProfileFragment extends Fragment {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+
+    String Username;
+    String Email;
 
 
     public EditProfileFragment() {
@@ -101,7 +111,6 @@ public class EditProfileFragment extends Fragment {
         text_email = root.findViewById(R.id.text_email);
         text_verification = root.findViewById(R.id.text_email_verification);
         button_edit_email = root.findViewById(R.id.button_edit_email);
-        button_edit_username = root.findViewById(R.id.button_edit_username);
         button_verify_email = root.findViewById(R.id.button_verify_email);
         button_change_password = root.findViewById(R.id.button_edit_password);
         button_delete_account = root.findViewById(R.id.button_delete_account);
@@ -110,21 +119,11 @@ public class EditProfileFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
-        text_username.setText(firebaseUser.getDisplayName());
-        text_email.setText(firebaseUser.getEmail());
+        Username = firebaseUser.getDisplayName();
+        Email = firebaseUser.getEmail();
 
-        button_edit_username.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String username = text_username.getText().toString();
-                if (TextUtils.isEmpty(username) == true){
-                    text_email.setError("You need to enter your username");
-                    return;
-                }
-
-                Toast.makeText(getContext(), "Successfully changed Username", Toast.LENGTH_LONG).show();
-            }
-        });
+        text_username.setText(Username);
+        text_email.setText(Email);
 
         button_edit_email.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,7 +169,22 @@ public class EditProfileFragment extends Fragment {
         button_delete_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
+                firebaseUser.delete().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
+
+                            Activity activity = getActivity();
+                            Intent intent = new Intent(activity, LoginActivity.class);
+                            startActivity(intent);
+                            activity.finish();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "Deleting account failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
 
