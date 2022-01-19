@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -116,8 +117,13 @@ public class UserProfileFragment extends Fragment {
         edit_profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{  Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                    startActivity(intent);}
+                try{
+                    Activity activity = getActivity();
+                    Intent intent = new Intent(activity, EditProfileActivity.class);
+                    startActivity(intent);
+                    assert activity != null;
+                    activity.finish();
+                }
                 catch(Exception e)
                 {e.printStackTrace();}
             }
@@ -127,8 +133,13 @@ public class UserProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                try{  Intent intent = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent);}
+                try{
+                    Activity activity = getActivity();
+                    Intent intent = new Intent(activity, LoginActivity.class);
+                    startActivity(intent);
+                    assert activity != null;
+                    activity.finish();
+                }
                 catch(Exception e)
                 {e.printStackTrace();}
             }

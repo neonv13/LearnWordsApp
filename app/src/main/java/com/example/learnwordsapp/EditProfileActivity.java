@@ -12,7 +12,7 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        Fragment f = EditProfileFragment.newInstance();
+        Fragment f = ReauthenticateFragment.newInstance();
         FragmentTransaction r = getSupportFragmentManager().beginTransaction();
         r.replace(R.id.frame_layout, f);
         r.commit();

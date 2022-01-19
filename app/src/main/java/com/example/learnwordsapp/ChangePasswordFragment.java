@@ -2,11 +2,14 @@ package com.example.learnwordsapp;
 
 import static com.example.learnwordsapp.RegisterActivity.containsNumber;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -32,6 +35,8 @@ public class ChangePasswordFragment extends Fragment {
     private EditText text_new_password;
     private EditText text_new_password2;
     private ProgressDialog progressDialog;
+    View button_change;
+    View button_go_back;
 
     private FirebaseUser firebaseUser;
 
@@ -56,7 +61,8 @@ public class ChangePasswordFragment extends Fragment {
         text_old_password = root.findViewById(R.id.old_password);
         text_new_password = root.findViewById(R.id.new_password);
         text_new_password2 = root.findViewById(R.id.confirm_new_password);
-        View button_change = root.findViewById(R.id.change_button);
+        button_change = root.findViewById(R.id.change_button);
+        button_go_back = root.findViewById(R.id.button_go_back);
         progressDialog = new ProgressDialog(getContext());
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -72,6 +78,16 @@ public class ChangePasswordFragment extends Fragment {
                     return;
 
                 ChangePassword(old_password, new_password);
+            }
+        });
+
+        button_go_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment f = EditProfileFragment.newInstance();
+                FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
+                r.replace(R.id.frame_layout, f);
+                r.commit();
             }
         });
 
@@ -118,6 +134,11 @@ public class ChangePasswordFragment extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     firebaseUser.updatePassword(new_password);
+
+                    Fragment f = EditProfileFragment.newInstance();
+                    FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
+                    r.replace(R.id.frame_layout, f);
+                    r.commit();
                 }
                 else{
                     text_old_password.setError("Re-Authentication Failed");

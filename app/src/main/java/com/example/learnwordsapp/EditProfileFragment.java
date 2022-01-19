@@ -1,6 +1,8 @@
 package com.example.learnwordsapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -142,7 +144,7 @@ public class EditProfileFragment extends Fragment {
                     text_email.setError("You need to enter your username");
                     return;
                 }
-                ChangeUsername(newUsername);
+                changeUsernameWarning(newUsername);
             }
         });
 
@@ -204,25 +206,7 @@ public class EditProfileFragment extends Fragment {
         button_delete_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseUser.delete().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
-                            FirebaseDatabase.getInstance().getReference("/Users").child(fbu).removeValue();
-                            FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
-
-                            Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
-
-                            Activity activity = getActivity();
-                            Intent intent = new Intent(activity, LoginActivity.class);
-                            startActivity(intent);
-                            activity.finish();
-                        }
-                        else{
-                            Toast.makeText(getContext(), "Deleting account failed: " + task.getException(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+                deleteAccountWarning();
             }
         });
 
@@ -246,7 +230,7 @@ public class EditProfileFragment extends Fragment {
         return root;
     }
 
-    void ChangeUsername(String newUsername){
+    void changeUsername(String newUsername){
         UserProfileChangeRequest.Builder request = new UserProfileChangeRequest.Builder().setDisplayName(newUsername);
 
 
@@ -281,6 +265,64 @@ public class EditProfileFragment extends Fragment {
                 }
                 else{
                     Toast.makeText(getContext(), "Changing Username failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void deleteAccountWarning() {
+        final String[] listItems = {"Yes", "No"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+        mBuilder.setTitle("You will delete your account. Are you sure?");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0) {
+                    deleteAccount();
+                }
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+    }
+
+    private void changeUsernameWarning(String newUsername) {
+        final String[] listItems = {"Yes", "No"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+        mBuilder.setTitle("Your points will be RESET too. Are you sure?");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0) {
+                    changeUsername(newUsername);
+                }
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+    }
+
+    private void deleteAccount(){
+        firebaseUser.delete().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()) {
+                    FirebaseDatabase.getInstance().getReference("/Users").child(fbu).removeValue();
+                    FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
+
+                    Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
+
+                    Activity activity = getActivity();
+                    Intent intent = new Intent(activity, LoginActivity.class);
+                    startActivity(intent);
+                    activity.finish();
+                }
+                else{
+                    Toast.makeText(getContext(), "Deleting account failed: " + task.getException(), Toast.LENGTH_LONG).show();
                 }
             }
         });
