@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class RegisterActivity extends AppCompatActivity {
 
     //Activity Components
@@ -74,19 +76,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean Validate(String email, String password, String password2) {
-        if (TextUtils.isEmpty(email) == true){
+        if (TextUtils.isEmpty(email)){
             emailText.setError("You need to enter your email");
             return true;
         }
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches() == false){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailText.setError("Email is incorrect");
             return true;
         }
-        if (TextUtils.isEmpty(password) == true){
+        if (TextUtils.isEmpty(password)){
             passwordText.setError("You need to enter your password");
             return true;
         }
-        if (password2.equals(password) == false){
+        if (!password2.equals(password)){
             password2Text.setError("Passwords have to be the same");
             return true;
         }
@@ -94,21 +96,21 @@ public class RegisterActivity extends AppCompatActivity {
             passwordText.setError("Password must be more than 5 characters");
             return true;
         }
-        if (password.equals(password.toLowerCase()) == true){
+        if (password.equals(password.toLowerCase())){
             passwordText.setError("Password must have at least one lowercase and uppercase letter");
             return true;
         }
-        if (containsNumber(password) == false){
+        if (!containsNumber(password)){
             passwordText.setError("Password must have at least one number");
             return true;
         }
         return false;
     }
 
-    private boolean containsNumber(String password){
+    public static boolean containsNumber(String password){
         for (int a=0; a<10; a++){
             String s=""+a;
-            if(password.contains(s) == true)
+            if(password.contains(s))
                 return true;
         }
         return false;
@@ -123,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    updateUserCredentials(mAuth.getCurrentUser(), username,email);
+                    updateUserCredentials(Objects.requireNonNull(mAuth.getCurrentUser()), username,email);
                     User u = new User(username, email);
                     String fbu = mAuth.getCurrentUser().getUid();
 
@@ -139,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         startActivity(intent);
                                         finish();
                                     } else {
-                                       //Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });

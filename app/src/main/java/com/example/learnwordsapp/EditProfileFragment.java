@@ -48,7 +48,7 @@ public class EditProfileFragment extends Fragment {
 
 
     View root;
-    private TextView text_username;
+    private EditText text_username;
     private EditText text_email;
     private TextView text_verification;
     private Button button_edit_username;
@@ -61,8 +61,11 @@ public class EditProfileFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
 
+    String fbu;
     String Username;
     String Email;
+
+    private View email_verification;
 
 
     public EditProfileFragment() {
@@ -110,30 +113,48 @@ public class EditProfileFragment extends Fragment {
         text_username = root.findViewById(R.id.text_username);
         text_email = root.findViewById(R.id.text_email);
         text_verification = root.findViewById(R.id.text_email_verification);
+        button_edit_username = root.findViewById(R.id.button_edit_username);
         button_edit_email = root.findViewById(R.id.button_edit_email);
         button_verify_email = root.findViewById(R.id.button_verify_email);
         button_change_password = root.findViewById(R.id.button_edit_password);
         button_delete_account = root.findViewById(R.id.button_delete_account);
         button_go_back = root.findViewById(R.id.button_go_back);
+        email_verification = root.findViewById(R.id.email_verification);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
+        fbu = firebaseAuth.getUid();
         Username = firebaseUser.getDisplayName();
         Email = firebaseUser.getEmail();
 
+        if(!firebaseUser.isEmailVerified())
+            email_verification.setVisibility(View.VISIBLE);
+
         text_username.setText(Username);
         text_email.setText(Email);
+
+        button_edit_username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newUsername = text_username.getText().toString();
+                if (TextUtils.isEmpty(newUsername)){
+                    text_email.setError("You need to enter your username");
+                    return;
+                }
+                ChangeUsername(newUsername);
+            }
+        });
 
         button_edit_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = text_email.getText().toString();
-                if (TextUtils.isEmpty(email) == true){
+                if (TextUtils.isEmpty(email)){
                     text_email.setError("You need to enter your email");
                     return;
                 }
-                if (Patterns.EMAIL_ADDRESS.matcher(email).matches() == false){
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     text_email.setError("Email is incorrect");
                     return;
                 }
@@ -155,14 +176,28 @@ public class EditProfileFragment extends Fragment {
         button_verify_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Link to verify your email was sent", Toast.LENGTH_LONG).show();
+
+                firebaseUser.sendEmailVerification().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(getContext(), "Verification email was sent", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "Cannot sent email", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
 
         button_change_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Change password", Toast.LENGTH_LONG).show();
+                Fragment f = ChangePasswordFragment.newInstance();
+                FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
+                r.replace(R.id.frame_layout, f);
+                r.commit();
             }
         });
 
@@ -173,6 +208,9 @@ public class EditProfileFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
+                            FirebaseDatabase.getInstance().getReference("/Users").child(fbu).removeValue();
+                            FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
+
                             Toast.makeText(getContext(), "Successfully deleted account", Toast.LENGTH_LONG).show();
 
                             Activity activity = getActivity();
@@ -195,6 +233,7 @@ public class EditProfileFragment extends Fragment {
                     Activity activity = getActivity();
                     Intent intent = new Intent(activity, MainActivity.class);
                     startActivity(intent);
+                    assert activity != null;
                     activity.finish();
                 }
                 catch(Exception e)
@@ -205,5 +244,45 @@ public class EditProfileFragment extends Fragment {
         });
 
         return root;
+    }
+
+    void ChangeUsername(String newUsername){
+        UserProfileChangeRequest.Builder request = new UserProfileChangeRequest.Builder().setDisplayName(newUsername);
+
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(newUsername)
+                .build();
+        firebaseUser.updateProfile(profileUpdates).addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(getContext(), "Successfully changed Username", Toast.LENGTH_LONG).show();
+
+                    String fbu = firebaseUser.getUid();
+
+                    FirebaseDatabase.getInstance().getReference("/Users").child(fbu).child("userName").setValue(newUsername);
+                    DatabaseReference  ref = FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi");
+
+                    FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
+                    FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(newUsername).setValue(0);
+
+                    /*ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            System.out.println("The read failed: " + databaseError.getCode());
+                        }
+                    });*/
+                }
+                else{
+                    Toast.makeText(getContext(), "Changing Username failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
