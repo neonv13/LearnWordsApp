@@ -41,15 +41,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity=""
+            android:layout_gravity="center_vertical"
             android:text="@string/place_ranking"
             android:textColor="@color/darkGray"
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/placeTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
+            android:layout_gravity="center_vertical"
+            android:text="Wait..."
             android:layout_marginStart="30dp"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
@@ -69,15 +71,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity=""
+            android:layout_gravity="center_vertical"
             android:text="@string/number_points"
             android:textColor="@color/darkGray"
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/scoreTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="235"
+            android:layout_gravity="center_vertical"
+            android:text="Wait..."
             android:layout_marginStart="30dp"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
@@ -96,15 +100,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity=""
+            android:layout_gravity="center_vertical"
             android:text="@string/your_level"
             android:textColor="@color/darkGray"
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/levelTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Intermediate"
+            android:layout_gravity="center_vertical"
+            android:text="Advanced"
             android:layout_marginStart="30dp"
             android:textColor="@color/darkGray"
             android:textSize="18sp"

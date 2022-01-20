@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,7 +27,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
     List<Model> allQuestionslist;
     Model modelclass;
     int index = 0;
-
+    ImageButton exitBtn;
     TextView card_question,optiona,optionb,optionc,optiond;
     CardView cardOA,cardOC,cardOB,cardOD;
 
@@ -77,6 +78,14 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         }.start();
 
         setAllData();
+        exitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
+                finish();
+                EndQuiz();
+            }
+        });
     }
 
     private void setAllData() {
@@ -107,7 +116,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         cardOD = findViewById(R.id.cardD);
 
         continueBtn = findViewById(R.id.continueBtn);
-
+        exitBtn=findViewById(R.id.exitBtn);
     }
 
     public void Correct(CardView cardView){

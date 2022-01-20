@@ -170,4 +170,10 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/cancelBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
 </LinearLayout>

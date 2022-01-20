@@ -3,7 +3,7 @@
 
     <!-- Main -->
     <string name="main_title">Witaj w Language Learning App!</string>
-    <string name="main_subtitle">Razem z  Language Learnig App, nauczysz się języka swoich marzeń</string>
+    <string name="main_subtitle">Razem z Language Learnig App, nauczysz się języka swoich marzeń</string>
 
     <!-- Nav -->
     <string name="nav_user">Profil</string>
@@ -28,7 +28,6 @@
     <string name="your_level">Twój poziom</string>
 
     <!-- My Profile -->
-
     <string name="my_profile">Mój Profil</string>
     <string name="edit_avatar">Edytuj Awatar</string>
     <string name="music">Muzyka</string>
@@ -36,33 +35,39 @@
     <string name="location">Lokalizacja</string>
     <string name="language_app">Język</string>
     <string name="logout">Wyloguj się</string>
-
+    <string name="dark_mode">Tryb ciemny</string>
     <string name="ranking">Ranking</string>
+    <string name="my_statistics">Statystyki</string>
+    <string name="location_Poland">Polska</string>
+    <string name="no_location">Brak Lokalizacji</string>
 
     <!-- Login and Register -->
-    <string name="login_title">Zaloguj się do Twojego Konta</string>
+    <string name="login_title">Zaloguj się do twojego konta</string>
     <string name="login_email">Wpisz swój Email</string>
     <string name="login_username">Wpisz swój login</string>
-    <string name="login_password">Wpisz swoje Hasło</string>
-    <string name="confirm_password">Potwierdź swoje Hasło</string>
+    <string name="login_password">Wpisz swoje hasło</string>
+    <string name="confirm_password">Potwierdź swoje hasło</string>
     <string name="sign_in">Zaloguj się</string>
     <string name="no_account">Nie masz jeszcze konta?</string>
     <string name="create_account">Stwórz Konto</string>
-    <string name="register_title">Zarejestruj Konto</string>
-    <string name="account">Masz już utworzone Konto?</string>
+    <string name="register_title">Zarejestruj konto</string>
+    <string name="account">Masz już utworzone konto?</string>
 
     <!-- Choose Your Language -->
     <string name="language">Wybierz język</string>
     <string name="cont">Kontynuuj</string>
+    <string name="chooseLanguage">Wybierz język:</string>
+    <string name="polishLanguage">Polski</string>
+    <string name="englishLanguage">Angielski</string>
 
     <!-- Complete the sentence -->
-    <string name="sentence_title">Complete the sentence</string>
-    <string name="sentence_subtitle">Make a Test from a Category:</string>
-    <string name="your_score">Your Score</string>
+    <string name="sentence_title">Uzupełnij zdanie</string>
+    <string name="sentence_subtitle">Zrób test z kategorii:</string>
+    <string name="your_score">Twój wynik</string>
 
     <!-- Time out -->
-    <string name="time_out">Time out!</string>
-    <string name="try_again">Try Again</string>
+    <string name="time_out">Koniec czasu!</string>
+    <string name="try_again">Spróbuj ponownie</string>
 
     <!-- Quiz -->
     <string name="quiz_title">Quiz</string>
@@ -93,4 +98,40 @@
     <string name="definition_polish">Wpisz definicję słowa po polsku</string>
     <string name="definition_english">Wpisz definicję słowa po angielsku</string>
     <string name="add_word">Dodaj</string>
+
+    <!-- Edit Profile -->
+    <string name="go_back">Wróć</string>
+    <string name="delete_account">Usuń konto</string>
+    <string name="verify_email">Zweryfikuj email</string>
+    <string name="edit">Zmień</string>
+    <string name="old_password">Wpisz swoje stare hasło</string>
+    <string name="new_password">Wpisz swoje nowe hasło</string>
+    <string name="confirm_new_password">Potwierdź swoje nowe hasło</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password">Zapomniałeś hasła?</string>
+    <string name="reset_password">Zresetuj hasło</string>
+    <string name="reset_your_password">Zresetuj swoje hasło</string>
+    <string name="reset_email_sent">Email do zresetowania hasła został wysłany</string>
+    <string name="error_need_enter_email">Musisz wpisać swój email</string>
+    <string name="error_incorrect_email">Email jest niepoprawny</string>
+    <string name="error_need_enter_password">Musisz wpisać swoje hasło</string>
+    <string name="error_the_same_passwords">Hasła muszą być takie same</string>
+    <string name="error_more_char_password">Hasło musi zawierać więcej niż 5 znaków</string>
+    <string name="error_lowercase_uppercase_password">Hasło musi zawierać co najmniej jedną wielką i małą literę</string>
+    <string name="error_number_password">Hasło musi zawierać co najmniej jedną cyfrę</string>
+    <string name="wait">Proszę poczekać…</string>
+    <string name="registration_failed">Rejestracja nie powiodła się!</string>
+    <string name="authentication_error">Błąd Autentykacji: </string>
+    <string name="authentication_failed">Autentykacja nie powiodła się</string>
+    <string name="use_fingerprint">Użyj swojego odcisku palca do zalogowania</string>
+    <string name="log_in_fingerprint">Zaloguj się odciskiem palca</string>
+    <string name="use_password">Użyj hasła</string>
+    <string name="login_failed">Logowanie nie powiodło się</string>
+    <string name="logged_successfully">Zalogowanie powiodło się</string>
+    <string name="error_need_username">Musisz wpisać nazwę użytkownika</string>
+    <string name="successfully_changed_email">Email został zmieniony</string>
+    <string name="changing_email_failed">Zmiana Emaila nie powiodła się</string>
+    <string name="sent_verification_email">Email do werefikacji został wysłany</string>
+    <string name="cannot_sent_email">Nie można wysłać emaila</string>
 </resources>

@@ -3,7 +3,7 @@
 
     <!-- Main -->
     <string name="main_title">Welcome to the Language Learning App!</string>
-    <string name="main_subtitle">With Language Learnig App, you will learn the language of your dreams</string>
+    <string name="main_subtitle">Learn language of your dreams with Language Learning App!</string>
 
     <!-- Nav -->
     <string name="nav_user">Profile</string>
@@ -15,7 +15,7 @@
     <string name="complete_the_sentence">Complete the Sentence</string>
     <string name="learn">Learn</string>
     <string name="create_your_flashcards">Create Your Flashcards</string>
-    <string name="category_test">You have already passed everything !!!</string>
+    <string name="category_test">You have already passed everything!!!</string>
     <string name="category_test_button">Take a test and go to a new category</string>
 
     <string name="edit_profile">Edit Profile</string>
@@ -28,7 +28,6 @@
     <string name="your_level">Your level</string>
 
     <!-- My Profile -->
-
     <string name="my_profile">My Profile</string>
     <string name="edit_avatar">Edit Avatar</string>
     <string name="music">Music</string>
@@ -37,22 +36,29 @@
     <string name="language_app">Language</string>
     <string name="logout">Logout</string>
     <string name="ranking">Ranking</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="my_statistics">My Statistics</string>
+    <string name="location_Poland">Poland</string>
+    <string name="no_location">No Location</string>
 
     <!-- Login and Register -->
-    <string name="login_title">Log in to Your Account</string>
-    <string name="login_email">Enter Your Email</string>
-    <string name="login_username">Enter Your Username</string>
-    <string name="login_password">Enter Your Password</string>
-    <string name="confirm_password">Confirm Your Password</string>
+    <string name="login_title">Log in to your account</string>
+    <string name="login_email">Enter your Email</string>
+    <string name="login_username">Enter your Username</string>
+    <string name="login_password">Enter your Password</string>
+    <string name="confirm_password">Confirm your Password</string>
     <string name="sign_in">Sign In</string>
     <string name="no_account">Don’t have an account yet?</string>
     <string name="create_account">Create account</string>
-    <string name="register_title">Register Account</string>
+    <string name="register_title">Register account</string>
     <string name="account">Do You already have an account?</string>
 
     <!-- Choose Your Language -->
     <string name="language">Choose Your Language</string>
     <string name="cont">Continue</string>
+    <string name="chooseLanguage">Choose Language:</string>
+    <string name="polishLanguage">Polish</string>
+    <string name="englishLanguage">English</string>
 
     <!-- Complete the sentence -->
     <string name="sentence_title">Complete the sentence</string>
@@ -81,15 +87,54 @@
     <string name="select">Select what You want to do</string>
 
     <!-- Your Flashcards -->
-    <string name="your_flashcards_title">Create a list of Your Flashcards</string>
+    <string name="your_flashcards_title">Create a list of your Flashcards</string>
     <string name="create">Create</string>
-    <string name="enter_your_list">Enter Your List</string>
+    <string name="enter_your_list">Enter your list</string>
 
     <!-- New Your Flashcards -->
-    <string name="your_flashcards_new_title">Add New Flashcard</string>
+    <string name="your_flashcards_new_title">Add new Flashcard</string>
     <string name="word_polish">Enter your word in polish</string>
     <string name="word_english">Enter your word in english</string>
     <string name="definition_polish">Enter your definition in polish</string>
     <string name="definition_english">Enter your definition in english</string>
     <string name="add_word">Add</string>
+
+    <!-- Edit Profile -->
+    <string name="go_back">Go back</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="verify_email">Verify email</string>
+    <string name="edit">Change</string>
+    <string name="old_password">Enter your old password</string>
+    <string name="new_password">Enter your new password</string>
+    <string name="confirm_new_password">Confirm your new password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_your_password">Reset your password</string>
+    <string name="reset_email_sent">Email to reset password was sent</string>
+    <string name="error_need_enter_email">You need to enter your email</string>
+    <string name="error_incorrect_email">Email is incorrect</string>
+    <string name="error_need_enter_password">You need to enter your password</string>
+    <string name="error_the_same_passwords">Passwords have to be the same</string>
+    <string name="error_more_char_password">Password must be more than 5 characters</string>
+    <string name="error_lowercase_uppercase_password">Password must have at least one lowercase and uppercase letter</string>
+    <string name="error_number_password">Password must have at least one number</string>
+    <string name="wait">Please wait…</string>
+    <string name="registration_failed">Registration failed!</string>
+    <string name="authentication_error">Authentication error: </string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="use_fingerprint">Use fingerprint to log in</string>
+    <string name="log_in_fingerprint">Log in using fingerprint</string>
+    <string name="use_password">Use password</string>
+    <string name="login_failed">Login failed</string>
+    <string name="logged_successfully">Logged Successfully</string>
+    <string name="error_need_username">You need to enter your username</string>
+    <string name="successfully_changed_email">Successfully changed Email</string>
+    <string name="changing_email_failed">Changing Email failed</string>
+    <string name="sent_verification_email">Verification email was sent</string>
+    <string name="cannot_sent_email">Cannot sent email</string>
+
+
 </resources>

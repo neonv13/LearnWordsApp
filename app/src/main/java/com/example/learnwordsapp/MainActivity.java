@@ -1,12 +1,16 @@
 package com.example.learnwordsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,14 +24,42 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.navigation2);
 
+        Fragment f = RankingFragment.newInstance();
+        FragmentTransaction r = getSupportFragmentManager().beginTransaction();
+        r.replace(R.id.frame_layout, f);
+        r.commit();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
 
-            Fragment selectedFragment = RankingFragment.newInstance();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_layout, selectedFragment);
-            transaction.commit();
-            return true;
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if(item.getItemId()== R.id.nav_ranking){
+                    Fragment f = RankingFragment.newInstance();
+                    FragmentTransaction r = getSupportFragmentManager().beginTransaction();
+                    r.replace(R.id.frame_layout, f);
+                    r.commit();
+                    return true;
+                }
+
+                if(item.getItemId()== R.id.nav_user){
+                    Fragment f = UserProfileFragment.newInstance();
+                    FragmentTransaction r = getSupportFragmentManager().beginTransaction();
+                    r.replace(R.id.frame_layout, f);
+                    r.commit();
+                    return true;
+                }
+
+                if(item.getItemId()== R.id.nav_home){
+                    Fragment f = HomeFragment.newInstance();
+                    FragmentTransaction r = getSupportFragmentManager().beginTransaction();
+                    r.replace(R.id.frame_layout, f);
+                    r.commit();
+                    return true;
+                }
+
+                return true;
+           }
         });
 
     }

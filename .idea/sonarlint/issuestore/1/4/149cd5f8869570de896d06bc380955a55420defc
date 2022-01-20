@@ -1,0 +1,18 @@
+
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(Œƒ•¾
+E
+java:S1874+"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
+X	java:S125."<This block of commented-out lines of code should be removed.(–šâ8ö Þóå/
+d
+java:S1192"IDefine a constant instead of duplicating this literal "Software" 4 times.(Áõ³üÿÿÿÿ
+d
+java:S1192"IDefine a constant instead of duplicating this literal "Hardware" 4 times.(Áõ³üÿÿÿÿ
+
+java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(ˆÊ²Ýûÿÿÿÿ
+>
+java:S1604+"(Make this anonymous inner class a lambda(„ÑñŒ
+k
+java:S1104"PMake list a static final constant or non-public and provide accessors if needed.(ˆÊ²Ýûÿÿÿÿ
+E
+java:S1444"*Make this "public static list" field final(ˆÊ²Ýûÿÿÿÿ
