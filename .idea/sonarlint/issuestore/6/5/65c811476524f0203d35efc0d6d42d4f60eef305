@@ -1,74 +1,0 @@
-
-m	java:S116)"XRename this field "card_question" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ°‹Á
-Z
-java:S1659)"DDeclare "optiona" and all following declarations on a separate line.(œ°‹Á
-^
-java:S1659*"CDeclare "cardOC" and all following declarations on a separate line.(”óŞÙøÿÿÿÿ
-F
-java:S1874<"0Remove this use of "getColor"; it is deprecated.(»»á‡
-K
-java:S1874="0Remove this use of "getColor"; it is deprecated.(½ƒ£¼ıÿÿÿÿ
-F
-java:S1874>"0Remove this use of "getColor"; it is deprecated.(åç§ı
-K
-java:S1874?"0Remove this use of "getColor"; it is deprecated.(±¢¢Àùÿÿÿÿ
-h	java:S100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿóù¦ùÿÿÿÿ
-h	java:S100|"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ƒº‰úÿÿÿÿ
-K
-java:S1874~"0Remove this use of "getColor"; it is deprecated.(„ı—Çÿÿÿÿÿ
-d	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†–ˆê
-F
-java:S1874"0Remove this use of "getColor"; it is deprecated.(Ï›Ö`
-i	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¤å†ÿÿÿÿÿ
-G
-java:S1874¹"0Remove this use of "getColor"; it is deprecated.(»»á‡
-L
-java:S1874º"0Remove this use of "getColor"; it is deprecated.(½ƒ£¼ıÿÿÿÿ
-G
-java:S1874»"0Remove this use of "getColor"; it is deprecated.(åç§ı
-L
-java:S1874¼"0Remove this use of "getColor"; it is deprecated.(±¢¢Àùÿÿÿÿ
-d	java:S100¿"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¤ëè
-B
-java:S1172¿"+Remove this unused method parameter "view".(Â¤ëè
-L
-java:S1874Å"0Remove this use of "getColor"; it is deprecated.(­Û€ùÿÿÿÿ
-d	java:S100Ñ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¹ıı
-B
-java:S1172Ñ"+Remove this unused method parameter "view".(Ì¹ıı
-G
-java:S1874×"0Remove this use of "getColor"; it is deprecated.(ªå»Í
-i	java:S100ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÓ «ûÿÿÿÿ
-G
-java:S1172ã"+Remove this unused method parameter "view".(ÇÓ «ûÿÿÿÿ
-G
-java:S1874é"0Remove this use of "getColor"; it is deprecated.(çÉòÌ
-i	java:S100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÕ¿ùÿÿÿÿ
-G
-java:S1172õ"+Remove this unused method parameter "view".(ŒÕ¿ùÿÿÿÿ
-L
-java:S1874û"0Remove this use of "getColor"; it is deprecated.(ß‹ºùÿÿÿÿ
-4
-java:S1128"Remove this duplicated import.(€¶£î
-9
-java:S1128"Remove this duplicated import.(ğÒ³ãıÿÿÿÿ
-9
-java:S1128"Remove this duplicated import.(·‚Àúÿÿÿÿ
-3
-java:S1128"Remove this duplicated import.(³ğ‹G
-9
-java:S1128"Remove this duplicated import.(°şÊóøÿÿÿÿ
-4
-java:S1128"Remove this duplicated import.(Ğˆ“ë
-9
-java:S1128"Remove this duplicated import.(Ø½­äşÿÿÿÿ
-9
-java:S1128"Remove this duplicated import.(çîšçúÿÿÿÿ
-9
-java:S1128"Remove this duplicated import.(„Ë‚ˆÿÿÿÿÿ
-C
-java:S1604O"(Make this anonymous inner class a lambda(Î—–ıÿÿÿÿ
-D
-java:S1604€"(Make this anonymous inner class a lambda(Ö…™£ùÿÿÿÿ
-D
-java:S1604‘"(Make this anonymous inner class a lambda(Ö…™£ùÿÿÿÿ

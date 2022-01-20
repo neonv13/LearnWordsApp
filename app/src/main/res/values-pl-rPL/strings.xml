@@ -13,6 +13,8 @@
     <string name="name">Nazwa</string>
     <string name="score">Punkty</string>
 
+    <string name="cancel">Cofnij</string>
+
     <string name="quiz">Quiz</string>
     <string name="flashcards">Fiszki</string>
     <string name="complete_the_sentence">Uzupełnij zdania</string>

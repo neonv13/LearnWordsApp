@@ -150,7 +150,7 @@
     <LinearLayout
         android:id="@+id/continueBtn"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="30dp"
@@ -173,7 +173,11 @@
     <ImageButton
         android:id="@+id/cancelBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/next_btn_quiz"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
 </LinearLayout>

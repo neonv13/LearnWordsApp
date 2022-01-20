@@ -21,7 +21,7 @@
         android:layout_width="333dp"
         android:layout_height="295dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/end_quiz"
         android:foregroundGravity="center" />
 
@@ -30,7 +30,7 @@
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="450dp">
+        android:layout_marginTop="400dp">
 
         <com.mikhaellopez.circularprogressbar.CircularProgressBar
             android:id="@+id/circularProgressBar"
@@ -54,17 +54,18 @@
             android:textSize="20sp" />
 
     </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/exitBtn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="550dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="80dp"
-        android:background="@drawable/next_btn_category_test"
-        android:backgroundTint="@color/peach"
+        android:background="@drawable/next_btn_quiz"
+        android:backgroundTint="@color/backgroundMint"
         android:gravity="center">
 
         <TextView

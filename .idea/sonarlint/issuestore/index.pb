@@ -44,8 +44,6 @@ p
 @app/src/main/java/com/example/learnwordsapp/QuizEndActivity.java,0\2\02e6c2e8e329bd6302f9b1fca43105b1bb2b3d1f
 f
 6app/src/main/java/com/example/learnwordsapp/Model.java,e\2\e2f29838f61e804f8b0b58d387c49defe72e9ef0
-v
-Fapp/src/main/java/com/example/learnwordsapp/QuizDashboardActivity.java,6\5\65c811476524f0203d35efc0d6d42d4f60eef305
 q
 Aapp/src/main/java/com/example/learnwordsapp/QuizMainActivity.java,d\f\df4034007a98b288cc3d0e0f8cd926ba7e71fca6
 z
