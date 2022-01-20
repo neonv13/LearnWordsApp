@@ -14,10 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemRippleColor="@color/lightGray"
-        app:labelVisibilityMode="labeled"
-        app:itemIconTint="@color/darkGray"
         android:background="@color/white"
+        app:itemIconTint="@color/darkGray"
+        app:itemRippleColor="@color/lightGray"
+        app:itemTextColor="@color/darkGray"
+        android:outlineAmbientShadowColor="@color/darkGray"
+        android:outlineSpotShadowColor="@color/darkGray"
         app:menu="@menu/item_menu" />
 
 </RelativeLayout>

@@ -40,6 +40,7 @@
             android:inputType="textEmailAddress"
             android:paddingVertical="12sp"
             android:paddingStart="20sp"
+            android:textColor="@color/black"
             android:textColorHint="@color/lightGray"
             tools:ignore="RtlSymmetry" />
 
@@ -59,8 +60,8 @@
             android:inputType="textPassword"
             android:paddingVertical="15sp"
             android:paddingStart="20sp"
-            android:textColor="#000000"
-            android:textColorHint="#BCBBBB"
+            android:textColor="@color/black"
+            android:textColorHint="@color/lightGray"
             tools:ignore="RtlSymmetry" />
 
     </RelativeLayout>

@@ -10,6 +10,9 @@
     <string name="nav_home">Home</string>
     <string name="nav_ranking">Ranking</string>
 
+    <string name="name">Nazwa</string>
+    <string name="score">Punkty</string>
+
     <string name="quiz">Quiz</string>
     <string name="flashcards">Fiszki</string>
     <string name="complete_the_sentence">Uzupełnij zdania</string>

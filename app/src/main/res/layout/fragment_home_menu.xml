@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:layout_gravity="center"
         android:gravity="center_horizontal">
 
         <TextView
@@ -34,40 +35,43 @@
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="380dp"
-            android:layout_height="250dp"
+            android:layout_width="300dp"
+            android:layout_height="216dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="100dp"
-            android:background="@drawable/home_menu" />
+            android:layout_marginEnd="53dp"
+            android:background="@drawable/home_menu"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/QuizBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/next_btn_quiz"
+            android:backgroundTint="@color/lightMint"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/quiz"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/QuizBtn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/next_btn_quiz"
-        android:backgroundTint="@color/lightMint"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/quiz"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/FlashcardsBtn"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/blue"
@@ -86,9 +90,9 @@
     <LinearLayout
         android:id="@+id/CompleteBtn"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/darkPurple"
