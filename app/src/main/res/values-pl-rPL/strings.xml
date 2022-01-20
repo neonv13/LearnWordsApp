@@ -109,5 +109,29 @@
     <string name="confirm_new_password">Potwierdź swoje nowe hasło</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="forgot_password">Zapomniałeś hasła?</string>
+    <string name="reset_password">Zresetuj hasło</string>
+    <string name="reset_your_password">Zresetuj swoje hasło</string>
+    <string name="reset_email_sent">Email do zresetowania hasła został wysłany</string>
+    <string name="error_need_enter_email">Musisz wpisać swój email</string>
+    <string name="error_incorrect_email">Email jest niepoprawny</string>
+    <string name="error_need_enter_password">Musisz wpisać swoje hasło</string>
+    <string name="error_the_same_passwords">Hasła muszą być takie same</string>
+    <string name="error_more_char_password">Hasło musi zawierać więcej niż 5 znaków</string>
+    <string name="error_lowercase_uppercase_password">Hasło musi zawierać co najmniej jedną wielką i małą literę</string>
+    <string name="error_number_password">Hasło musi zawierać co najmniej jedną cyfrę</string>
+    <string name="wait">Proszę poczekać…</string>
+    <string name="registration_failed">Rejestracja nie powiodła się!</string>
+    <string name="authentication_error">Błąd Autentykacji: </string>
+    <string name="authentication_failed">Autentykacja nie powiodła się</string>
+    <string name="use_fingerprint">Użyj swojego odcisku palca do zalogowania</string>
+    <string name="log_in_fingerprint">Zaloguj się odciskiem palca</string>
+    <string name="use_password">Użyj hasła</string>
+    <string name="login_failed">Logowanie nie powiodło się</string>
+    <string name="logged_successfully">Zalogowanie powiodło się</string>
+    <string name="error_need_username">Musisz wpisać nazwę użytkownika</string>
+    <string name="successfully_changed_email">Email został zmieniony</string>
+    <string name="changing_email_failed">Zmiana Emaila nie powiodła się</string>
+    <string name="sent_verification_email">Email do werefikacji został wysłany</string>
+    <string name="cannot_sent_email">Nie można wysłać emaila</string>
 </resources>

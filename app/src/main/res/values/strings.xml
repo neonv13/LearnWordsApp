@@ -110,6 +110,31 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_your_password">Reset your password</string>
+    <string name="reset_email_sent">Email to reset password was sent</string>
+    <string name="error_need_enter_email">You need to enter your email</string>
+    <string name="error_incorrect_email">Email is incorrect</string>
+    <string name="error_need_enter_password">You need to enter your password</string>
+    <string name="error_the_same_passwords">Passwords have to be the same</string>
+    <string name="error_more_char_password">Password must be more than 5 characters</string>
+    <string name="error_lowercase_uppercase_password">Password must have at least one lowercase and uppercase letter</string>
+    <string name="error_number_password">Password must have at least one number</string>
+    <string name="wait">Please wait…</string>
+    <string name="registration_failed">Registration failed!</string>
+    <string name="authentication_error">Authentication error: </string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="use_fingerprint">Use fingerprint to log in</string>
+    <string name="log_in_fingerprint">Log in using fingerprint</string>
+    <string name="use_password">Use password</string>
+    <string name="login_failed">Login failed</string>
+    <string name="logged_successfully">Logged Successfully</string>
+    <string name="error_need_username">You need to enter your username</string>
+    <string name="successfully_changed_email">Successfully changed Email</string>
+    <string name="changing_email_failed">Changing Email failed</string>
+    <string name="sent_verification_email">Verification email was sent</string>
+    <string name="cannot_sent_email">Cannot sent email</string>
 
 
 </resources>

@@ -141,7 +141,7 @@ public class EditProfileFragment extends Fragment {
             public void onClick(View view) {
                 String newUsername = text_username.getText().toString();
                 if (TextUtils.isEmpty(newUsername)){
-                    text_email.setError("You need to enter your username");
+                    text_email.setError(getString(R.string.error_need_username));
                     return;
                 }
                 changeUsernameWarning(newUsername);
@@ -153,11 +153,11 @@ public class EditProfileFragment extends Fragment {
             public void onClick(View view) {
                 String email = text_email.getText().toString();
                 if (TextUtils.isEmpty(email)){
-                    text_email.setError("You need to enter your email");
+                    text_email.setError(getString(R.string.error_need_enter_email));
                     return;
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    text_email.setError("Email is incorrect");
+                    text_email.setError(getString(R.string.error_incorrect_email));
                     return;
                 }
 
@@ -165,10 +165,10 @@ public class EditProfileFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(getContext(), "Successfully changed Email", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getString(R.string.successfully_changed_email), Toast.LENGTH_LONG).show();
                         }
                         else{
-                            Toast.makeText(getContext(), "Changing Email failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getString(R.string.changing_email_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -183,10 +183,10 @@ public class EditProfileFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(getContext(), "Verification email was sent", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getString(R.string.sent_verification_email), Toast.LENGTH_LONG).show();
                         }
                         else{
-                            Toast.makeText(getContext(), "Cannot sent email", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getString(R.string.cannot_sent_email), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

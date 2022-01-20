@@ -37,6 +37,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'org.chromium.net:cronet-embedded:95.4638.50'
     def room_version = "2.4.0"
     def lifecycle_version = "2.4.0"
 

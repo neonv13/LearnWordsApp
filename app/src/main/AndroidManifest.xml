@@ -49,6 +49,10 @@
         <activity
             android:name=".SentenceEndActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="true"/>
+
         <service
             android:name=".NotificationService"
             android:exported="false">

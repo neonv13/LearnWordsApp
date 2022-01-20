@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private View signInButton;
     private View createAccountButton;
     private ImageView fingerprintImage;
+    private View resetButton;
 
     //Firebase
     private SharedPreferences sharedPreferences;
@@ -64,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.passwordText);
         signInButton = findViewById(R.id.signInButton);
         createAccountButton = findViewById(R.id.createAccountButton);
+        resetButton = findViewById(R.id.resetButton);
         fingerprintImage = findViewById(R.id.fingerprintImage);
 
         progressDialog = new ProgressDialog(this);
@@ -80,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
-                Toast.makeText(getApplicationContext(), "Authentication error: " + errString, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.authentication_error) + ": " + errString, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -96,14 +98,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
-                Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.authentication_failed), Toast.LENGTH_SHORT).show();
             }
         });
 
-        promptInfo = new androidx.biometric.BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Use fingerprint to log in")
-                .setSubtitle("Log in using fingerprint")
-                .setNegativeButtonText("Use password")
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle(getString(R.string.use_fingerprint))
+                .setSubtitle(getString(R.string.log_in_fingerprint))
+                .setNegativeButtonText(getString(R.string.use_password))
                 .build();
 
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -112,10 +114,12 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailText.getText().toString();
                 String password = passwordText.getText().toString();
                 if (TextUtils.isEmpty(email)) {
-                    emailText.setError("You need to enter your email");
+                    emailText.setError(getString(R.string.error_need_enter_email));
+                    return;
                 }
                 if (TextUtils.isEmpty(password)) {
-                    passwordText.setError("You need to enter your password");
+                    passwordText.setError(getString(R.string.error_need_enter_password));
+                    return;
                 }
                 Login(email, password);
             }
@@ -129,13 +133,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+                finish();
+            }
+        });
+
         fingerprintImage.setOnClickListener(view -> {
             biometricPrompt.authenticate(promptInfo);
         });
     }
 
     private void Login(String email, String password) {
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setMessage(getString(R.string.wait));
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
@@ -150,11 +162,11 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putBoolean("isLogin", true);
                     editor.apply();
 
-                    Toast.makeText(LoginActivity.this, "Logged Successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.logged_successfully), Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 } else {
-                    Toast.makeText(LoginActivity.this, "Login failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
             }

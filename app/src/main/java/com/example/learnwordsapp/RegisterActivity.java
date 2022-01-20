@@ -77,31 +77,31 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean Validate(String email, String password, String password2) {
         if (TextUtils.isEmpty(email)){
-            emailText.setError("You need to enter your email");
+            emailText.setError(getString(R.string.error_need_enter_email));
             return true;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailText.setError("Email is incorrect");
+            emailText.setError(getString(R.string.error_incorrect_email));
             return true;
         }
         if (TextUtils.isEmpty(password)){
-            passwordText.setError("You need to enter your password");
+            passwordText.setError(getString(R.string.error_need_enter_password));
             return true;
         }
         if (!password2.equals(password)){
-            password2Text.setError("Passwords have to be the same");
+            password2Text.setError(getString(R.string.error_the_same_passwords));
             return true;
         }
         if (password.length() < 5){
-            passwordText.setError("Password must be more than 5 characters");
+            passwordText.setError(getString(R.string.error_more_char_password));
             return true;
         }
         if (password.equals(password.toLowerCase())){
-            passwordText.setError("Password must have at least one lowercase and uppercase letter");
+            passwordText.setError(getString(R.string.error_lowercase_uppercase_password));
             return true;
         }
         if (!containsNumber(password)){
-            passwordText.setError("Password must have at least one number");
+            passwordText.setError(getString(R.string.error_number_password));
             return true;
         }
         return false;
@@ -118,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void Register(String email, String password){
         String username = usernameText.getText().toString().trim();
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setMessage(getString(R.string.wait));
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -136,12 +136,12 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
                                         Toast.makeText(RegisterActivity.this, "User '" + username + "' registered successfully", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(RegisterActivity.this, UserProfile.class);
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                         //Intent intent = new Intent(SignUpActivity.this, LoginUser.class);
                                         startActivity(intent);
                                         finish();
                                     } else {
-                                        Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed), Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
@@ -150,7 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(RegisterActivity.this, "Registration failed: " + task.getException(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
             }
