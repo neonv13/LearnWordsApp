@@ -10,6 +10,7 @@ public class Question {
     private int id;
     private String questionPL;
     private String questionENG;
+    private int correctAnswerId;
 
     public Question(String questionPL, String questionENG) {
         this.questionPL = questionPL;
@@ -30,5 +31,13 @@ public class Question {
 
     public String getQuestionENG() {
         return questionENG;
+    }
+
+    public int getCorrectAnswerId() {
+        return correctAnswerId;
+    }
+
+    public void setCorrectAnswerId(int correctAnswerId) {
+        this.correctAnswerId = correctAnswerId;
     }
 }

@@ -64,12 +64,13 @@ public abstract class LearnDatabase extends RoomDatabase {
 
             // Adding Data here == API fetch data here ?
 
-
-//            answerDao.insert((new Answer("Text sample here1")));
-//            answerDao.insert((new Answer("Text sample here2")));
-//            answerDao.insert((new Answer("Text sample here3")));
-//            answerDao.insert((new Answer("Text sample here4")));
-//            answerDao.insert((new Answer("Text sample here5")));
+            Question tmpQ = new Question("PL question", "Eng question");
+            Answer tmpAnswer = new Answer("Correct answer", tmpQ.getId());
+            tmpQ.setCorrectAnswerId(tmpAnswer.getId());
+            questionDao.insert(tmpQ);
+            answerDao.insert(tmpAnswer);
+            answerDao.insert((new Answer("Text sample here1", tmpQ.getId())));
+            answerDao.insert((new Answer("Text sample here2", tmpQ.getId())));
 
             return null;
         }

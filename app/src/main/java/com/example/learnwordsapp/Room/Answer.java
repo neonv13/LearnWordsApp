@@ -10,9 +10,11 @@ public class Answer {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String content;
+    private int idQ;
 
-    public Answer(String content) {
+    public Answer(String content, int idQ) {
         this.content = content;
+        this.idQ = idQ;
     }
 
     public void setId(int id) {
@@ -25,5 +27,13 @@ public class Answer {
 
     public String getContent() {
         return content;
+    }
+
+    public int getIdQ() {
+        return idQ;
+    }
+
+    public void setIdQ(int idQ) {
+        this.idQ = idQ;
     }
 }

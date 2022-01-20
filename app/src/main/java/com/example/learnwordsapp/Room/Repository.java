@@ -37,7 +37,6 @@ public class Repository {
         questionDao = learnDatabase.questionDao();
         allQuestion = questionDao.getAllQuestion();
 
-
     }
 
     // Answers
@@ -59,11 +58,9 @@ public class Repository {
     //                                             AsyncTask<Input, Progres update, Output>
     private static class InsertAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
-
         private InsertAnswerAsync(AnswerDao answerDao){
             this.answerDao = answerDao;
         }
-
         @Override
         protected Void doInBackground(Answer... answers) {
             answerDao.insert(answers[0]);
@@ -72,11 +69,9 @@ public class Repository {
     }
     private static class UpdateAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
-
         private UpdateAnswerAsync(AnswerDao answerDao){
             this.answerDao = answerDao;
         }
-
         @Override
         protected Void doInBackground(Answer... answers) {
             answerDao.update(answers[0]);
@@ -85,11 +80,9 @@ public class Repository {
     }
     private static class DeleteAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
-
         private DeleteAnswerAsync(AnswerDao answerDao){
             this.answerDao = answerDao;
         }
-
         @Override
         protected Void doInBackground(Answer... answers) {
             answerDao.delete(answers[0]);
@@ -232,11 +225,9 @@ public class Repository {
     //
     private static class InsertQuestionAsync extends AsyncTask<Question, Void, Void>{
         private QuestionDao questionDao;
-
         private InsertQuestionAsync(QuestionDao questionDao ){
             this.questionDao = questionDao;
         }
-
         @Override
         protected Void doInBackground(Question... questions) {
             questionDao.insert((questions[0]));
@@ -245,11 +236,9 @@ public class Repository {
     }
     private static class UpdateQuestionAsync extends AsyncTask<Question, Void, Void>{
         private QuestionDao questionDao;
-
         private UpdateQuestionAsync(QuestionDao questionDao ){
             this.questionDao = questionDao;
         }
-
         @Override
         protected Void doInBackground(Question... questions) {
             questionDao.update((questions[0]));
@@ -258,11 +247,9 @@ public class Repository {
     }
     private static class DeleteQuestionAsync extends AsyncTask<Question, Void, Void>{
         private QuestionDao questionDao;
-
         private DeleteQuestionAsync(QuestionDao questionDao ){
             this.questionDao = questionDao;
         }
-
         @Override
         protected Void doInBackground(Question... questions) {
             questionDao.delete((questions[0]));
