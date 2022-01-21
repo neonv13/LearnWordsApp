@@ -56,15 +56,6 @@ public class RankingFragment extends Fragment {
         return RankingFragment;
     }
 
-   /* private void setData() {
-        najlepsi = new ArrayList<Ranking>();
-        najlepsi.add(new Ranking("Janek", 30));
-        najlepsi.add(new Ranking("Walek", 29));
-        najlepsi.add(new Ranking("Jurek", 28));
-        najlepsi.add(new Ranking("Ziuta", 20));
-
-    }*/
-
     private void initRecyclerView() {
         rankingList = RankingFragment.findViewById(R.id.rankingList);
         rankingList.setHasFixedSize(true);

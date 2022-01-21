@@ -231,17 +231,6 @@ public class EditProfileFragment extends Fragment {
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(newUsername).setValue(0);
 
-                    /*ref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            System.out.println("The read failed: " + databaseError.getCode());
-                        }
-                    });*/
                 } else {
                     Toast.makeText(getContext(), "Changing Username failed: " + task.getException(), Toast.LENGTH_LONG).show();
                 }

@@ -23,11 +23,6 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     public RankingAdapter(List<Ranking> elements) {
         this._elements = elements;
     }
-   /* public RankingAdapter(String path) {
-        database = FirebaseDatabase.getInstance();
-        rankingTable = database.getReference(path ).child("najlepsi");
-    }
-*/
 
     @NonNull
     @Override
