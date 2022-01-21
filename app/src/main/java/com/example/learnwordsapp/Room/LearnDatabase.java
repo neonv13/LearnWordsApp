@@ -14,6 +14,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
         Question.class,
         Answer.class,
         FlashCardPersonal.class
+
 }, version = 1)
 
 public abstract class LearnDatabase extends RoomDatabase {
@@ -49,8 +50,8 @@ public abstract class LearnDatabase extends RoomDatabase {
     private static class PopulateDbAsyncTack extends AsyncTask<Void, Void,Void>{
         private AnswerDao answerDao;
         private FlashCardDao flashCardDao;
-        private  FlashCardPersonalDao flashCardPersonalDao;
-        private  QuestionDao questionDao;
+        private FlashCardPersonalDao flashCardPersonalDao;
+        private QuestionDao questionDao;
 
         private PopulateDbAsyncTack(LearnDatabase db){
             this.answerDao = db.answerDao();
@@ -64,13 +65,37 @@ public abstract class LearnDatabase extends RoomDatabase {
 
             // Adding Data here == API fetch data here ?
 
-            Question tmpQ = new Question("PL question", "Eng question");
-            Answer tmpAnswer = new Answer("Correct answer", tmpQ.getId());
+            Question tmpQ = new Question("-", "Computer programs contained permanently in a hardware device (such as a read-only memory)");
+            Answer tmpAnswer = new Answer("Firmware", tmpQ.getId());
             tmpQ.setCorrectAnswerId(tmpAnswer.getId());
             questionDao.insert(tmpQ);
             answerDao.insert(tmpAnswer);
-            answerDao.insert((new Answer("Text sample here1", tmpQ.getId())));
-            answerDao.insert((new Answer("Text sample here2", tmpQ.getId())));
+            answerDao.insert((new Answer("Malware", tmpQ.getId())));
+            answerDao.insert((new Answer("Software", tmpQ.getId())));
+            answerDao.insert((new Answer("Spyware", tmpQ.getId())));
+
+            tmpQ = new Question("-", "Software that collects information about how someone uses the internet, or personal information such as passwords, without the user knowing about it");
+            tmpAnswer = new Answer("Spyware", tmpQ.getId());
+            tmpQ.setCorrectAnswerId(tmpAnswer.getId());
+            questionDao.insert(tmpQ);
+            answerDao.insert(tmpAnswer);
+            answerDao.insert((new Answer("Adware", tmpQ.getId())));
+            answerDao.insert((new Answer("Abandonware", tmpQ.getId())));
+            answerDao.insert((new Answer("Trojan", tmpQ.getId())));
+
+            tmpQ = new Question("-", "A computer program that prevents advertisements from being displayed on a screen, for example when you visit a website");
+            tmpAnswer = new Answer("Ad-blocker", tmpQ.getId());
+            tmpQ.setCorrectAnswerId(tmpAnswer.getId());
+            questionDao.insert(tmpQ);
+            answerDao.insert(tmpAnswer);
+            answerDao.insert((new Answer("Spyware", tmpQ.getId())));
+            answerDao.insert((new Answer("Abandonware", tmpQ.getId())));
+            answerDao.insert((new Answer("Blocker", tmpQ.getId())));
+
+
+
+
+
 
             return null;
         }

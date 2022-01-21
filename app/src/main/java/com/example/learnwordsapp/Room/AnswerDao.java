@@ -26,5 +26,8 @@ public interface AnswerDao {
     @Query("SELECT * FROM answer_table") // WHERE Category something ?
     LiveData<List<Answer>> getAllAnswer();
 
+    @Query("SELECT * FROM answer_table WHERE id == :id") // WHERE Category something ?
+    List<Answer> getAnswers(int id);
+
 
 }

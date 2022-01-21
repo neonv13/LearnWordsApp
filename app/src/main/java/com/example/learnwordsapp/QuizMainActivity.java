@@ -3,17 +3,36 @@ package com.example.learnwordsapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+
+import com.example.learnwordsapp.Room.Answer;
+import com.example.learnwordsapp.Room.Question;
+import com.example.learnwordsapp.Room.Repository;
+
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class QuizMainActivity extends AppCompatActivity {
 
+    private static final String TAG = "tmp";
     public static ArrayList<Model> list;
+    public Repository repo;
+    public LiveData<List<Question>> QuestionTMP;
+    public Question q;
+
+    public int tmp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_main);
+
+//        repo = new Repository(getApplication());
+//        QuestionTMP = repo.getAllQuestion();
 
         list = new ArrayList<>();
 
@@ -41,8 +60,8 @@ public class QuizMainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent intent= new Intent(QuizMainActivity.this, QuizDashboardActivity.class);
-                //startActivity(intent);
+                Intent intent= new Intent(QuizMainActivity.this, QuizDashboardActivity.class);
+                startActivity(intent);
             }
         }, 1500);
     }

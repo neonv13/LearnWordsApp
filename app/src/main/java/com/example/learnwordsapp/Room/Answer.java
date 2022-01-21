@@ -1,10 +1,17 @@
 package com.example.learnwordsapp.Room;
 
+
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "answer_table")
+@Entity(
+        tableName = "answer_table"
+//        ,
+//        foreignKeys = @ForeignKey(entity = Question.class,
+//                                    parentColumns = "id",
+//                                    childColumns = "idQ")
+)
 public class Answer {
 
     @PrimaryKey(autoGenerate = true)

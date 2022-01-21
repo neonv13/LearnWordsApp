@@ -9,7 +9,7 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.example.learnwordsapp.Room.Question;
-import com.example.learnwordsapp.Room.relations.QuestionsAndAnswers;
+
 
 import java.util.List;
 
@@ -28,8 +28,11 @@ public interface QuestionDao {
     @Query("SELECT * FROM question_table") // WHERE Category something ?
     LiveData<List<Question>> getAllQuestion();
 
-
-    @Transaction
-    @Query("SELECT * FROM question_table WHERE id = :id")
-    LiveData<List<QuestionsAndAnswers>> getQuestion(int id);
+    @Query("SELECT * FROM question_table") // WHERE Category something ?
+    List<Question> getQuestions();
+//
+//
+//    @Transaction
+//    @Query("SELECT * FROM question_table")
+//    LiveData<List<QuestionsAndAnswers>> getQuestion();
 }

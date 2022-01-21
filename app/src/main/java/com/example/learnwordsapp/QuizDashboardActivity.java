@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -15,6 +16,9 @@ import static com.example.learnwordsapp.QuizMainActivity.list;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -23,14 +27,28 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.learnwordsapp.ModelView.QuizModelView;
+import com.example.learnwordsapp.Room.Answer;
+import com.example.learnwordsapp.Room.Question;
+import com.example.learnwordsapp.Room.Repository;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class QuizDashboardActivity extends AppCompatActivity {
 
+    private QuizModelView quizModelView;
+
+    private Repository repo;
+    private List<Question> allQuestions;
+    private List<Answer> allAnswers;
+    private List<Answer> qAnswer;
+    int qID;
     CountDownTimer countDownTimer;
     int timerValue=20;
     RoundedHorizontalProgressBar progressBar;
@@ -50,6 +68,25 @@ public class QuizDashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_dashboard);
+
+        qAnswer = new ArrayList<>();
+        quizModelView = new ViewModelProvider(this).get(QuizModelView.class);
+        quizModelView.getQuestions().observe(this, new Observer<List<Question>>() {
+            @Override
+            public void onChanged(@Nullable List<Question> questions) {
+                Toast.makeText(QuizDashboardActivity.this, "hallo", Toast.LENGTH_LONG).show();
+                allQuestions = questions;
+
+            }
+        });
+        quizModelView.getAnswers().observe(this, new Observer<List<Answer>>() {
+            @Override
+            public void onChanged(List<Answer> answers) {
+                allAnswers = answers;
+            }
+        });
+
+
 
         Hooks();
 
@@ -97,6 +134,20 @@ public class QuizDashboardActivity extends AppCompatActivity {
         optionb.setText(modelclass.getoB());
         optionc.setText(modelclass.getoC());
         optiond.setText(modelclass.getoD());
+
+//        card_question.setText(allQuestions.get(index).getQuestionENG());
+        qID = allQuestions.size();
+//        for(int i = 0; i < allAnswers.size(); i++){
+//            if(allAnswers.get(i).getIdQ() == qID){
+//                qAnswer.add(allAnswers.get(i));
+//            }
+//        }
+//
+//        optiona.setText(qAnswer.get(0).getContent());
+//        optionb.setText(qAnswer.get(1).getContent());
+//        optionc.setText(qAnswer.get(2).getContent());
+//        optiond.setText(qAnswer.get(3).getContent());
+
         timerValue = 20;
         countDownTimer.cancel();
         countDownTimer.start();
@@ -129,11 +180,15 @@ public class QuizDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 correctCount++;
-                index++;
-                modelclass=list.get(index);
-                resetColor();
-                setAllData();
-                enableButton();
+                if(index<list.size()-1){
+                    index++;
+                    modelclass = list.get(index);
+                    resetColor();
+                    setAllData();
+                    enableButton();
+                }else {
+                    EndQuiz();
+                }
             }
         });
     }
@@ -193,6 +248,18 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
+//        if(qAnswer.get(0).getId() == allQuestions.get(index).getCorrectAnswerId()){
+//            cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
+//
+//            if(index<list.size()-1){
+//                Correct(cardOA);
+//            }else {
+//                EndQuiz();
+//            }
+//        } else {
+//            Wrong(cardOA);
+//        }
+
         if(modelclass.getoA().equals(modelclass.getAns())){
             cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
 
@@ -210,6 +277,18 @@ public class QuizDashboardActivity extends AppCompatActivity {
 
         disableButton();
         continueBtn.setClickable(true);
+
+//        if(qAnswer.get(1).getId() == allQuestions.get(index).getCorrectAnswerId()){
+//            cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
+//
+//            if(index<list.size()-1){
+//                Correct(cardOB);
+//            }else {
+//                EndQuiz();
+//            }
+//        } else {
+//            Wrong(cardOB);
+//        }
 
         if(modelclass.getoB().equals(modelclass.getAns())){
             cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
@@ -229,6 +308,18 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
+//        if(qAnswer.get(2).getId() == allQuestions.get(index).getCorrectAnswerId()){
+//            cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
+//
+//            if(index<list.size()-1){
+//                Correct(cardOC);
+//            }else {
+//                EndQuiz();
+//            }
+//        } else {
+//            Wrong(cardOC);
+//        }
+
         if(modelclass.getoC().equals(modelclass.getAns())){
             cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
 
@@ -246,6 +337,19 @@ public class QuizDashboardActivity extends AppCompatActivity {
 
         disableButton();
         continueBtn.setClickable(true);
+
+
+//        if(qAnswer.get(3).getId() == allQuestions.get(index).getCorrectAnswerId()){
+//            cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));
+//
+//            if(index<list.size()-1){
+//                Correct(cardOD);
+//            }else {
+//                EndQuiz();
+//            }
+//        } else {
+//            Wrong(cardOD);
+//        }
 
         if(modelclass.getoD().equals(modelclass.getAns())){
             cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));

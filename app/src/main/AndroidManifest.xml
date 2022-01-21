@@ -24,8 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".UserProfile"/>
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".QuizDashboardActivity"/>
+        <activity android:name=".QuizMainActivity"/>
+        <activity android:name=".QuizEndActivity"/>
 
         <service
             android:name=".NotificationService"

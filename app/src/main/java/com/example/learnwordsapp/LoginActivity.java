@@ -79,30 +79,30 @@ public class LoginActivity extends AppCompatActivity {
             fingerprintImage.setVisibility(View.VISIBLE);
         }
 
-        biometricPrompt = new androidx.biometric.BiometricPrompt(LoginActivity.this, executor, new androidx.biometric.BiometricPrompt.AuthenticationCallback()
-        {
-            @Override
-            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
-                super.onAuthenticationError(errorCode, errString);
-                Toast.makeText(getApplicationContext(),"Authentication error: " + errString, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAuthenticationSucceeded(@NonNull androidx.biometric.BiometricPrompt.AuthenticationResult result) {
-                super.onAuthenticationSucceeded(result);
-
-                String email = sharedPreferences.getString("email","");
-                String password = sharedPreferences.getString("password","");
-
-                Login(email,password);
-            }
-
-            @Override
-            public void onAuthenticationFailed() {
-                super.onAuthenticationFailed();
-                Toast.makeText(getApplicationContext(),"Authentication failed", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        biometricPrompt = new androidx.biometric.BiometricPrompt(LoginActivity.this, executor, new androidx.biometric.BiometricPrompt.AuthenticationCallback()
+//        {
+//            @Override
+//            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+//                super.onAuthenticationError(errorCode, errString);
+//                Toast.makeText(getApplicationContext(),"Authentication error: " + errString, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onAuthenticationSucceeded(@NonNull androidx.biometric.BiometricPrompt.AuthenticationResult result) {
+//                super.onAuthenticationSucceeded(result);
+//
+//                String email = sharedPreferences.getString("email","");
+//                String password = sharedPreferences.getString("password","");
+//
+//                Login(email,password);
+//            }
+//
+//            @Override
+//            public void onAuthenticationFailed() {
+//                super.onAuthenticationFailed();
+//                Toast.makeText(getApplicationContext(),"Authentication failed", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         promptInfo = new androidx.biometric.BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Use fingerprint to log in")
@@ -154,7 +154,8 @@ public class LoginActivity extends AppCompatActivity {
                     editor.apply();
 
                     Toast.makeText(LoginActivity.this, "Logged Successfully", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(LoginActivity.this, UserProfile.class));
+//                    startActivity(new Intent(LoginActivity.this, UserProfile.class));
+                    startActivity(new Intent(LoginActivity.this, QuizMainActivity.class));
                     finish();
                 }
                 else{

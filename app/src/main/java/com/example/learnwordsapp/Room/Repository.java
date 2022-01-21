@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+
 import java.util.List;
 
 public class Repository {
@@ -20,10 +21,12 @@ public class Repository {
     private QuestionDao questionDao;
     private LiveData<List<Question>>allQuestion;
 
+
     public Repository(Application application){
         LearnDatabase learnDatabase = LearnDatabase.getInstance(application);
         //assign db dao to our variable in this calss
         // and fetch data from db to list
+
 
         ansewerDao = learnDatabase.answerDao();
         allAnswer = ansewerDao.getAllAnswer();
@@ -36,11 +39,12 @@ public class Repository {
 
         questionDao = learnDatabase.questionDao();
         allQuestion = questionDao.getAllQuestion();
+//        questions = questionDao.getQuestions();
 
     }
 
-    // Answers
-    //Methods to do db operations
+//     Answers
+//    Methods to do db operations
     public void insertAnswer(Answer answer){
         new InsertAnswerAsync(ansewerDao).execute(answer);
     }
@@ -50,12 +54,15 @@ public class Repository {
     public void deleteAnswer(Answer answer){
         new DeleteAnswerAsync(ansewerDao).execute(answer);
     }
+    public List<Answer> getAnswers(int id){
+        return ansewerDao.getAnswers(id);
+    }
     public LiveData<List<Answer>> getAllAnswer(){
         return allAnswer;
     }
 
-    //Androind needs a Async data operation so ...
-    //                                             AsyncTask<Input, Progres update, Output>
+//    Androind needs a Async data operation so ...
+//                                                 AsyncTask<Input, Progres update, Output>
     private static class InsertAnswerAsync extends AsyncTask<Answer, Void, Void>{
         private AnswerDao answerDao;
         private InsertAnswerAsync(AnswerDao answerDao){
@@ -206,7 +213,7 @@ public class Repository {
         }
     }
 
-    // Question
+//     Question
     //Methods to do db operations
     public void insertQuestion(Question question){
         new InsertQuestionAsync(questionDao).execute(question);
@@ -256,4 +263,19 @@ public class Repository {
             return null;
         }
     }
+//    private static class GetQuestionAsync extends AsyncTask<Void, Void, List<Question>>{
+//        private QuestionDao questionDao;
+//        private GetQuestionAsync(QuestionDao questionDao){
+//            this.questionDao = questionDao;
+//        }
+//
+//        @Override
+//        protected List<Question> doInBackground(Void... voids) {
+//            return questionDao.getQuestions();
+//        }
+//    }
+
+
+
+
 }
