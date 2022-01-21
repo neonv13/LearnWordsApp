@@ -7,19 +7,17 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!--   add tools:context and id -->
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
+        android:outlineAmbientShadowColor="@color/darkGray"
+        android:outlineSpotShadowColor="@color/darkGray"
         app:itemIconTint="@color/darkGray"
         app:itemRippleColor="@color/lightGray"
         app:itemTextColor="@color/darkGray"
-        android:outlineAmbientShadowColor="@color/darkGray"
-        android:outlineSpotShadowColor="@color/darkGray"
         app:menu="@menu/item_menu" />
 
 </RelativeLayout>

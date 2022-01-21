@@ -34,14 +34,14 @@ import java.util.List;
 public class QuizDashboardActivity extends AppCompatActivity {
 
     CountDownTimer countDownTimer;
-    int timerValue=20;
+    int timerValue = 20;
     RoundedHorizontalProgressBar progressBar;
     List<Model> allQuestionslist;
     Model modelclass;
     int index = 0;
 
-    TextView card_question,optiona,optionb,optionc,optiond;
-    CardView cardOA,cardOC,cardOB,cardOD;
+    TextView card_question, optiona, optionb, optionc, optiond;
+    CardView cardOA, cardOC, cardOB, cardOD;
 
     ImageButton cancelBtn;
     int correctCount = 0;
@@ -58,7 +58,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
 
         allQuestionslist = list;
         Collections.shuffle(allQuestionslist);
-        modelclass=list.get(index);
+        modelclass = list.get(index);
 
         cardOA.setBackgroundColor(getResources().getColor(R.color.white));
         cardOB.setBackgroundColor(getResources().getColor(R.color.white));
@@ -76,7 +76,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Dialog dialog = new Dialog (QuizDashboardActivity.this);
+                Dialog dialog = new Dialog(QuizDashboardActivity.this);
                 dialog.setContentView(R.layout.activity_time_out);
 
                 dialog.findViewById(R.id.btn_tryAgain).setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
         }.start();
 
         setAllData();
-       cancelBtn.setOnClickListener(new View.OnClickListener() {
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 countDownTimer.cancel();
@@ -133,7 +133,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
 
     }
 
-    public void Correct(CardView cardView){
+    public void Correct(CardView cardView) {
 
         cardView.setBackgroundColor(getResources().getColor(R.color.green));
 
@@ -142,7 +142,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 correctCount++;
                 index++;
-                modelclass=list.get(index);
+                modelclass = list.get(index);
                 resetColor();
                 setAllData();
                 enableButton();
@@ -150,7 +150,7 @@ public class QuizDashboardActivity extends AppCompatActivity {
         });
     }
 
-    public void Wrong(CardView cardOA){
+    public void Wrong(CardView cardOA) {
 
         cardOA.setBackgroundColor(getResources().getColor(R.color.red));
 
@@ -158,42 +158,42 @@ public class QuizDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 wrongCount++;
-                if(index<list.size()-1){
+                if (index < list.size() - 1) {
                     index++;
                     modelclass = list.get(index);
                     resetColor();
                     setAllData();
                     enableButton();
-                }else {
+                } else {
                     EndQuiz();
                 }
             }
         });
     }
 
-    private void EndQuiz(){
-        Intent intent = new Intent(QuizDashboardActivity.this,QuizEndActivity.class);
-        intent.putExtra("correct",correctCount);
-        intent.putExtra("wrong",wrongCount);
+    private void EndQuiz() {
+        Intent intent = new Intent(QuizDashboardActivity.this, QuizEndActivity.class);
+        intent.putExtra("correct", correctCount);
+        intent.putExtra("wrong", wrongCount);
 
         startActivity(intent);
     }
 
-    public void enableButton(){
+    public void enableButton() {
         cardOA.setClickable(true);
         cardOB.setClickable(true);
         cardOC.setClickable(true);
         cardOD.setClickable(true);
     }
 
-    public void disableButton(){
+    public void disableButton() {
         cardOA.setClickable(false);
         cardOB.setClickable(false);
         cardOC.setClickable(false);
         cardOD.setClickable(false);
     }
 
-    public void resetColor(){
+    public void resetColor() {
         cardOA.setBackgroundColor(getResources().getColor(R.color.white));
         cardOB.setBackgroundColor(getResources().getColor(R.color.white));
         cardOC.setBackgroundColor(getResources().getColor(R.color.white));
@@ -205,12 +205,12 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoA().equals(modelclass.getAns())){
+        if (modelclass.getoA().equals(modelclass.getAns())) {
             cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOA);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -223,12 +223,12 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoB().equals(modelclass.getAns())){
+        if (modelclass.getoB().equals(modelclass.getAns())) {
             cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOB);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -241,12 +241,12 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoC().equals(modelclass.getAns())){
+        if (modelclass.getoC().equals(modelclass.getAns())) {
             cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOC);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -259,12 +259,12 @@ public class QuizDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoD().equals(modelclass.getAns())){
+        if (modelclass.getoD().equals(modelclass.getAns())) {
             cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOD);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {

@@ -25,17 +25,14 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     }
    /* public RankingAdapter(String path) {
         database = FirebaseDatabase.getInstance();
-
         rankingTable = database.getReference(path ).child("najlepsi");
-
-
     }
 */
 
     @NonNull
     @Override
     public RankingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranking_item, parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranking_item, parent, false);
 
         return new ViewHolder(v);
     }
@@ -68,7 +65,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
 
         public void setData(String txtUserName, int score) {
 
-            Integer s=new Integer(score);
+            Integer s = new Integer(score);
             _txt_name.setText(txtUserName);
             _txt_score.setText(s.toString());
         }

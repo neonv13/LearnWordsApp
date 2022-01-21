@@ -56,7 +56,7 @@ public class ChangePasswordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root=inflater.inflate(R.layout.fragment_change_password, container, false);
+        root = inflater.inflate(R.layout.fragment_change_password, container, false);
 
         text_old_password = root.findViewById(R.id.old_password);
         text_new_password = root.findViewById(R.id.new_password);
@@ -96,34 +96,34 @@ public class ChangePasswordFragment extends Fragment {
     }
 
     private boolean Validate(String old_password, String password, String password2) {
-        if (TextUtils.isEmpty(old_password)){
+        if (TextUtils.isEmpty(old_password)) {
             text_old_password.setError("You need to enter your old password");
             return true;
         }
-        if (TextUtils.isEmpty(password)){
+        if (TextUtils.isEmpty(password)) {
             text_new_password.setError("You need to enter your new password");
             return true;
         }
-        if (!password2.equals(password)){
+        if (!password2.equals(password)) {
             text_new_password2.setError("Passwords have to be the same");
             return true;
         }
-        if (password.length() < 5){
+        if (password.length() < 5) {
             text_new_password.setError("Password must be more than 5 characters");
             return true;
         }
-        if (password.equals(password.toLowerCase())){
+        if (password.equals(password.toLowerCase())) {
             text_new_password.setError("Password must have at least one lowercase and uppercase letter");
             return true;
         }
-        if (!containsNumber(password)){
+        if (!containsNumber(password)) {
             text_new_password.setError("Password must have at least one number");
             return true;
         }
         return false;
     }
 
-    private void ChangePassword(String old_password, String new_password){
+    private void ChangePassword(String old_password, String new_password) {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
@@ -132,15 +132,14 @@ public class ChangePasswordFragment extends Fragment {
         firebaseUser.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     firebaseUser.updatePassword(new_password);
 
                     Fragment f = EditProfileFragment.newInstance();
                     FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
                     r.commit();
-                }
-                else{
+                } else {
                     text_old_password.setError("Re-Authentication Failed");
                 }
                 progressDialog.dismiss();

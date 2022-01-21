@@ -51,8 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Wait..."
             android:layout_marginStart="30dp"
+            android:text="Wait..."
             android:textColor="@color/darkGray"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -81,8 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Wait..."
             android:layout_marginStart="30dp"
+            android:text="Wait..."
             android:textColor="@color/darkGray"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -110,8 +110,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Advanced"
             android:layout_marginStart="30dp"
+            android:text="Advanced"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
             android:textStyle="bold" />

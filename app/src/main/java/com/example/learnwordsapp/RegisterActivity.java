@@ -76,47 +76,47 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean Validate(String email, String password, String password2) {
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             emailText.setError(getString(R.string.error_need_enter_email));
             return true;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailText.setError(getString(R.string.error_incorrect_email));
             return true;
         }
-        if (TextUtils.isEmpty(password)){
+        if (TextUtils.isEmpty(password)) {
             passwordText.setError(getString(R.string.error_need_enter_password));
             return true;
         }
-        if (!password2.equals(password)){
+        if (!password2.equals(password)) {
             password2Text.setError(getString(R.string.error_the_same_passwords));
             return true;
         }
-        if (password.length() < 5){
+        if (password.length() < 5) {
             passwordText.setError(getString(R.string.error_more_char_password));
             return true;
         }
-        if (password.equals(password.toLowerCase())){
+        if (password.equals(password.toLowerCase())) {
             passwordText.setError(getString(R.string.error_lowercase_uppercase_password));
             return true;
         }
-        if (!containsNumber(password)){
+        if (!containsNumber(password)) {
             passwordText.setError(getString(R.string.error_number_password));
             return true;
         }
         return false;
     }
 
-    public static boolean containsNumber(String password){
-        for (int a=0; a<10; a++){
-            String s=""+a;
-            if(password.contains(s))
+    public static boolean containsNumber(String password) {
+        for (int a = 0; a < 10; a++) {
+            String s = "" + a;
+            if (password.contains(s))
                 return true;
         }
         return false;
     }
 
-    private void Register(String email, String password){
+    private void Register(String email, String password) {
         String username = usernameText.getText().toString().trim();
         progressDialog.setMessage(getString(R.string.wait));
         progressDialog.show();
@@ -124,8 +124,8 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    updateUserCredentials(Objects.requireNonNull(mAuth.getCurrentUser()), username,email);
+                if (task.isSuccessful()) {
+                    updateUserCredentials(Objects.requireNonNull(mAuth.getCurrentUser()), username, email);
                     User u = new User(username, email);
                     String fbu = mAuth.getCurrentUser().getUid();
 
@@ -148,15 +148,15 @@ public class RegisterActivity extends AppCompatActivity {
                     //dopisujemy usera do Rankingu
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(username).setValue(0);
 
-                }
-                else{
+                } else {
                     Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
             }
         });
     }
-    private void updateUserCredentials(@NonNull FirebaseUser fUser, @NonNull String displayName, @NonNull String eMail){
+
+    private void updateUserCredentials(@NonNull FirebaseUser fUser, @NonNull String displayName, @NonNull String eMail) {
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(displayName)
                 //.setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
@@ -182,6 +182,5 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 }

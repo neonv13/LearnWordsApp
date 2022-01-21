@@ -32,19 +32,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EditProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EditProfileFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -75,19 +68,10 @@ public class EditProfileFragment extends Fragment {
     }
 
     public static EditProfileFragment newInstance() {
-        EditProfileFragment editProfileFragment=new EditProfileFragment();
+        EditProfileFragment editProfileFragment = new EditProfileFragment();
         return editProfileFragment;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EditProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static EditProfileFragment newInstance(String param1, String param2) {
         EditProfileFragment fragment = new EditProfileFragment();
         Bundle args = new Bundle();
@@ -130,7 +114,7 @@ public class EditProfileFragment extends Fragment {
         Username = firebaseUser.getDisplayName();
         Email = firebaseUser.getEmail();
 
-        if(!firebaseUser.isEmailVerified())
+        if (!firebaseUser.isEmailVerified())
             email_verification.setVisibility(View.VISIBLE);
 
         text_username.setText(Username);
@@ -140,7 +124,7 @@ public class EditProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String newUsername = text_username.getText().toString();
-                if (TextUtils.isEmpty(newUsername)){
+                if (TextUtils.isEmpty(newUsername)) {
                     text_email.setError(getString(R.string.error_need_username));
                     return;
                 }
@@ -152,11 +136,11 @@ public class EditProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String email = text_email.getText().toString();
-                if (TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     text_email.setError(getString(R.string.error_need_enter_email));
                     return;
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     text_email.setError(getString(R.string.error_incorrect_email));
                     return;
                 }
@@ -164,10 +148,9 @@ public class EditProfileFragment extends Fragment {
                 firebaseUser.updateEmail(email).addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             Toast.makeText(getContext(), getString(R.string.successfully_changed_email), Toast.LENGTH_LONG).show();
-                        }
-                        else{
+                        } else {
                             Toast.makeText(getContext(), getString(R.string.changing_email_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -182,10 +165,9 @@ public class EditProfileFragment extends Fragment {
                 firebaseUser.sendEmailVerification().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             Toast.makeText(getContext(), getString(R.string.sent_verification_email), Toast.LENGTH_LONG).show();
-                        }
-                        else{
+                        } else {
                             Toast.makeText(getContext(), getString(R.string.cannot_sent_email), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -213,15 +195,13 @@ public class EditProfileFragment extends Fragment {
         button_go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try {
                     Activity activity = getActivity();
                     Intent intent = new Intent(activity, MainActivity.class);
                     startActivity(intent);
                     assert activity != null;
                     activity.finish();
-                }
-                catch(Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -230,7 +210,7 @@ public class EditProfileFragment extends Fragment {
         return root;
     }
 
-    void changeUsername(String newUsername){
+    void changeUsername(String newUsername) {
         UserProfileChangeRequest.Builder request = new UserProfileChangeRequest.Builder().setDisplayName(newUsername);
 
 
@@ -240,13 +220,13 @@ public class EditProfileFragment extends Fragment {
         firebaseUser.updateProfile(profileUpdates).addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     Toast.makeText(getContext(), "Successfully changed Username", Toast.LENGTH_LONG).show();
 
                     String fbu = firebaseUser.getUid();
 
                     FirebaseDatabase.getInstance().getReference("/Users").child(fbu).child("userName").setValue(newUsername);
-                    DatabaseReference  ref = FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi");
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi");
 
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(newUsername).setValue(0);
@@ -262,8 +242,7 @@ public class EditProfileFragment extends Fragment {
                             System.out.println("The read failed: " + databaseError.getCode());
                         }
                     });*/
-                }
-                else{
+                } else {
                     Toast.makeText(getContext(), "Changing Username failed: " + task.getException(), Toast.LENGTH_LONG).show();
                 }
             }
@@ -306,11 +285,11 @@ public class EditProfileFragment extends Fragment {
         mDialog.show();
     }
 
-    private void deleteAccount(){
+    private void deleteAccount() {
         firebaseUser.delete().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     FirebaseDatabase.getInstance().getReference("/Users").child(fbu).removeValue();
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(Username).removeValue();
 
@@ -320,8 +299,7 @@ public class EditProfileFragment extends Fragment {
                     Intent intent = new Intent(activity, LoginActivity.class);
                     startActivity(intent);
                     activity.finish();
-                }
-                else{
+                } else {
                     Toast.makeText(getContext(), "Deleting account failed: " + task.getException(), Toast.LENGTH_LONG).show();
                 }
             }

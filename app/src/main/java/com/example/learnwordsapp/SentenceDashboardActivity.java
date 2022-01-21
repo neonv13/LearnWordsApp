@@ -22,14 +22,14 @@ import java.util.List;
 public class SentenceDashboardActivity extends AppCompatActivity {
 
     CountDownTimer countDownTimer;
-    int timerValue=20;
+    int timerValue = 20;
     RoundedHorizontalProgressBar progressBar;
     List<Model> allQuestionslist;
     Model modelclass;
     int index = 0;
     ImageButton exitBtn;
-    TextView card_question,optiona,optionb,optionc,optiond;
-    CardView cardOA,cardOC,cardOB,cardOD;
+    TextView card_question, optiona, optionb, optionc, optiond;
+    CardView cardOA, cardOC, cardOB, cardOD;
 
     int correctCount = 0;
     int wrongCount = 0;
@@ -45,7 +45,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
 
         allQuestionslist = list;
         Collections.shuffle(allQuestionslist);
-        modelclass=list.get(index);
+        modelclass = list.get(index);
 
         cardOA.setBackgroundColor(getResources().getColor(R.color.white));
         cardOB.setBackgroundColor(getResources().getColor(R.color.white));
@@ -63,7 +63,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Dialog dialog = new Dialog (SentenceDashboardActivity.this);
+                Dialog dialog = new Dialog(SentenceDashboardActivity.this);
                 dialog.setContentView(R.layout.activity_time_out);
 
                 dialog.findViewById(R.id.btn_tryAgain).setOnClickListener(new View.OnClickListener() {
@@ -116,10 +116,10 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         cardOD = findViewById(R.id.cardD);
 
         continueBtn = findViewById(R.id.continueBtn);
-        exitBtn=findViewById(R.id.exitBtn);
+        exitBtn = findViewById(R.id.exitBtn);
     }
 
-    public void Correct(CardView cardView){
+    public void Correct(CardView cardView) {
 
         cardView.setBackgroundColor(getResources().getColor(R.color.green));
 
@@ -128,7 +128,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 correctCount++;
                 index++;
-                modelclass=list.get(index);
+                modelclass = list.get(index);
                 resetColor();
                 setAllData();
                 enableButton();
@@ -136,7 +136,7 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         });
     }
 
-    public void Wrong(CardView cardOA){
+    public void Wrong(CardView cardOA) {
 
         cardOA.setBackgroundColor(getResources().getColor(R.color.red));
 
@@ -144,42 +144,42 @@ public class SentenceDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 wrongCount++;
-                if(index<list.size()-1){
+                if (index < list.size() - 1) {
                     index++;
                     modelclass = list.get(index);
                     resetColor();
                     setAllData();
                     enableButton();
-                }else {
+                } else {
                     EndQuiz();
                 }
             }
         });
     }
 
-    private void EndQuiz(){
-        Intent intent = new Intent(SentenceDashboardActivity.this,SentenceEndActivity.class);
-        intent.putExtra("correct",correctCount);
-        intent.putExtra("wrong",wrongCount);
+    private void EndQuiz() {
+        Intent intent = new Intent(SentenceDashboardActivity.this, SentenceEndActivity.class);
+        intent.putExtra("correct", correctCount);
+        intent.putExtra("wrong", wrongCount);
 
         startActivity(intent);
     }
 
-    public void enableButton(){
+    public void enableButton() {
         cardOA.setClickable(true);
         cardOB.setClickable(true);
         cardOC.setClickable(true);
         cardOD.setClickable(true);
     }
 
-    public void disableButton(){
+    public void disableButton() {
         cardOA.setClickable(false);
         cardOB.setClickable(false);
         cardOC.setClickable(false);
         cardOD.setClickable(false);
     }
 
-    public void resetColor(){
+    public void resetColor() {
         cardOA.setBackgroundColor(getResources().getColor(R.color.white));
         cardOB.setBackgroundColor(getResources().getColor(R.color.white));
         cardOC.setBackgroundColor(getResources().getColor(R.color.white));
@@ -191,12 +191,12 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoA().equals(modelclass.getAns())){
+        if (modelclass.getoA().equals(modelclass.getAns())) {
             cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOA);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -209,12 +209,12 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoB().equals(modelclass.getAns())){
+        if (modelclass.getoB().equals(modelclass.getAns())) {
             cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOB);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -227,12 +227,12 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoC().equals(modelclass.getAns())){
+        if (modelclass.getoC().equals(modelclass.getAns())) {
             cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOC);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {
@@ -245,12 +245,12 @@ public class SentenceDashboardActivity extends AppCompatActivity {
         disableButton();
         continueBtn.setClickable(true);
 
-        if(modelclass.getoD().equals(modelclass.getAns())){
+        if (modelclass.getoD().equals(modelclass.getAns())) {
             cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));
 
-            if(index<list.size()-1){
+            if (index < list.size() - 1) {
                 Correct(cardOD);
-            }else {
+            } else {
                 EndQuiz();
             }
         } else {

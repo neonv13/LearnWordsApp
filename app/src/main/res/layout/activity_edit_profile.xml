@@ -19,11 +19,11 @@
         android:textColor="@color/darkGray"
         android:textSize="30sp" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/edit_profile" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/edit_profile" />
     </RelativeLayout>
 
     <FrameLayout

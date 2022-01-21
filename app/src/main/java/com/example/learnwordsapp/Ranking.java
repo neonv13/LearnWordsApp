@@ -6,14 +6,13 @@ public class Ranking {
 
     public Ranking() {
         UserName = "";
-        Score=0;
+        Score = 0;
     }
 
-    public Ranking(String UserName, int Score){
-        this.UserName=UserName;
-        this.Score=Score;
+    public Ranking(String UserName, int Score) {
+        this.UserName = UserName;
+        this.Score = Score;
     }
-
 
     public String getUserName() {
         return UserName;

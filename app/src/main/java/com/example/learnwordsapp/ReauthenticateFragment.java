@@ -53,7 +53,7 @@ public class ReauthenticateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root=inflater.inflate(R.layout.fragment_reauthenticate, container, false);
+        root = inflater.inflate(R.layout.fragment_reauthenticate, container, false);
 
         text_email = root.findViewById(R.id.emailText);
         text_password = root.findViewById(R.id.passwordText);
@@ -80,15 +80,13 @@ public class ReauthenticateFragment extends Fragment {
         button_go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try {
                     Activity activity = getActivity();
                     Intent intent = new Intent(activity, MainActivity.class);
                     startActivity(intent);
                     assert activity != null;
                     activity.finish();
-                }
-                catch(Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -96,6 +94,7 @@ public class ReauthenticateFragment extends Fragment {
 
         return root;
     }
+
     private void reauthenticateUser(String email, String password) {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
@@ -105,13 +104,12 @@ public class ReauthenticateFragment extends Fragment {
         firebaseUser.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Fragment f = EditProfileFragment.newInstance();
                     FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
                     r.commit();
-                }
-                else{
+                } else {
                     Toast.makeText(getContext(), "Re-Authentication Failed", Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
@@ -128,7 +126,6 @@ public class ReauthenticateFragment extends Fragment {
             text_password.setError("You need to enter your password");
             return true;
         }
-
         return false;
     }
 }

@@ -1,32 +1,0 @@
-
-S
-java:S2696"6Make the enclosing method "static" or remove this set.(Œƒ•¾8ÁĞ“îå/
-L
-java:S1874)"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8ÁĞ“îå/
-]	java:S125,"<This block of commented-out lines of code should be removed.(ş¯Šûûÿÿÿÿ8×Ë×ïå/
-m
-java:S1192"PDefine a constant instead of duplicating this literal "Virtual machine" 3 times.(¸æõ˜8ËĞ“îå/
-c
-java:S1192"MDefine a constant instead of duplicating this literal "Machine code" 5 times.(’åûÑ
-b
-java:S1192"LDefine a constant instead of duplicating this literal "Abandonware" 5 times.(ÔÆÊ¢
-e
-java:S1192"IDefine a constant instead of duplicating this literal "Software" 6 times.(î–Ú+8ËĞ“îå/
-c
-java:S1192"MDefine a constant instead of duplicating this literal "Trojan horse" 4 times.(ÔÆÊ¢
-d
-java:S1192"HDefine a constant instead of duplicating this literal "Spyware" 5 times.(î–Ú+8ËĞ“îå/
-k
-java:S1192"PDefine a constant instead of duplicating this literal "Embedded system" 4 times.(¬Èÿ‹úÿÿÿÿ
-k
-java:S1192"IDefine a constant instead of duplicating this literal "Hardware" 4 times.(Áõ³üÿÿÿÿ8ËĞ“îå/
-f
-java:S1192"KDefine a constant instead of duplicating this literal "Ad-blocker" 3 times.(¬Èÿ‹úÿÿÿÿ
-†
-java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(ˆÊ²İûÿÿÿÿ8ËĞ“îå/
-E
-java:S1604)"(Make this anonymous inner class a lambda(„ÑñŒ8ÕĞ“îå/
-r
-java:S1104"PMake list a static final constant or non-public and provide accessors if needed.(ˆÊ²İûÿÿÿÿ8ÕĞ“îå/
-L
-java:S1444"*Make this "public static list" field final(ˆÊ²İûÿÿÿÿ8ÕĞ“îå/

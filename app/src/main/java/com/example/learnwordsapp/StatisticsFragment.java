@@ -21,11 +21,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StatisticsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class StatisticsFragment extends Fragment {
 
     View root;
@@ -35,17 +30,14 @@ public class StatisticsFragment extends Fragment {
     String userDisplayName;
     String score;
 
-
     List<Ranking> najlepsi;
 
     public StatisticsFragment() {
         // Required empty public constructor
     }
 
-
     public static StatisticsFragment newInstance() {
         StatisticsFragment fragment = new StatisticsFragment();
-
         return fragment;
     }
 
@@ -57,10 +49,10 @@ public class StatisticsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        root=inflater.inflate(R.layout.fragment_statistics, container, false);
-        placetxt=root.findViewById(R.id.placeTxt);
-        scoretxt=root.findViewById(R.id.scoreTxt);
-        leveltxt=root.findViewById(R.id.levelTxt);
+        root = inflater.inflate(R.layout.fragment_statistics, container, false);
+        placetxt = root.findViewById(R.id.placeTxt);
+        scoretxt = root.findViewById(R.id.scoreTxt);
+        leveltxt = root.findViewById(R.id.levelTxt);
 
         userDisplayName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
 
@@ -75,14 +67,10 @@ public class StatisticsFragment extends Fragment {
             public void onCallback(String value) {
             }
         });
-
-
         return root;
     }
 
-
-
-    private void getUserScore(Callback callback){
+    private void getUserScore(Callback callback) {
 
         FirebaseDatabase.getInstance()
                 .getReference("/Ranking")
@@ -91,9 +79,9 @@ public class StatisticsFragment extends Fragment {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(!snapshot.hasChildren()){
+                        if (!snapshot.hasChildren()) {
                             String user = snapshot.getKey();
-                            Object d =  snapshot.getValue();
+                            Object d = snapshot.getValue();
                             score = d.toString();
                             int scoreV = Integer.parseInt(score);
                             SetUserScore(scoreV);
@@ -102,38 +90,34 @@ public class StatisticsFragment extends Fragment {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
 
     }
 
-    private void SetUserScore(int score){
-
+    private void SetUserScore(int score) {
         scoretxt.setText(Integer.toString(score));
-
     }
 
-    public void getUserPosition(Callback callback){
-
+    public void getUserPosition(Callback callback) {
         FirebaseDatabase.getInstance()
                 .getReference("/Ranking")
                 .child("najlepsi")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        najlepsi =new ArrayList<>();
-                        if(snapshot.hasChildren()){
-                            for(DataSnapshot data:snapshot.getChildren()){
+                        najlepsi = new ArrayList<>();
+                        if (snapshot.hasChildren()) {
+                            for (DataSnapshot data : snapshot.getChildren()) {
                                 String user = data.getKey();
-                                Object d =  data.getValue();
+                                Object d = data.getValue();
                                 String score = d.toString();
-                                int scoreVal= Integer.valueOf(score);
-                                Ranking local=new Ranking(user,scoreVal);
+                                int scoreVal = Integer.valueOf(score);
+                                Ranking local = new Ranking(user, scoreVal);
                                 najlepsi.add(local);
                             }
                         }
-                        if(najlepsi.size()<=0) {//jeśli nie ma danych na liście
+                        if (najlepsi.size() <= 0) {//jeśli nie ma danych na liście
                             Ranking local = new Ranking("<NO DATA>", 0);
                             najlepsi.add(local);
                         } else {//jeśli są dane
@@ -155,11 +139,11 @@ public class StatisticsFragment extends Fragment {
                 });
     }
 
-    private void SetUserPosition(String userName){
-        for(int i=0;i< najlepsi.size();i++){
+    private void SetUserPosition(String userName) {
+        for (int i = 0; i < najlepsi.size(); i++) {
             Ranking x = najlepsi.get(i);
-            if(x.getUserName().equals(userName)){
-                String poz = Integer.toString(i+1);
+            if (x.getUserName().equals(userName)) {
+                String poz = Integer.toString(i + 1);
                 placetxt.setText(poz);
                 return;
             }

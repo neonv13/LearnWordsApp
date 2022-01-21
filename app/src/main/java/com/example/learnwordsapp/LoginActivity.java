@@ -53,8 +53,6 @@ public class LoginActivity extends AppCompatActivity {
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,6 +197,5 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 }

@@ -26,7 +26,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
-
         emailText = findViewById(R.id.emailText);
         resetButton = findViewById(R.id.resetButton);
         goBackButton = findViewById(R.id.button_go_back);
@@ -38,13 +37,12 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             Toast.makeText(ResetPasswordActivity.this, getString(R.string.reset_email_sent), Toast.LENGTH_LONG).show();
 
                             startActivity(new Intent(ResetPasswordActivity.this, LoginActivity.class));
                             finish();
-                        }
-                        else{
+                        } else {
                             Toast.makeText(ResetPasswordActivity.this, getString(R.string.cannot_sent_email), Toast.LENGTH_LONG).show();
                         }
                     }

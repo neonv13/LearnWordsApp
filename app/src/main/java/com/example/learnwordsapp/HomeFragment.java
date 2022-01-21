@@ -16,6 +16,7 @@ public class HomeFragment extends Fragment {
     LinearLayout learnBtn;
     LinearLayout flashcardBtn;
     View root;
+
     public HomeFragment() {
     }
 
@@ -48,9 +49,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root=inflater.inflate(R.layout.fragment_home, container, false);
-        flashcardBtn=root.findViewById(R.id.FlashcardBtn);
-        learnBtn=root.findViewById(R.id.LearnBtn);
+        root = inflater.inflate(R.layout.fragment_home, container, false);
+        flashcardBtn = root.findViewById(R.id.FlashcardBtn);
+        learnBtn = root.findViewById(R.id.LearnBtn);
         learnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

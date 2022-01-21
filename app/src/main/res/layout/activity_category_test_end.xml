@@ -7,8 +7,6 @@
     android:background="@color/white"
     tools:context=".CategoryTestEndActivity">
 
-    <!--   add tools:context and id -->
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

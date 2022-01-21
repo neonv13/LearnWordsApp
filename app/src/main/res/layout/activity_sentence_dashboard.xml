@@ -8,14 +8,12 @@
     android:orientation="vertical"
     tools:context=".SentenceDashboardActivity">
 
-    <!--   add tools:context and id -->
-
     <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
         android:id="@+id/quiz_timer"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_height="6dp"
+        android:layout_marginTop="40dp"
         android:background="@color/darkPurple"
         android:indeterminate="false"
         android:max="20"
@@ -51,7 +49,6 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:onClick="OptionClickA"
         android:id="@+id/cardA"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -60,6 +57,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="20dp"
+        android:onClick="OptionClickA"
         app:cardCornerRadius="20dp">
 
         <TextView
@@ -76,7 +74,6 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:onClick="OptionClickB"
         android:id="@+id/cardB"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -85,6 +82,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="20dp"
+        android:onClick="OptionClickB"
         app:cardCornerRadius="20dp">
 
         <TextView
@@ -101,7 +99,6 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:onClick="OptionClickC"
         android:id="@+id/cardC"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -110,6 +107,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="20dp"
+        android:onClick="OptionClickC"
         app:cardCornerRadius="20dp">
 
         <TextView
@@ -126,7 +124,6 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:onClick="OptionClickD"
         android:id="@+id/cardD"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -135,6 +132,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="20dp"
+        android:onClick="OptionClickD"
         app:cardCornerRadius="20dp">
 
         <TextView
@@ -178,8 +176,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
         android:background="@drawable/next_btn_sentence"
         app:srcCompat="?attr/homeAsUpIndicator" />
 

@@ -1,6 +1,6 @@
 package com.example.learnwordsapp;
 
-public class Model{
+public class Model {
 
     String Question;
 
@@ -10,7 +10,7 @@ public class Model{
     String oD;
     String ans;
 
-    public Model(String question, String oA, String oB,String oC,String oD,String ans) {
+    public Model(String question, String oA, String oB, String oC, String oD, String ans) {
 
         Question = question;
         this.oA = oA;

@@ -55,6 +55,7 @@
             android:textSize="20sp" />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
@@ -76,7 +77,6 @@
             android:textColor="@color/darkGray"
             android:textSize="28sp"
             android:textStyle="bold" />
-
 
 
     </RelativeLayout>

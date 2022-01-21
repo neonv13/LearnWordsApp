@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,11 +22,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RankingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RankingFragment extends Fragment {
 
     RecyclerView rankingList;
@@ -33,7 +29,7 @@ public class RankingFragment extends Fragment {
     View RankingFragment;
     FirebaseDatabase database;
     DatabaseReference rankingTable;
-    int sum=0;
+    int sum = 0;
     List<Ranking> najlepsi;
     RankingAdapter ad;
 
@@ -41,15 +37,15 @@ public class RankingFragment extends Fragment {
     }
 
     public static RankingFragment newInstance() {
-        RankingFragment rankingFragment=new RankingFragment();
+        RankingFragment rankingFragment = new RankingFragment();
         return rankingFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        database=FirebaseDatabase.getInstance();
-        rankingTable=database.getReference("/Ranking/najlepsi");
+        database = FirebaseDatabase.getInstance();
+        rankingTable = database.getReference("/Ranking/najlepsi");
     }
 
     @Override
@@ -69,12 +65,11 @@ public class RankingFragment extends Fragment {
 
     }*/
 
-
     private void initRecyclerView() {
         rankingList = RankingFragment.findViewById(R.id.rankingList);
         rankingList.setHasFixedSize(true);
 
-        layoutManager=new LinearLayoutManager(this.getActivity());
+        layoutManager = new LinearLayoutManager(this.getActivity());
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
 
@@ -85,18 +80,18 @@ public class RankingFragment extends Fragment {
         rankingTable.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                najlepsi=new ArrayList<>();
-                if(snapshot.hasChildren()){
-                    for(DataSnapshot data:snapshot.getChildren()){
+                najlepsi = new ArrayList<>();
+                if (snapshot.hasChildren()) {
+                    for (DataSnapshot data : snapshot.getChildren()) {
                         String user = data.getKey();
-                        Object d =  data.getValue();
+                        Object d = data.getValue();
                         String score = d.toString();
-                        int scoreVal= Integer.valueOf(score);
-                        Ranking local=new Ranking(user,scoreVal);
+                        int scoreVal = Integer.valueOf(score);
+                        Ranking local = new Ranking(user, scoreVal);
                         najlepsi.add(local);
                     }
                 }
-                if(najlepsi.size()<=0) {//jeśli nie ma danych na liście
+                if (najlepsi.size() <= 0) {//jeśli nie ma danych na liście
                     Ranking local = new Ranking("<NO DATA>", 0);
                     najlepsi.add(local);
                 } else {//jeśli są dane
@@ -114,16 +109,10 @@ public class RankingFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                String e=error.toString();
-                String m= error.getMessage();
-                String d= error.getDetails();
+                String e = error.toString();
+                String m = error.getMessage();
+                String d = error.getDetails();
             }
         });
-
-
     }
-
-
-
-
 }

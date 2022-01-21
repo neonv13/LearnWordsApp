@@ -28,15 +28,15 @@ public class SentenceEndActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sentence_end);
 
-        correct = getIntent().getIntExtra("correct",0);
-        wrong = getIntent().getIntExtra("wrong",0);
+        correct = getIntent().getIntExtra("correct", 0);
+        wrong = getIntent().getIntExtra("wrong", 0);
 
         circularProgressBar = findViewById(R.id.circularProgressBar);
         resultText = findViewById(R.id.resultText);
 
-        backBtn=findViewById(R.id.backBtn);
+        backBtn = findViewById(R.id.backBtn);
         circularProgressBar.setProgress(correct);
-        resultText.setText(correct+"/20");
+        resultText.setText(correct + "/20");
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +45,10 @@ public class SentenceEndActivity extends AppCompatActivity {
             }
         });
     }
+
     private void UpdateScore() {
 
-
         String userDisplayName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-
 
         FirebaseDatabase.getInstance()
                 .getReference("/Ranking")
@@ -58,10 +57,10 @@ public class SentenceEndActivity extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(!snapshot.hasChildren()){
+                        if (!snapshot.hasChildren()) {
                             String user = snapshot.getKey();
-                            Object d =  snapshot.getValue();
-                            int finalScore= Integer.valueOf(d.toString());
+                            Object d = snapshot.getValue();
+                            int finalScore = Integer.valueOf(d.toString());
                             finalScore += correct;
                             FirebaseDatabase.getInstance().getReference("/Ranking")
                                     .child("najlepsi")
@@ -75,9 +74,6 @@ public class SentenceEndActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
     }
 
     private void BackToMain() {

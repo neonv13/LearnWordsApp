@@ -71,9 +71,7 @@ public class UserProfile extends AppCompatActivity {
     private MediaPlayer musicP;
     private Switch darkMode;
 
-
     private FusedLocationProviderClient fusedLocationClient;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

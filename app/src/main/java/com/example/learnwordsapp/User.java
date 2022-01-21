@@ -1,16 +1,17 @@
 package com.example.learnwordsapp;
+
 public class User {
     private String UserName;
     private String Email;
 
-    public User(){
-        UserName="";
-        Email="";
+    public User() {
+        UserName = "";
+        Email = "";
     }
 
-    public User(String UserName, String Email){
-        this.UserName=UserName;
-        this.Email=Email;
+    public User(String UserName, String Email) {
+        this.UserName = UserName;
+        this.Email = Email;
     }
 
     //region "Getters  & Setters"

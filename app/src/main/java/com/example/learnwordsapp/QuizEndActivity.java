@@ -31,14 +31,14 @@ public class QuizEndActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_end);
 
-        correct = getIntent().getIntExtra("correct",0);
-        wrong = getIntent().getIntExtra("wrong",0);
+        correct = getIntent().getIntExtra("correct", 0);
+        wrong = getIntent().getIntExtra("wrong", 0);
 
         circularProgressBar = findViewById(R.id.circularProgressBar);
         resultText = findViewById(R.id.resultText);
 
         circularProgressBar.setProgress(correct);
-        resultText.setText(correct+"/20");
+        resultText.setText(correct + "/20");
         ExitBtn = findViewById(R.id.exitBtn);
 
         ExitBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,37 +50,39 @@ public class QuizEndActivity extends AppCompatActivity {
             }
         });
     }
+
     private void UpdateScore() {
 
 
-            String userDisplayName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+        String userDisplayName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
 
 
-            FirebaseDatabase.getInstance()
-                    .getReference("/Ranking")
-                    .child("najlepsi")
-                    .child(userDisplayName)
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(!snapshot.hasChildren()){
-                                String user = snapshot.getKey();
-                                Object d =  snapshot.getValue();
-                                int finalScore= Integer.valueOf(d.toString());
-                                finalScore += correct;
-                                FirebaseDatabase.getInstance().getReference("/Ranking")
-                                        .child("najlepsi")
-                                        .child(userDisplayName)
-                                        .setValue(finalScore);
-                            }
+        FirebaseDatabase.getInstance()
+                .getReference("/Ranking")
+                .child("najlepsi")
+                .child(userDisplayName)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (!snapshot.hasChildren()) {
+                            String user = snapshot.getKey();
+                            Object d = snapshot.getValue();
+                            int finalScore = Integer.valueOf(d.toString());
+                            finalScore += correct;
+                            FirebaseDatabase.getInstance().getReference("/Ranking")
+                                    .child("najlepsi")
+                                    .child(userDisplayName)
+                                    .setValue(finalScore);
                         }
+                    }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
+                    }
+                });
     }
+
     private void BackToMain() {
         Intent intent = new Intent(QuizEndActivity.this, MainActivity.class);
         startActivity(intent);

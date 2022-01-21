@@ -42,7 +42,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-
 public class UserProfileFragment extends Fragment {
     private static final int REQUEST_CODE = 0101;
     public static final int CAMERA_PERM_CODE = 101;
@@ -68,8 +67,6 @@ public class UserProfileFragment extends Fragment {
     public UserProfileFragment() {
         // Required empty public constructor
     }
-
-
 
     public static UserProfileFragment newInstance() {
         UserProfileFragment fragment = new UserProfileFragment();
@@ -109,23 +106,23 @@ public class UserProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //askCameraPermissions();
-                Intent camera=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera,CAMERA_REQUEST_CODE);
+                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(camera, CAMERA_REQUEST_CODE);
             }
         });
 
         edit_profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
+                try {
                     Activity activity = getActivity();
                     Intent intent = new Intent(activity, EditProfileActivity.class);
                     startActivity(intent);
                     assert activity != null;
                     activity.finish();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                catch(Exception e)
-                {e.printStackTrace();}
             }
         });
 
@@ -133,15 +130,15 @@ public class UserProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                try{
+                try {
                     Activity activity = getActivity();
                     Intent intent = new Intent(activity, LoginActivity.class);
                     startActivity(intent);
                     assert activity != null;
                     activity.finish();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                catch(Exception e)
-                {e.printStackTrace();}
             }
         });
 
@@ -209,11 +206,12 @@ public class UserProfileFragment extends Fragment {
 
         return root;
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==CAMERA_REQUEST_CODE){
-            Bitmap image=(Bitmap) data.getExtras().get("data");
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
             avatar_image.setImageBitmap(image);
             //saveAvatar(avatar);
         }

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                if(item.getItemId()== R.id.nav_ranking){
+                if (item.getItemId() == R.id.nav_ranking) {
                     Fragment f = RankingFragment.newInstance();
                     FragmentTransaction r = getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
 
-                if(item.getItemId()== R.id.nav_user){
+                if (item.getItemId() == R.id.nav_user) {
                     Fragment f = UserProfileFragment.newInstance();
                     FragmentTransaction r = getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
@@ -50,18 +50,15 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
 
-                if(item.getItemId()== R.id.nav_home){
+                if (item.getItemId() == R.id.nav_home) {
                     Fragment f = HomeFragment.newInstance();
                     FragmentTransaction r = getSupportFragmentManager().beginTransaction();
                     r.replace(R.id.frame_layout, f);
                     r.commit();
                     return true;
                 }
-
                 return true;
-           }
+            }
         });
-
     }
-
 }
