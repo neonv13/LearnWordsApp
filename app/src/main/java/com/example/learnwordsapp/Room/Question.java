@@ -11,13 +11,23 @@ public class Question {
     private String questionPL;
     private String questionENG;
     private String ansver;
+    private String category;
     private int correctAnswerId;
 
-    public Question(String questionPL, String questionENG, String ansver) {
+
+    public Question(String questionPL, String questionENG, String ansver, String category) {
 //        this.id = id;
         this.questionPL = questionPL;
         this.questionENG = questionENG;
         this.ansver = ansver;
+        this.category = category;
+    }
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getAnsver() {
