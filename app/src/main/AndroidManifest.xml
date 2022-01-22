@@ -11,47 +11,54 @@
         android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnWordsApp">
-<!--        <activity-->
-<!--            android:name=".UserProfile"-->
-<!--            android:exported="true" />-->
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RegisterActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".EditProfileActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".QuizMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".QuizDashboardActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".QuizEndActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SentenceMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SentenceDashboardActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SentenceEndActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ResetPasswordActivity"
-            android:exported="true"/>
-
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <service
             android:name=".NotificationService"
             android:exported="false">
@@ -78,7 +85,4 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-    <!--- add android:theme="@style/Theme.AppCompat.NoActionBar" -->
-
 </manifest>
