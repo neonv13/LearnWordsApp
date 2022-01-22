@@ -273,17 +273,18 @@ public class UserProfileFragment extends Fragment {
             }
         });
 
-        darkMode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-                }
-            }
-        });
+//        darkMode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (!isChecked) {
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//
+//                } else {
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//
+//                }
+//            }
+//        });
 
         return root;
     }

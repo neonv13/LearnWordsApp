@@ -44,7 +44,9 @@
             android:fontFamily="@font/lato"
             android:text="@string/app_name"
             android:textColor="@color/darkGray"
-            android:textSize="20sp" />
+            android:textSize="16sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -69,7 +71,9 @@
             android:text="@string/app_name"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -94,7 +98,9 @@
             android:text="@string/app_name"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -119,7 +125,9 @@
             android:text="@string/app_name"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -144,7 +152,9 @@
             android:text="@string/app_name"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"/>
 
     </androidx.cardview.widget.CardView>
 

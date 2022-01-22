@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context=".RankingFragment">
+    tools:context=".RankingFragment"
+    android:gravity="center_horizontal">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/lato"
         android:gravity="center"
         android:text="@string/ranking"
@@ -26,7 +27,11 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="113dp"
         android:layout_marginTop="-174dp"
-        android:background="@drawable/rankings" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rankings"
+        android:foregroundGravity="center"
+        android:gravity="center_horizontal" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/title"

@@ -5,6 +5,7 @@
     android:layout_height="50dp"
     android:layout_margin="10dp"
     android:padding="10dp"
+    android:gravity="center_horizontal"
     app:cardBackgroundColor="@color/white"
     app:cardElevation="4dp">
 

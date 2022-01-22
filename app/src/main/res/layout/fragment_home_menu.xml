@@ -15,28 +15,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:layout_marginRight="150dp"
             android:fontFamily="@font/lato"
+            android:text="@string/select"
             android:textColor="@color/darkGray"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="216dp"
+            android:layout_width="match_parent"
+            android:layout_height="254dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="100dp"
-            android:layout_marginEnd="53dp"
+            android:layout_marginEnd="0dp"
             android:background="@drawable/home_menu"
-            android:gravity="center" />
+            android:gravity="center_horizontal" />
 
         <LinearLayout
             android:id="@+id/QuizBtn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="380dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/next_btn_quiz"
             android:backgroundTint="@color/lightMint"
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="460dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/blue"
@@ -80,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="540dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/darkPurple"
