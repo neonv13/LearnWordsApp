@@ -22,7 +22,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LiveData;
 
+import com.example.learnwordsapp.Room.Question;
+import com.example.learnwordsapp.Room.Repository;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -30,9 +33,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import java.util.List;
 import java.util.concurrent.Executor;
 
 public class LoginActivity extends AppCompatActivity {
+
 
     //Activity Components
     private EditText emailText;
@@ -75,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         if (isLogin) {
             fingerprintImage.setVisibility(View.VISIBLE);
         }
+
 
         biometricPrompt = new androidx.biometric.BiometricPrompt(LoginActivity.this, executor, new androidx.biometric.BiometricPrompt.AuthenticationCallback() {
             @Override
@@ -160,8 +166,10 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putBoolean("isLogin", true);
                     editor.apply();
 
+
                     Toast.makeText(LoginActivity.this, getString(R.string.logged_successfully), Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, getString(R.string.login_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
