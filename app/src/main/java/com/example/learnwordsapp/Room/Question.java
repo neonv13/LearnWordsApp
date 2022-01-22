@@ -10,11 +10,22 @@ public class Question {
     private int id;
     private String questionPL;
     private String questionENG;
+    private String ansver;
     private int correctAnswerId;
 
-    public Question(String questionPL, String questionENG) {
+    public Question(String questionPL, String questionENG, String ansver) {
+//        this.id = id;
         this.questionPL = questionPL;
         this.questionENG = questionENG;
+        this.ansver = ansver;
+    }
+
+    public String getAnsver() {
+        return ansver;
+    }
+
+    public void setAnsver(String ansver) {
+        this.ansver = ansver;
     }
 
     public void setId(int id) {

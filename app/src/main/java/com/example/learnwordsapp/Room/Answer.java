@@ -6,12 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity(
-        tableName = "answer_table"
-//        ,
-//        foreignKeys = @ForeignKey(entity = Question.class,
-//                                    parentColumns = "id",
-//                                    childColumns = "idQ")
-)
+        tableName = "answer_table")
 public class Answer {
 
     @PrimaryKey(autoGenerate = true)

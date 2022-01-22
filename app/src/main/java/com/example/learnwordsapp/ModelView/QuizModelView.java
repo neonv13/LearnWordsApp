@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.example.learnwordsapp.Room.Answer;
 import com.example.learnwordsapp.Room.Question;
@@ -13,12 +14,12 @@ import com.example.learnwordsapp.Room.Repository;
 import java.util.List;
 
 public class QuizModelView extends AndroidViewModel {
-    private Repository repository;
-    private LiveData<List<Question>> questions;
-    private LiveData<List<Answer>> answers;
+    public static Repository repository;
+    public LiveData<List<Question>> questions;
+    public LiveData<List<Answer>> answers;
 
 
-    public QuizModelView(@NonNull Application application) {
+    public QuizModelView(Application application) {
         super(application);
         repository = new Repository(application);
         questions = repository.getAllQuestion();
@@ -31,7 +32,4 @@ public class QuizModelView extends AndroidViewModel {
     public LiveData<List<Answer>> getAnswers(){
         return answers;
     }
-
-
-
 }

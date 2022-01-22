@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 public class Repository {
+    private LearnDatabase learnDatabase;
     private AnswerDao ansewerDao;
     private LiveData<List<Answer>> allAnswer;
 
@@ -23,7 +24,7 @@ public class Repository {
 
 
     public Repository(Application application){
-        LearnDatabase learnDatabase = LearnDatabase.getInstance(application);
+        learnDatabase = LearnDatabase.getInstance(application);
         //assign db dao to our variable in this calss
         // and fetch data from db to list
 
@@ -263,19 +264,6 @@ public class Repository {
             return null;
         }
     }
-//    private static class GetQuestionAsync extends AsyncTask<Void, Void, List<Question>>{
-//        private QuestionDao questionDao;
-//        private GetQuestionAsync(QuestionDao questionDao){
-//            this.questionDao = questionDao;
-//        }
-//
-//        @Override
-//        protected List<Question> doInBackground(Void... voids) {
-//            return questionDao.getQuestions();
-//        }
-//    }
-
-
 
 
 }
