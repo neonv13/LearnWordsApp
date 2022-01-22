@@ -119,6 +119,42 @@
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/navigation.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/menu/item_menu.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/shape_statistics.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/time_btn.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_end.xml" value="0.2" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_edit_profile.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_flashcards_end.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_dashboard.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_end.xml" value="0.264" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_quiz_end.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_quiz_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_register.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_reset_password.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_sentence_dashboard.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_sentence_end.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_sentence_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_time_out.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_your_flashcard_new.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_your_flashcards_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/bottom_menu.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_category_test.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_change_password.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_edit_profile.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_home.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_home_menu.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_profile.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_reauthenticate.xml" value="0.2608695652173913" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_statistics.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/fragment_user_profile.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/ranking_activity.xml" value="0.264" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/ranking_fragment.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/ranking_item.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/ptymo/LearnWordsApp/app/src/main/res/layout-v26/activity_quiz_dashboard.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/ptymo/LearnWordsApp/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ptymo/LearnWordsApp/app/src/main/res/layout/activity_category_test_end.xml" value="0.25416666666666665" />

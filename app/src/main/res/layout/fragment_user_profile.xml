@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserProfileFragment"
-    android:backgroundTint="@color/white"
+    android:background="@color/backgroundWhite"
     android:gravity="center_horizontal">
 
     <RelativeLayout
@@ -152,7 +152,6 @@
                 android:id="@+id/button_editprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:backgroundTint="@color/yellow"
                 android:text="@string/edit_profile" />
 
@@ -161,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:backgroundTint="@color/backgroundBlue"
+                android:backgroundTint="@color/blue"
                 android:text="@string/my_statistics" />
         </LinearLayout>
 

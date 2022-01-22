@@ -9,8 +9,19 @@
 <!--        <item name="colorSecondary">@color/teal_200</item>-->
 <!--        <item name="colorSecondaryVariant">@color/teal_200</item>-->
 <!--        <item name="colorOnSecondary">@color/black</item>-->
+        <item name="colorOnPrimary">@color/backgroundWhite</item>
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/backgroundWhite</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/backgroundWhite</item>
+
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="colorPrimaryDark">@color/backgroundWhite</item>
+        <item name="colorAccent">@color/backgroundWhite</item>
     </style>
 </resources>

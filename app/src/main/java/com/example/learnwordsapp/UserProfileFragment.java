@@ -85,8 +85,13 @@ public class UserProfileFragment extends Fragment {
     Uri outputFileUri_s = null;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-    private MediaPlayer musicP;
     private Switch darkMode_switch;
+
+
+    public static final String MyPREFERENCES = "nightModePref";
+    public static final String KEY_ISNIGHTMODE = "nightModePref";
+    SharedPreferences sharedPreferences;
+
 
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -165,6 +170,8 @@ public class UserProfileFragment extends Fragment {
         loadLocale();
         root = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
+        sharedPreferences = getActivity().getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+
         notif_switch = root.findViewById(R.id.switch_notification);
        // sound_switch = root.findViewById(R.id.switch_sound);
         location_text = root.findViewById(R.id.location_text);
@@ -177,6 +184,22 @@ public class UserProfileFragment extends Fragment {
         darkMode_switch = root.findViewById(R.id.switch_mode);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(container.getContext());
+
+
+        checkNightModeActivated();
+
+        darkMode_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                saveNightModeState(true);
+                getActivity().recreate();
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                saveNightModeState(false);
+                getActivity().recreate();            }
+
+        });
+
 
         permLocateUser();
 
@@ -288,6 +311,26 @@ public class UserProfileFragment extends Fragment {
 
         return root;
     }
+
+
+    private void saveNightModeState(boolean nightMode) {
+
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putBoolean(KEY_ISNIGHTMODE, nightMode);
+        editor.apply();
+
+    }
+
+    public void checkNightModeActivated(){
+        if(sharedPreferences.getBoolean(KEY_ISNIGHTMODE, false)){
+            darkMode_switch.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else{
+            darkMode_switch.setChecked(false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
     private void uploadImage(@NonNull String path) {
         String UID = mAuth.getCurrentUser().getUid();
         FirebaseDatabase storage = FirebaseDatabase.getInstance();

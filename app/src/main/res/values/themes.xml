@@ -4,12 +4,13 @@
         <!-- Primary brand color. -->
 <!--        <item name="colorPrimary">@color/purple_500</item>-->
 <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/backgroundWhite</item>
         <!-- Secondary brand color. -->
 <!--        <item name="colorSecondary">@color/teal_200</item>-->
 <!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
 <!--        <item name="colorOnSecondary">@color/black</item>-->
         <!-- Status bar color. -->
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
         <!-- Customize your theme here. -->
     </style>
@@ -17,13 +18,20 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/darkGray</item>
         <item name="colorPrimaryVariant">@color/darkGray</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/backgroundWhite</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/darkGray</item>
         <item name="colorSecondaryVariant">@color/darkGray</item>
         <item name="colorOnSecondary">@color/darkGray</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/backgroundWhite</item>
     </style>
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/backgroundWhite</item>
 
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="colorPrimaryDark">@color/backgroundWhite</item>
+        <item name="colorAccent">@color/backgroundWhite</item>
+    </style>
 </resources>

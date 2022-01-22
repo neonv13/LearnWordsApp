@@ -5,7 +5,7 @@
     android:layout_width="250dp"
     android:layout_height="150dp"
     android:layout_gravity="center"
-    app:cardBackgroundColor="@color/white"
+    android:background="@color/backgroundWhite"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
