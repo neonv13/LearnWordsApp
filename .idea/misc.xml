@@ -119,13 +119,20 @@
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/layout/navigation.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/menu/item_menu.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/ptymo/AndroidStudioProjects/LearnWordsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/next_btn_flashcards.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/next_btn_level_test.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/next_btn_quiz.xml" value="0.2703125" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/shape.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/shape_statistics.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/drawable/time_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_dashboard.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_end.xml" value="0.2" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_category_test_main.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_edit_profile.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_flashcards_dashboard.xml" value="0.264" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_flashcards_end.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_flashcards_main.xml" value="0.4" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_dashboard.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_end.xml" value="0.264" />
         <entry key="..\:/Users/ptymo/Favorites/Project/app/src/main/res/layout/activity_level_test_main.xml" value="0.12360688956433637" />

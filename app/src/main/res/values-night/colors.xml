@@ -19,5 +19,6 @@
     <color name="peach">#F7A492</color>
     <color name="yellow">#F7CC7E</color>
     <color name="backgroundYellow">#373737</color>
+    <color name="backgroundDarkBlue">#373737</color>
 
 </resources>

@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 public class HomeFragment extends Fragment {
 
     LinearLayout learnBtn;
-    LinearLayout flashcardBtn;
     View root;
 
     public HomeFragment() {
@@ -37,7 +36,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_home, container, false);
-        flashcardBtn = root.findViewById(R.id.FlashcardBtn);
         learnBtn = root.findViewById(R.id.LearnBtn);
         learnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +44,6 @@ public class HomeFragment extends Fragment {
                 FragmentTransaction r = getActivity().getSupportFragmentManager().beginTransaction();
                 r.replace(R.id.frame_layout, f);
                 r.commit();
-            }
-        });
-        flashcardBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
         return root;

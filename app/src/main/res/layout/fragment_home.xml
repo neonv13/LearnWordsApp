@@ -34,9 +34,9 @@
     <LinearLayout
         android:id="@+id/LearnBtn"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="470dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/next_btn_quiz"
         android:backgroundTint="@color/lightMint"
@@ -48,30 +48,8 @@
             android:layout_gravity="center"
             android:text="@string/learn"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/FlashcardBtn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/next_btn_quiz"
-        android:backgroundTint="@color/blue"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/create_your_flashcards"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
 
 </FrameLayout>

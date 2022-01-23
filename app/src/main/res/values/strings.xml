@@ -13,6 +13,10 @@
     <string name="name">Name</string>
     <string name="score">Score</string>
 
+
+    <string name="flashcardsDescription">Learn Flashcards!</string>
+
+
     <string name="cancel">Cancel</string>
 
     <string name="quiz">Quiz</string>

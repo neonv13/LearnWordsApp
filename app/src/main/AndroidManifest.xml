@@ -60,7 +60,18 @@
             android:name=".ResetPasswordActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".FlashcardsMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".FlashcardsDashboardActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".FlashcardsEndActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <service
             android:name=".NotificationService"
             android:exported="false">
