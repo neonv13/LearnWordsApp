@@ -29,7 +29,7 @@ public class StatisticsFragment extends Fragment {
     TextView leveltxt;
     String userDisplayName;
     String score;
-
+    String level;
     List<Ranking> najlepsi;
 
     public StatisticsFragment() {
@@ -67,7 +67,14 @@ public class StatisticsFragment extends Fragment {
             public void onCallback(String value) {
             }
         });
+        getUserLevel(new Callback() {
+            @Override
+            public void onCallback(String value) {
+                // leveltxt.setText(score);
+            }
+        });
         return root;
+
     }
 
     private void getUserScore(Callback callback) {
@@ -149,5 +156,32 @@ public class StatisticsFragment extends Fragment {
             }
         }
         placetxt.setText("UNKNOWN");
+    }
+    public void getUserLevel(Callback callback) {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        String fbu = mAuth.getCurrentUser().getUid();
+        FirebaseDatabase.getInstance()
+                .getReference("/Users")
+                .child(fbu)
+                .child("Level")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String user = snapshot.getKey();
+                        Object d = snapshot.getValue();
+                        level = d.toString();
+                        SetUserLevel(level);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+    }
+
+    private void SetUserLevel(String score) {
+        leveltxt.setText(score);
     }
 }

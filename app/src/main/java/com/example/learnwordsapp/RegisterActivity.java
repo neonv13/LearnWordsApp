@@ -136,7 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
                                         Toast.makeText(RegisterActivity.this, "User '" + username + "' registered successfully", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, LevelTestMainActivity.class);
                                         //Intent intent = new Intent(SignUpActivity.this, LoginUser.class);
                                         startActivity(intent);
                                         finish();
@@ -147,8 +147,7 @@ public class RegisterActivity extends AppCompatActivity {
                             });
                     //dopisujemy usera do Rankingu
                     FirebaseDatabase.getInstance().getReference("/Ranking").child("najlepsi").child(username).setValue(0);
-
-                } else {
+                    FirebaseDatabase.getInstance().getReference("/Users").child(fbu).child("Level").setValue(0);                } else {
                     Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed) + ": " + task.getException(), Toast.LENGTH_LONG).show();
                 }
                 progressDialog.dismiss();
