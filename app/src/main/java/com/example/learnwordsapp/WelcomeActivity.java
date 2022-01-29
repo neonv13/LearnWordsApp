@@ -21,6 +21,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         }, 2000);
-        
+
     }
 }
