@@ -37,7 +37,7 @@ public class LevelTestMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_main);
+        setContentView(R.layout.activity_level_test_main);
 
 
         quizModelView = new ViewModelProvider(this).get(QuizModelView.class);
@@ -82,9 +82,11 @@ public class LevelTestMainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent= new Intent(LevelTestMainActivity.this, LevelTestDashboardActivity.class);
+                try{Intent intent= new Intent(LevelTestMainActivity.this, LevelTestDashboardActivity.class);
 
-                startActivity(intent);
+                startActivity(intent);}
+                catch (Exception e){
+                    e.printStackTrace();}
             }
         }, 2000);
     }

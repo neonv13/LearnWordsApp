@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
-            android:text="Advanced"
+            android:text="Wait..."
             android:textColor="@color/darkGray"
             android:textSize="18sp"
             android:textStyle="bold" />

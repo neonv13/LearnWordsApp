@@ -71,7 +71,7 @@ public class LevelTestDashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_dashboard);
+        setContentView(R.layout.activity_level_test_dashboard);
 
         qAnswer = new ArrayList<>();
         questions = LevelTestMainActivity.allQuestions;
@@ -111,14 +111,7 @@ public class LevelTestDashboardActivity extends AppCompatActivity {
         }.start();
 
         setAllData();
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                countDownTimer.cancel();
-                finish();
-                EndQuiz();
-            }
-        });
+
     }
 
     private void setAllData() {
@@ -209,6 +202,7 @@ public class LevelTestDashboardActivity extends AppCompatActivity {
     }
 
     private void EndQuiz() {
+        //finish();
         Intent intent = new Intent(LevelTestDashboardActivity.this, LevelTestEndActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);

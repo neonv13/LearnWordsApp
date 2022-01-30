@@ -30,16 +30,16 @@ public class LevelTestEndActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_end);
+        setContentView(R.layout.activity_level_test_end);
 
         correct = getIntent().getIntExtra("correct", 0);
         wrong = getIntent().getIntExtra("wrong", 0);
 
-        circularProgressBar = findViewById(R.id.circularProgressBar);
-        resultText = findViewById(R.id.resultText);
-
-        circularProgressBar.setProgress(correct);
-        resultText.setText(correct + "/20");
+//        circularProgressBar = findViewById(R.id.circularProgressBar);
+//        resultText = findViewById(R.id.resultText);
+//
+//        circularProgressBar.setProgress(correct);
+//        resultText.setText(correct + "/20");
         ExitBtn = findViewById(R.id.exitBtn);
 
         ExitBtn.setOnClickListener(new View.OnClickListener() {
